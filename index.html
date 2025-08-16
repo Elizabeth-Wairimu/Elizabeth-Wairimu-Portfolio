@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elizabeth Wairimu — Digital Marketing Strategist</title>
+  <style>
+    :root {
+      --burgundy: #660B05;   /* Header & Footer */
+      --gold: #d4af37;       /* Highlight color */
+      --card: #FFF5F2;       /* Card background */
+      --ink: #1a1a1a;        /* Main text */
+      --muted: #555;         /* Sub text */
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: #fff;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    /* Header */
+    header {
+      background: var(--burgundy);
+      color: #fff;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 1rem;
+      height: 80px; /* match footer later */
+    }
+    .nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1rem;
+    }
+    .nav a.active {
+      color: var(--gold);
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    .hero h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0.5rem auto 2rem;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .buttons a {
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .primary {
+      background: var(--gold);
+      color: #000;
+    }
+    .primary:hover {
+      background: #b9972f;
+    }
+    .secondary {
+      border: 1px solid var(--gold);
+      color: var(--gold);
+    }
+    .secondary:hover {
+      background: var(--gold);
+      color: #000;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--burgundy);
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      margin-top: 2rem;
+    }
+    footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: var(--gold);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav class="nav container">
+      <div><strong>Elizabeth Wairimu</strong></div>
+      <div>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="education-experience.html">Education & Experience</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero container">
+    <h1>Elizabeth Wairimu</h1>
+    <h2>Digital Marketing Strategist | Virtual Assistant | SEO/SEM | Social Media Management</h2>
+    <p>
+      I fuse creative marketing strategy with data intelligence and GIS precision 
+      to build campaigns that are engaging, measurable, and conversion-driven.
+    </p>
+    <div class="buttons">
+      <a href="projects.html" class="primary">View My Work</a>
+      <a href="contact.html" class="secondary">Get In Touch</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div>© 2025 Elizabeth Wairimu. All rights reserved.</div>
+    <div><a href="https://linkedin.com/in/elizabeth-wairimu-2069a6289">LinkedIn</a></div>
+  </footer>
+
+</body>
+</html>
