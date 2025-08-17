@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Elizabeth Wairimu — Education & Experience</title>
+  <title>Elizabeth Edge — Education & Experience</title>
   <style>
     :root{
-      --burgundy:#660B05;   /* updated brand color */
+      --burgundy:#660B05;
       --gold:#d4af37;
       --card:#FFF5F2;
       --ink:#1a1a1a;
@@ -22,12 +22,17 @@
     header{background:var(--burgundy); color:#fff}
     .nav{
       display:flex; justify-content:space-between; align-items:center;
-      padding:1.5rem 1rem;              /* match footer padding */
-      height:auto;                      /* remove fixed height */
+      padding:1rem; height:60px; /* same as footer */
     }
-    .nav div{display:flex; align-items:center;}
-    .nav a{color:#fff; text-decoration:none; margin-left:1rem}
-    .nav a.active{color:var(--gold)}
+    .brand{display:flex; align-items:center; gap:.75rem; color:#fff; text-decoration:none;}
+    .logo{
+      width:40px; height:40px; border-radius:50%;
+      display:grid; place-items:center;
+      border:2px solid var(--gold); color:#fff; font-weight:800; letter-spacing:.5px;
+    }
+    .brand-name{font-weight:800}
+    .links a{color:#fff; text-decoration:none; margin-left:1rem}
+    .links a.active, .links a:hover{color:var(--gold)}
 
     /* Grid */
     .grid{display:grid; gap:1rem; grid-template-columns:1fr}
@@ -49,7 +54,11 @@
     .more{margin-top:.5rem; color:var(--muted)}
 
     /* Footer */
-    footer{background:var(--burgundy); color:#fff; text-align:center; padding:1.5rem 1rem; margin-top:2rem}
+    footer{
+      background:var(--burgundy); color:#fff; text-align:center;
+      height:60px; display:flex; align-items:center; justify-content:center;
+      flex-direction:column; margin-top:2rem;
+    }
     footer a{color:#fff; text-decoration:none}
     footer a:hover{color:var(--gold)}
   </style>
@@ -58,8 +67,11 @@
 
 <header>
   <nav class="nav container">
-    <div></div> <!-- brand text removed as requested -->
-    <div>
+    <a class="brand" href="index.html" aria-label="Home">
+      <span class="logo">EE</span>
+      <span class="brand-name">Elizabeth Edge</span>
+    </a>
+    <div class="links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
@@ -78,6 +90,7 @@
     <span class="eyebrow">Academic Background</span>
     <h2>Academic Background & Certifications</h2>
     <div class="grid">
+      <!-- your cards kept exactly the same -->
       <div class="card">
         <h3>Digital Marketing Certificate — Generation Kenya</h3>
         <div class="meta">2025</div>
@@ -85,7 +98,6 @@
         <div class="divider"></div>
         <p>SEO, Google Ads, Social Media Marketing, Email Automation, Content Strategy, Analytics, Branding, AI in Marketing, WordPress.</p>
       </div>
-
       <div class="card">
         <h3>Foundations Program on Digital Skills — Women in Digital Business</h3>
         <div class="meta">2025</div>
@@ -93,7 +105,6 @@
         <div class="divider"></div>
         <p>Business digitization, WordPress site creation, social media marketing, SEO, and entrepreneurship.</p>
       </div>
-
       <div class="card">
         <h3>Generative AI Mastermind — Outskill</h3>
         <div class="meta">2025</div>
@@ -101,7 +112,6 @@
         <div class="divider"></div>
         <p>Prompt engineering, AI-powered SEO, workflow automation, ethical AI, video automation.</p>
       </div>
-
       <div class="card">
         <h3>Supervisory Skills Development — Kenya School of Government</h3>
         <div class="meta">2024</div>
@@ -109,7 +119,6 @@
         <div class="divider"></div>
         <p>Leadership, performance monitoring, conflict resolution, and time management.</p>
       </div>
-
       <div class="card">
         <h3>Diploma in Cartography</h3>
         <div class="meta">Kenya Institute of Surveying & Mapping • 2012 – 2014</div>
@@ -117,7 +126,6 @@
         <div class="divider"></div>
         <p>Comprehensive training in cartography and geospatial methods.</p>
       </div>
-
       <div class="card">
         <h3>Certificate in Computer Information</h3>
         <div class="meta">Central Business School • 2011</div>
@@ -133,8 +141,7 @@
     <span class="eyebrow">Professional Experience</span>
     <h2>Professional Experience</h2>
     <div class="grid">
-
-      <!-- Sundrops Realtors -->
+      <!-- All your cards remain unchanged -->
       <div class="card">
         <h3>Digital Marketing Manager — Sundrops Realtors</h3>
         <div class="meta">Mar 2020 – 2025</div>
@@ -153,7 +160,6 @@
         </details>
       </div>
 
-      <!-- Ministry of Mining -->
       <div class="card">
         <h3>GIS & Digital Communications Specialist — Ministry of Mining</h3>
         <div class="meta">Jul 2017 – Dec 2023</div>
@@ -170,7 +176,6 @@
         </details>
       </div>
 
-      <!-- Geomaps Africa -->
       <div class="card">
         <h3>GIS & Graphics Specialist — Geomaps Africa</h3>
         <div class="meta">Jun 2016 – Jun 2017</div>
@@ -184,7 +189,6 @@
         </details>
       </div>
 
-      <!-- Kiambu -->
       <div class="card">
         <h3>GIS Analyst — Kiambu County Government</h3>
         <div class="meta">Feb 2016 – Jun 2016</div>
@@ -197,7 +201,6 @@
         </details>
       </div>
 
-      <!-- NTC -->
       <div class="card">
         <h3>Cartographer / GIS Data Analyst — National Titling Center</h3>
         <div class="meta">Nov 2014 – Jan 2016</div>
@@ -211,7 +214,6 @@
         </details>
       </div>
 
-      <!-- Geosurv -->
       <div class="card">
         <h3>GIS Consultant — Geosurv Systems Ltd</h3>
         <div class="meta">Aug 2015 – Oct 2015</div>
@@ -229,7 +231,7 @@
 </main>
 
 <footer>
-  <div>© 2025 Elizabeth Wairimu. All rights reserved.</div>
+  <div>© 2025 Elizabeth Edge. All rights reserved.</div>
   <div><a href="https://linkedin.com/in/elizabeth-wairimu-2069a6289">LinkedIn</a></div>
 </footer>
 
