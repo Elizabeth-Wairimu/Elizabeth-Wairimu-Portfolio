@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elizabeth Edge — Blog</title>
+  <style>
+    :root{
+      --burgundy:#660B05;
+      --gold:#d4af37;
+      --card:#FFF5F2;
+      --ink:#1a1a1a;
+      --muted:#555;
+    }
+    body{margin:0; font-family:Arial,Helvetica,sans-serif; color:var(--ink); background:#fff}
+    .container{max-width:1100px; margin:0 auto; padding:1.25rem}
+
+    /* Header */
+    header{background:var(--burgundy); color:#fff}
+    .nav{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:1rem 0; height:64px;
+    }
+    .brand{display:flex; align-items:center; gap:.75rem; color:#fff; text-decoration:none;}
+    .logo{
+      width:40px; height:40px; border-radius:50%;
+      display:grid; place-items:center;
+      border:2px solid var(--gold); color:#fff; font-weight:800; letter-spacing:.5px;
+    }
+    .brand-name{font-weight:800}
+    .links a{color:#fff; text-decoration:none; margin-left:1rem}
+    .links a.active, .links a:hover{color:var(--gold)}
+
+    /* Blog Grid */
+    .blog-grid{display:grid; gap:1.25rem; grid-template-columns:1fr; margin-top:2rem}
+    @media(min-width:700px){.blog-grid{grid-template-columns:1fr 1fr}}
+    @media(min-width:1000px){.blog-grid{grid-template-columns:1fr 1fr 1fr}}
+    .post{background:var(--card); border:1px solid #eee; border-radius:12px; padding:1rem}
+    .post h3{margin:.5rem 0; color:var(--burgundy)}
+    .post .meta{font-size:.85rem; color:var(--muted); margin-bottom:.5rem}
+    .post p{margin:.5rem 0 1rem}
+    .readmore{
+      display:inline-block; padding:.4rem .9rem; font-size:.85rem; font-weight:700;
+      background:var(--gold); color:#000; border-radius:999px; text-decoration:none;
+    }
+    .readmore:hover{opacity:.85}
+
+    /* Footer */
+    footer{background:var(--burgundy); color:#fff; margin-top:2rem}
+    .footer-wrap{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:1rem 0; height:64px;
+    }
+    .footer-left{flex:1; text-align:left}
+    .footer-center{flex:1; text-align:center}
+    .footer-right{flex:1; text-align:right}
+    .footer-btn{
+      cursor:pointer; border-radius:999px; padding:.4rem .9rem; font-size:.85rem; font-weight:700;
+      background:var(--gold); color:#000; text-decoration:none; display:inline-block;
+    }
+    .footer-btn:hover{opacity:.85}
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="nav container">
+    <a class="brand" href="index.html" aria-label="Home">
+      <span class="logo">EE</span>
+      <span class="brand-name">Elizabeth Edge</span>
+    </a>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="educationexperience.html">Education & Experience</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main class="container">
+  <h1 style="text-align:center; color:var(--burgundy)">Blog</h1>
+  <p style="text-align:center; max-width:700px; margin:0 auto; color:var(--muted)">
+    Insights, strategies, and stories on digital marketing, SEO, social media, and business growth.
+  </p>
+
+  <div class="blog-grid">
+    <article class="post">
+      <h3>How to Build High-Converting Campaigns</h3>
+      <div class="meta">March 2025 • 5 min read</div>
+      <p>Practical steps for designing campaigns that attract, engage, and convert your ideal customers.</p>
+      <a href="#" class="readmore">Read More</a>
+    </article>
+
+    <article class="post">
+      <h3>SEO vs. SEM: Finding the Right Balance</h3>
+      <div class="meta">February 2025 • 6 min read</div>
+      <p>Understanding when to focus on organic growth and when to invest in paid ads for faster impact.</p>
+      <a href="#" class="readmore">Read More</a>
+    </article>
+
+    <article class="post">
+      <h3>Top 5 Social Media Trends in 2025</h3>
+      <div class="meta">January 2025 • 4 min read</div>
+      <p>Emerging trends you should know to stay ahead and keep your audience engaged this year.</p>
+      <a href="#" class="readmore">Read More</a>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-wrap">
+    <div class="footer-left">© 2025 Elizabeth Edge. All rights reserved.</div>
+    <div class="footer-center">
+      <a href="https://linkedin.com/in/elizabeth-wairimu-2069a6289" target="_blank" class="footer-btn">LinkedIn</a>
+    </div>
+    <div class="footer-right">
+      <a href="mailto:elizabethwairimu.int@gmail.com" class="footer-btn">Email</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
