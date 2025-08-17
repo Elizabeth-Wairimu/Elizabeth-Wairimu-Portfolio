@@ -6,7 +6,7 @@
   <title>Elizabeth Wairimu — Education & Experience</title>
   <style>
     :root{
-      --burgundy:#3f1717;
+      --burgundy:#660B05;   /* updated brand color */
       --gold:#d4af37;
       --card:#FFF5F2;
       --ink:#1a1a1a;
@@ -20,7 +20,11 @@
 
     /* Header */
     header{background:var(--burgundy); color:#fff}
-    .nav{display:flex; justify-content:space-between; align-items:center; padding:1.5rem 1rem; height:80px;}
+    .nav{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:1.5rem 1rem;              /* match footer padding */
+      height:auto;                      /* remove fixed height */
+    }
     .nav div{display:flex; align-items:center;}
     .nav a{color:#fff; text-decoration:none; margin-left:1rem}
     .nav a.active{color:var(--gold)}
@@ -54,14 +58,14 @@
 
 <header>
   <nav class="nav container">
-    <div><strong>Elizabeth Wairimu</strong></div>
+    <div></div> <!-- brand text removed as requested -->
     <div>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="projects.html">Projects</a>
       <a href="reviews.html">Reviews</a>
-      <a href="education-experience.html" class="active">Education & Experience</a>
+      <a href="educationexperience.html" class="active">Education & Experience</a>
       <a href="contact.html">Contact</a>
     </div>
   </nav>
