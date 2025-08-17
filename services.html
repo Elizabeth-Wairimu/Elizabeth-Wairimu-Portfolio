@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Elizabeth Wairimu — Services</title>
+  <title>Elizabeth Edge — Services</title>
   <style>
     :root {
-      --burgundy:#660B05;  /* updated */
+      --burgundy:#660B05;  /* unified brand color */
       --gold:#d4af37;
       --card:#FFF5F2;
       --ink:#1a1a1a;
@@ -20,7 +20,11 @@
 
     /* Header */
     header{background:var(--burgundy); color:#fff}
-    .nav{display:flex; justify-content:space-between; align-items:center; padding:1.5rem 1rem; height:80px;}
+    .nav{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:1.5rem 1rem;   /* match footer padding */
+      height:auto;           /* no fixed height */
+    }
     .nav a{color:#fff; text-decoration:none; margin-left:1rem}
     .nav a.active{color:var(--gold)}
 
@@ -44,14 +48,14 @@
 
 <header>
   <nav class="nav container">
-    <div><strong>Elizabeth Wairimu</strong></div>
+    <div></div> <!-- brand text removed -->
     <div>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html" class="active">Services</a>
       <a href="projects.html">Projects</a>
       <a href="reviews.html">Reviews</a>
-      <a href="education-experience.html">Education & Experience</a>
+      <a href="educationexperience.html">Education & Experience</a>
       <a href="contact.html">Contact</a>
     </div>
   </nav>
@@ -101,7 +105,7 @@
 </main>
 
 <footer>
-  <div>© 2025 Elizabeth Wairimu. All rights reserved.</div>
+  <div>© 2025 Elizabeth Edge. All rights reserved.</div>
   <div><a href="https://linkedin.com/in/elizabeth-wairimu-2069a6289">LinkedIn</a></div>
 </footer>
 
