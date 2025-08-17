@@ -1,4 +1,21 @@
-<!DOCTYPE html>
+<div class="story-card fade-in">
+                    <div class="star-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <div class="story-content">
+                        <p class="story-text story-preview">Elizabeth's event marketing expertise and virtual assistance transformed how we promote our events...</p>
+                        <p class="story-text story-full">Elizabeth's event marketing expertise and virtual assistance transformed how we promote our events. Her email automation sequences and targeted social media campaigns helped us sell out three major events in Nairobi. Her workflow optimization reduced our admin tasks by 60% while increasing our event attendance by 180%. Working with her has been a game-changer for our business growth.</p>
+                        <button class="story-toggle" onclick="toggleStory(this)">Read More →</button>
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar">JM</div>
+                        <div class="client-details">
+                            <h4>Joseph Mwangi</h4>
+                            <p><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,18 +37,20 @@
             box-sizing: border-box;
         }
 
-        /* Colors */
+        /* Colors - Updated to match brand guidelines */
         :root {
-            --burgundy: #660B05;
+            --burgundy: #3B060A;
             --gold: #d4af37;
             --off-white: #FFF5F2;
             --white: #ffffff;
+            --ink: #1a1a1a;
+            --muted: #555;
         }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: var(--ink);
             background: var(--white);
         }
 
@@ -75,6 +94,7 @@
             font-size: 1.2rem;
             font-weight: 700;
             text-decoration: none;
+            border: 2px solid var(--gold);
         }
 
         .brand-name {
@@ -126,7 +146,7 @@
 
         /* Main Content */
         .main-content {
-            min-height: calc(100vh - 180px);
+            min-height: calc(100vh - 128px);
             padding: 4rem 2rem;
         }
 
@@ -149,7 +169,7 @@
 
         .page-subtitle {
             font-size: 1.2rem;
-            color: #666;
+            color: var(--muted);
             max-width: 600px;
             margin: 0 auto;
             line-height: 1.6;
@@ -165,9 +185,9 @@
 
         .story-card {
             background: var(--off-white);
-            padding: 2.5rem;
+            padding: 1.8rem;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(102, 11, 5, 0.1);
+            box-shadow: 0 10px 30px rgba(59, 6, 10, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border-left: 5px solid var(--burgundy);
             position: relative;
@@ -175,7 +195,7 @@
 
         .story-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(102, 11, 5, 0.15);
+            box-shadow: 0 20px 40px rgba(59, 6, 10, 0.15);
         }
 
         .story-card::before {
@@ -190,13 +210,49 @@
         }
 
         .story-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 2rem;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--muted);
+            margin-bottom: 1.5rem;
             font-style: italic;
             position: relative;
             z-index: 1;
+        }
+
+        /* Read More functionality for stories */
+        .story-content {
+            position: relative;
+        }
+
+        .story-preview {
+            display: block;
+        }
+
+        .story-full {
+            display: none;
+        }
+
+        .story-toggle {
+            background: var(--gold);
+            color: var(--burgundy);
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+            cursor: pointer;
+            border: none;
+        }
+
+        .story-toggle:hover {
+            background: #b8941f;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
         }
 
         .client-info {
@@ -235,7 +291,7 @@
         .star-rating {
             display: flex;
             gap: 0.2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .star {
@@ -258,7 +314,7 @@
         .results-title {
             text-align: center;
             font-size: 2.5rem;
-            color: #660B05;
+            color: var(--burgundy);
             margin-bottom: 3rem;
             font-weight: 700;
         }
@@ -280,19 +336,19 @@
         .result-number {
             font-size: 3rem;
             font-weight: 700;
-            color: #660B05;
+            color: var(--burgundy);
             display: block;
             margin-bottom: 0.5rem;
         }
 
         .result-label {
-            color: #666;
+            color: var(--muted);
             font-weight: 500;
         }
 
         /* CTA Section */
         .cta-section {
-            background: linear-gradient(135deg, #660B05, #8B0000);
+            background: linear-gradient(135deg, var(--burgundy), #4B0812);
             color: white;
             padding: 4rem 2rem;
             border-radius: 20px;
@@ -314,8 +370,8 @@
 
         .cta-button {
             display: inline-block;
-            background: #FFD700;
-            color: #660B05;
+            background: var(--gold);
+            color: var(--burgundy);
             padding: 15px 30px;
             border-radius: 50px;
             text-decoration: none;
@@ -325,9 +381,9 @@
         }
 
         .cta-button:hover {
-            background: #FFC107;
+            background: #b8941f;
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
         }
 
         /* Footer */
@@ -460,7 +516,11 @@
             }
 
             .story-card {
-                padding: 1.5rem;
+                padding: 1.3rem;
+            }
+            
+            .story-text {
+                font-size: 0.95rem;
             }
         }
 
@@ -529,7 +589,11 @@
                         <span class="star">★</span>
                         <span class="star">★</span>
                     </div>
-                    <p class="story-text">Elizabeth transformed our digital presence completely. Her marketing strategies increased our lead generation by 300% within just six months. Her expertise in GIS-based targeting helped us reach the right customers in high-value neighborhoods, and her automated email sequences converted prospects into buyers like never before.</p>
+                    <div class="story-content">
+                        <p class="story-text story-preview">Elizabeth transformed our digital presence completely. Her marketing strategies increased our lead generation by 300% within just six months...</p>
+                        <p class="story-text story-full">Elizabeth transformed our digital presence completely. Her marketing strategies increased our lead generation by 300% within just six months. Her expertise in GIS-based targeting helped us reach the right customers in high-value neighborhoods, and her automated email sequences converted prospects into buyers like never before. The ROI we've seen has exceeded all our expectations, and her professional approach made the entire process seamless.</p>
+                        <button class="story-toggle" onclick="toggleStory(this)">Read More →</button>
+                    </div>
                     <div class="client-info">
                         <div class="client-avatar">FN</div>
                         <div class="client-details">
@@ -547,7 +611,11 @@
                         <span class="star">★</span>
                         <span class="star">★</span>
                     </div>
-                    <p class="story-text">Elizabeth's GIS expertise was instrumental in our county planning initiatives. Her attention to detail and technical skills are exceptional. She consolidated our fragmented datasets and created interactive maps that improved our public engagement by 20% and boosted our web traffic significantly.</p>
+                    <div class="story-content">
+                        <p class="story-text story-preview">Elizabeth's GIS expertise was instrumental in our county planning initiatives. Her attention to detail and technical skills are exceptional...</p>
+                        <p class="story-text story-full">Elizabeth's GIS expertise was instrumental in our county planning initiatives. Her attention to detail and technical skills are exceptional. She consolidated our fragmented datasets and created interactive maps that improved our public engagement by 20% and boosted our web traffic significantly. Her ability to translate complex spatial data into actionable insights has been invaluable to our team.</p>
+                        <button class="story-toggle" onclick="toggleStory(this)">Read More →</button>
+                    </div>
                     <div class="client-info">
                         <div class="client-avatar">ET</div>
                         <div class="client-details">
@@ -739,10 +807,24 @@
             }
         });
 
-        // Performance optimization
-        window.addEventListener('load', function() {
-            document.body.classList.add('loaded');
-        });
+        // Toggle story function
+        function toggleStory(button) {
+            const storyContent = button.parentElement;
+            const preview = storyContent.querySelector('.story-preview');
+            const full = storyContent.querySelector('.story-full');
+            
+            if (preview.style.display !== 'none') {
+                // Show full story
+                preview.style.display = 'none';
+                full.style.display = 'block';
+                button.textContent = '← Read Less';
+            } else {
+                // Show preview
+                preview.style.display = 'block';
+                full.style.display = 'none';
+                button.textContent = 'Read More →';
+            }
+        }
     </script>
 </body>
 </html>
