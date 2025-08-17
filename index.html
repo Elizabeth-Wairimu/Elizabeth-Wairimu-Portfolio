@@ -21,7 +21,7 @@
     header{background:var(--burgundy); color:#fff}
     .nav{
       display:flex; justify-content:space-between; align-items:center;
-      padding:1.25rem 0; height:84px;
+      padding:1.2rem 0; height:auto;   /* standardized */
     }
     .brand{
       display:flex; align-items:center; gap:.75rem; color:#fff; text-decoration:none;
@@ -68,10 +68,13 @@
     .eyebrow{color:var(--gold); text-transform:uppercase; letter-spacing:.12em; font-size:.78rem; display:block; margin-bottom:.35rem}
 
     /* Footer */
-    footer{background:var(--burgundy); color:#fff; margin-top:2rem}
-    .footer-wrap{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:.75rem; padding:1.25rem 0}
-    footer a{color:#fff; text-decoration:none}
-    footer a:hover{color:var(--gold)}
+    footer{background:var(--burgundy); color:#fff; margin-top:2rem; text-align:center; padding:1.5rem 1rem}
+    .footer-wrap{display:flex; flex-direction:column; align-items:center; gap:.75rem}
+    .footer-btn{
+      cursor:pointer; border-radius:999px; padding:.4rem .9rem; font-size:.85rem; font-weight:700;
+      background:var(--gold); color:#000; text-decoration:none; display:inline-block; margin:.3rem;
+    }
+    footer a:hover{opacity:0.85}
   </style>
 </head>
 <body>
@@ -79,7 +82,7 @@
 <header>
   <nav class="nav container">
     <a class="brand" href="index.html" aria-label="Home">
-      <span class="logo">EH</span>
+      <span class="logo">EE</span>
       <span class="brand-name">Elizabeth Wairimu</span>
     </a>
     <div class="links">
@@ -131,7 +134,10 @@
 <footer>
   <div class="container footer-wrap">
     <div>© 2025 Elizabeth Wairimu. All rights reserved.</div>
-    <div><a href="mailto:elizabethwairimu.int@gmail.com">elizabethwairimu.int@gmail.com</a> · <a href="https://linkedin.com/in/elizabeth-wairimu-2069a6289">LinkedIn</a></div>
+    <div>
+      <a href="mailto:elizabethwairimu.int@gmail.com" class="footer-btn">Email</a>
+      <a href="https://linkedin.com/in/elizabeth-wairimu-2069a6289" target="_blank" class="footer-btn">LinkedIn</a>
+    </div>
   </div>
 </footer>
 
