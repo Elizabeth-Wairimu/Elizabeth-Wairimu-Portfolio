@@ -63,6 +63,11 @@
       box-shadow:0 2px 8px rgba(212, 175, 55, 0.4);
       font-weight:600;
     }
+    /* Special case for Home link - remove fill color */
+    .nav-link.active[href="index.html"]{
+      background:transparent; color:#fff;
+      box-shadow:none;
+    }
     .nav-link:hover:not(.active){
       background:rgba(255,255,255,0.1); color:var(--gold);
       transform:translateY(-1px);
