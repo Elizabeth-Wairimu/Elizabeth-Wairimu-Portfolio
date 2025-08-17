@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Elizabeth Wairimu - Digital Marketing Strategist | GIS Expert | Virtual Assistant</title>
-  <meta name="description" content="Elizabeth Wairimu - Expert digital marketing strategist, GIS specialist, and virtual assistant. Proven results in lead generation, SEO/SEM, social media management, and data driven marketing campaigns.">
-  <meta name="keywords" content="digital marketing strategist, GIS expert, virtual assistant, SEO SEM specialist, social media management, email marketing automation, Nairobi Kenya">
+  <title>Elizabeth Wairimu - Digital Marketing Strategist | Education & Experience</title>
+  <meta name="description" content="Elizabeth Wairimu's professional education and experience in digital marketing, GIS, and virtual assistance services.">
+  <meta name="keywords" content="digital marketing education, GIS experience, virtual assistant qualifications, professional background Nairobi Kenya">
 
   <style>
     :root{
-      --burgundy:#660B05;   /* header/footer */
+      --burgundy:#3E0703;   /* header/footer */
       --gold:#d4af37;       /* accents & CTA */
       --card:#FFF5F2;       /* off-white cards */
       --ink:#1a1a1a;        /* main text */
@@ -63,11 +63,6 @@
       box-shadow:0 2px 8px rgba(212, 175, 55, 0.4);
       font-weight:600;
     }
-    /* Special case for Home link - remove fill color */
-    .nav-link.active[href="index.html"]{
-      background:transparent; color:#fff;
-      box-shadow:none;
-    }
     .nav-link:hover:not(.active){
       background:rgba(255,255,255,0.1); color:var(--gold);
       transform:translateY(-1px);
@@ -115,108 +110,135 @@
       .logo{width:32px; height:32px; font-size:0.9rem}
     }
 
-    /* Main content area - Optimized for single page view */
-    main{flex:1; padding:0.5rem 0; display:flex; flex-direction:column}
+    /* Main content */
+    main{flex:1; padding:2rem 0}
 
-    /* Hero - Ultra compressed but maintained image size */
-    .hero{
-      background:var(--card);
-      border-radius:8px; padding:1rem 0.8rem; text-align:center;
-      box-shadow:0 4px 15px rgba(102, 11, 5, 0.08); transition:transform 0.3s ease, box-shadow 0.3s ease;
-      border-left:3px solid var(--burgundy); position:relative;
-      display:flex; flex-direction:column; align-items:center;
-      margin-bottom:0.8rem; flex-shrink:0;
+    /* Section headers */
+    .section-header{
+      text-align:center; margin-bottom:2rem;
     }
-    .hero:hover{transform:translateY(-2px); box-shadow:0 6px 20px rgba(102, 11, 5, 0.12)}
-    
-    .profile-image{
-      width:100px; height:100px; border-radius:50%; /* Maintained size as requested */
-      border:3px solid var(--gold); margin-bottom:0.6rem;
-      object-fit:cover; box-shadow:0 4px 15px rgba(102, 11, 5, 0.15);
-      transition:transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .profile-image:hover{transform:scale(1.03); box-shadow:0 6px 20px rgba(102, 11, 5, 0.25)}
-    
-    .hero h1{font-size:1.5rem; margin:0 0 0.3rem; color:var(--burgundy); font-weight:700; line-height:1.2}
-    .hero h2{font-size:0.9rem; margin:0 0 0.5rem; color:var(--muted); font-weight:600; line-height:1.2}
-    .hero p{max-width:650px; margin:0 auto 0.6rem; line-height:1.3; font-size:0.9rem}
-    .buttons{margin-top:0.2rem}
-    .btn{
-      display:inline-block; padding:8px 18px; border-radius:30px; font-weight:600;
-      text-decoration:none; margin:0.2rem; transition:all 0.3s ease; font-size:0.85rem;
-    }
-    .btn:hover{transform:translateY(-1px)}
-    .btn-primary{background:var(--gold); color:var(--burgundy)}
-    .btn-primary:hover{box-shadow:0 4px 15px rgba(212,175,55,.25)}
-    .btn-outline{border:2px solid var(--gold); color:var(--gold)}
-    .btn-outline:hover{background:var(--gold); color:var(--burgundy)}
-
-    /* Value bullets - Maximum compression for single page view */
-    .value{
-      display:grid; gap:0.6rem; grid-template-columns:repeat(3, 1fr); 
-      margin-bottom:0; flex:1; align-items:start;
-    }
-    .v-card{
-      background:var(--card); border-radius:6px; padding:0.8rem;
-      box-shadow:0 3px 12px rgba(102, 11, 5, 0.08); transition:transform 0.3s ease, box-shadow 0.3s ease;
-      border-left:3px solid var(--burgundy); position:relative; height:fit-content;
-    }
-    .v-card:hover{transform:translateY(-2px); box-shadow:0 6px 18px rgba(102, 11, 5, 0.12)}
-    .v-card h3{margin:0.1rem 0 0.3rem; font-size:0.95rem; color:var(--burgundy); line-height:1.2}
     .eyebrow{
       color:var(--gold); text-transform:uppercase; letter-spacing:0.08em; 
-      font-size:0.6rem; font-weight:600; display:block; margin-bottom:0.1rem
+      font-size:0.8rem; font-weight:600; display:block; margin-bottom:0.5rem;
     }
-    .v-card p{color:var(--muted); line-height:1.25; font-size:0.8rem; margin:0}
-
-    /* Mobile and tablet responsive */
-    @media(max-width:1024px){
-      .value{grid-template-columns:repeat(3, 1fr); gap:0.5rem}
-      .v-card{padding:0.7rem}
-      .v-card h3{font-size:0.9rem}
-      .v-card p{font-size:0.75rem; line-height:1.2}
+    .section-title{
+      font-size:2rem; margin:0; color:var(--burgundy); font-weight:700;
     }
 
+    /* Grid layout */
+    .grid{
+      display:grid; gap:1.5rem; margin-bottom:3rem;
+      grid-template-columns:repeat(auto-fit, minmax(350px, 1fr));
+    }
+
+    /* Cards - compressed and compact */
+    .card{
+      background:var(--card); border-radius:8px; padding:1rem;
+      box-shadow:0 4px 15px rgba(102, 11, 5, 0.08); 
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
+      border-left:3px solid var(--burgundy); position:relative;
+      height:fit-content;
+    }
+    .card:hover{
+      transform:translateY(-2px); 
+      box-shadow:0 6px 20px rgba(102, 11, 5, 0.12);
+    }
+    .card h3{
+      margin:0 0 0.3rem; font-size:1rem; color:var(--burgundy); 
+      font-weight:600; line-height:1.2;
+    }
+    .meta{
+      color:var(--muted); font-size:0.8rem; margin-bottom:0.6rem;
+      font-weight:500;
+    }
+    .card p{
+      color:var(--ink); line-height:1.4; font-size:0.85rem; 
+      margin:0 0 0.8rem;
+    }
+
+    /* Badges - more compact */
+    .badges{margin-bottom:0.6rem}
+    .badge{
+      display:inline-block; padding:0.15rem 0.4rem; font-size:0.65rem;
+      border:1px solid var(--gold); color:var(--gold); border-radius:12px; 
+      margin:0.15rem 0.2rem 0.15rem 0; font-weight:500;
+      transition:all 0.3s ease;
+    }
+    .badge:hover{
+      background:var(--gold); color:var(--burgundy);
+    }
+
+    /* Divider - thinner */
+    .divider{
+      height:1px; background:rgba(102, 11, 5, 0.15); 
+      margin:0.6rem 0;
+    }
+
+    /* Read more functionality */
+    details{margin-top:0.5rem}
+    summary{
+      cursor:pointer; border-radius:20px; padding:0.4rem 0.8rem; 
+      font-size:0.85rem; font-weight:600;
+      background:var(--gold); color:var(--burgundy); 
+      display:inline-block; transition:all 0.3s ease;
+      list-style:none;
+    }
+    summary:hover{
+      transform:translateY(-1px);
+      box-shadow:0 2px 8px rgba(212, 175, 55, 0.3);
+    }
+    summary::-webkit-details-marker{display:none}
+    .more{
+      margin-top:1rem; color:var(--muted); font-size:0.9rem;
+    }
+    .more ul{
+      margin:0; padding-left:1.2rem;
+    }
+    .more li{
+      margin-bottom:0.4rem; line-height:1.4;
+    }
+
+    /* Mobile responsive adjustments */
     @media(max-width:768px){
-      main{padding:0.4rem 0}
-      .hero{padding:0.8rem 0.6rem; margin-bottom:0.6rem}
-      .hero h1{font-size:1.4rem}
-      .hero h2{font-size:0.85rem}
-      .hero p{font-size:0.85rem; line-height:1.25}
-      .profile-image{width:90px; height:90px; margin-bottom:0.5rem}
-      .value{grid-template-columns:1fr; gap:0.5rem}
-      .v-card{padding:0.7rem}
+      main{padding:1.5rem 0}
+      .section-title{font-size:1.8rem}
+      .grid{
+        grid-template-columns:1fr; gap:1.2rem;
+        margin-bottom:2rem;
+      }
+      .card{padding:1.2rem}
     }
 
     @media(max-width:480px){
-      .hero{padding:0.7rem 0.5rem}
-      .hero h1{font-size:1.3rem}
-      .profile-image{width:85px; height:85px}
-      .btn{padding:7px 15px; font-size:0.8rem}
+      .card{padding:1rem}
+      .section-title{font-size:1.6rem}
+      .card h3{font-size:1rem}
     }
 
-    /* Footer - Compressed and sticky */
+    /* Footer - matching index */
     footer{
       background:var(--burgundy); color:#fff; margin-top:auto;
       flex-shrink:0;
     }
     .footer-wrap{
       display:grid; grid-template-columns:1fr auto 1fr; align-items:center;
-      gap:1.5rem; padding:0; height:64px; /* Updated to 64px */
+      gap:1.5rem; padding:0; height:64px;
     }
     .footer-left{text-align:left; font-size:0.85rem; color:rgba(255,255,255,0.8)}
     .footer-center{display:flex; gap:0.8rem; justify-content:center}
     .footer-right{text-align:right}
     .footer-badge{
-      cursor:pointer; border-radius:999px; padding:0.3rem 0.7rem; font-size:0.75rem; font-weight:700;
-      background:var(--gold); color:var(--burgundy); text-decoration:none; display:inline-block;
-      transition:all 0.3s ease;
+      cursor:pointer; border-radius:999px; padding:0.3rem 0.7rem; 
+      font-size:0.75rem; font-weight:700;
+      background:var(--gold); color:var(--burgundy); text-decoration:none; 
+      display:inline-block; transition:all 0.3s ease;
     }
     .footer-badge:hover{opacity:.85; transform:translateY(-1px)}
 
     @media(max-width:768px){
       .footer-wrap{
-        grid-template-columns:1fr; height:auto; padding:0.8rem 0; gap:0.8rem; text-align:center;
+        grid-template-columns:1fr; height:auto; padding:0.8rem 0; 
+        gap:0.8rem; text-align:center;
       }
       .footer-left, .footer-right{text-align:center}
       .footer-center{order:-1}
@@ -236,10 +258,10 @@
       <span class="brand-name">Elizabeth Edge</span>
     </a>
     <ul class="nav-menu" id="navMenu">
-      <li><a href="index.html" class="nav-link active">Home</a></li>
+      <li><a href="index.html" class="nav-link">Home</a></li>
       <li><a href="about.html" class="nav-link">About</a></li>
       <li><a href="services.html" class="nav-link">Services</a></li>
-      <li><a href="educationexperience.html" class="nav-link">Education & Experience</a></li>
+      <li><a href="educationexperience.html" class="nav-link active">Education & Experience</a></li>
       <li><a href="projects.html" class="nav-link">Projects</a></li>
       <li><a href="success-stories.html" class="nav-link">Success Stories</a></li>
       <li><a href="contact.html" class="nav-link">Contact</a></li>
@@ -253,38 +275,197 @@
 </header>
 
 <main class="container">
-  <!-- Hero -->
-  <section class="hero">
-    <!-- Replace 'path-to-your-image.png' with your actual image file path -->
-    <img src="images/elizabeth-profile.png" alt="Elizabeth Wairimu - Professional Profile Photo" class="profile-image">
-    <h1>Hi, I'm Elizabeth Wairimu</h1>
-    <h2>Digital Marketing Strategist | Virtual Assistant | SEO/SEM | Social Media Management</h2>
-    <p>
-      I fuse creative marketing strategy with data intelligence and GIS precision to build campaigns that are engaging, measurable, and conversion driven.
-    </p>
-    <div class="buttons">
-      <a href="projects.html" class="btn btn-primary">View My Work</a>
-      <a href="contact.html" class="btn btn-outline">Get In Touch</a>
+
+  <!-- Academic Background & Certifications -->
+  <section>
+    <div class="section-header">
+      <span class="eyebrow">Academic Foundation</span>
+      <h1 class="section-title">Education & Certifications</h1>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Digital Marketing Certificate — Generation Kenya</h3>
+        <div class="meta">2025</div>
+        <div class="badges">
+          <span class="badge">SEO</span>
+          <span class="badge">Google Ads</span>
+          <span class="badge">Google Analytics</span>
+          <span class="badge">Social Media</span>
+        </div>
+        <div class="divider"></div>
+        <p>Complete digital marketing program: SEO optimization, Google Ads management, analytics, social media strategy, and AI-powered marketing tools.</p>
+      </div>
+
+      <div class="card">
+        <h3>Foundations Program on Digital Skills — Women in Digital Business</h3>
+        <div class="meta">2025</div>
+        <div class="badges">
+          <span class="badge">Digitization</span>
+          <span class="badge">WordPress</span>
+          <span class="badge">SEO</span>
+          <span class="badge">Entrepreneurship</span>
+        </div>
+        <div class="divider"></div>
+        <p>Business digitization training: WordPress development, SEO techniques, social media marketing, and digital entrepreneurship strategies.</p>
+      </div>
+
+      <div class="card">
+        <h3>Generative AI Mastermind — Outskill</h3>
+        <div class="meta">2025</div>
+        <div class="badges">
+          <span class="badge">Prompting</span>
+          <span class="badge">AI SEO</span>
+          <span class="badge">Automation</span>
+          <span class="badge">Ethics</span>
+        </div>
+        <div class="divider"></div>
+        <p>AI marketing specialization: prompt engineering, AI-powered SEO, workflow automation, and ethical AI implementation.</p>
+      </div>
+
+      <div class="card">
+        <h3>Supervisory Skills Development — Kenya School of Government</h3>
+        <div class="meta">2024</div>
+        <div class="badges">
+          <span class="badge">Leadership</span>
+          <span class="badge">Performance</span>
+          <span class="badge">Conflict Resolution</span>
+        </div>
+        <div class="divider"></div>
+        <p>Leadership development: performance management, conflict resolution, team supervision, and effective time management.</p>
+      </div>
+
+      <div class="card">
+        <h3>Diploma in Cartography</h3>
+        <div class="meta">Kenya Institute of Surveying & Mapping • 2012 – 2014</div>
+        <div class="badges">
+          <span class="badge">Mapping</span>
+          <span class="badge">Data Analysis</span>
+          <span class="badge">Surveying</span>
+          <span class="badge">GIS</span>
+        </div>
+        <div class="divider"></div>
+        <p>Geospatial analysis training: mapping technologies, cartographic design, spatial data management, and surveying techniques.</p>
+      </div>
+
+      <div class="card">
+        <h3>Certificate in Computer Information</h3>
+        <div class="meta">Central Business School • 2011</div>
+        <div class="badges">
+          <span class="badge">IT Skills</span>
+          <span class="badge">Digital Literacy</span>
+          <span class="badge">Productivity Tools</span>
+        </div>
+        <div class="divider"></div>
+        <p>IT fundamentals: computer systems, digital literacy, productivity software, and business applications.</p>
+      </div>
     </div>
   </section>
 
-  <!-- Quick value props -->
-  <section class="value" aria-label="Why work with me">
-    <article class="v-card">
-      <span class="eyebrow">Mission</span>
-      <h3>Smart, Human, Data Informed Marketing</h3>
-      <p>Strategies that connect with customers, strengthen brand trust, and deliver measurable results through proven digital marketing techniques.</p>
-    </article>
-    <article class="v-card">
-      <span class="eyebrow">Value</span>
-      <h3>Creative + Intelligence</h3>
-      <p>I fuse creative strategy with analytics and GIS precision to build campaigns that convert prospects into loyal customers.</p>
-    </article>
-    <article class="v-card">
-      <span class="eyebrow">Focus</span>
-      <h3>Performance You Can See</h3>
-      <p>From SEO/SEM to social media and email automation, I optimize for ROI with clear KPIs and transparent reporting.</p>
-    </article>
+  <!-- Professional Experience -->
+  <section>
+    <div class="section-header">
+      <span class="eyebrow">Career Journey</span>
+      <h2 class="section-title">Professional Experience</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Digital Marketing Manager — Sundrops Realtors</h3>
+        <div class="meta">Mar 2020 – Present</div>
+        <p>Integrated digital marketing campaigns with GIS-based targeting for real estate lead generation and customer acquisition.</p>
+        <details><summary>View Achievements</summary>
+          <div class="more">
+            <ul>
+              <li>Drove +300% qualified leads through integrated digital marketing campaigns</li>
+              <li>Boosted targeting efficiency by 25% through strategic audience mapping</li>
+              <li>Increased website conversions by 40% via optimized landing pages and A/B testing</li>
+              <li>Achieved +35% CTR improvement using Google Analytics, Meta Insights, and Semrush</li>
+              <li>Grew social media engagement by 15% and followers by 10% with strategic content calendar</li>
+              <li>Enhanced lead nurturing with Mailchimp automation (+35% follow-up response rate)</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <h3>GIS & Digital Communications Specialist — Ministry of Mining</h3>
+        <div class="meta">Jul 2017 – Dec 2023</div>
+        <p>GIS data management and digital communications for government mining operations and policy development.</p>
+        <details><summary>View Achievements</summary>
+          <div class="more">
+            <ul>
+              <li>Increased data accuracy by 15% across 5+ government departments</li>
+              <li>Boosted public engagement by 20% and web traffic by 18% through digital initiatives</li>
+              <li>Supported 50+ mapping projects using GPS, remote sensing, and cadastral data</li>
+              <li>Trained government staff in GIS tools and data management standards</li>
+              <li>Applied spatial analysis for policy development and licensing decisions</li>
+              <li>Produced publication-ready maps for national mining reports and presentations</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <h3>GIS & Graphics Specialist — Geomaps Africa</h3>
+        <div class="meta">Jun 2016 – Jun 2017</div>
+        <p>GIS solutions for urban planning and real estate development across East Africa.</p>
+        <details><summary>View Achievements</summary>
+          <div class="more">
+            <ul>
+              <li>Produced high-quality visuals for $2M+ project proposals, improving approval rates by 25%</li>
+              <li>Digitized 100+ land records, reducing processing time by 70%</li>
+              <li>Identified land vacancy patterns that influenced strategic investment decisions</li>
+              <li>Created detailed urban planning maps for major development projects</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <h3>GIS Analyst — Kiambu County Government</h3>
+        <div class="meta">Feb 2016 – Jun 2016</div>
+        <p>Digital cadastral records management for property valuation and zoning processes.</p>
+        <details><summary>View Achievements</summary>
+          <div class="more">
+            <ul>
+              <li>Digitized 500+ cadastral plans accessible to 200+ government staff members</li>
+              <li>Significantly reduced processing delays by improving access to critical land records</li>
+              <li>Streamlined property valuation processes through digital record management</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <h3>Cartographer / GIS Data Analyst — National Titling Center</h3>
+        <div class="meta">Nov 2014 – Jan 2016</div>
+        <p>Land records digitization for the National Land Information Management System (NLIMS).</p>
+        <details><summary>View Achievements</summary>
+          <div class="more">
+            <ul>
+              <li>Reduced land record processing time by 70% through digitization initiatives</li>
+              <li>Produced accurate parcel maps for land registration and deed issuance</li>
+              <li>Ensured data accuracy through comprehensive quality assurance processes</li>
+              <li>Supported national land titling digitization program</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <h3>GIS Consultant — Geosurv Systems Ltd</h3>
+        <div class="meta">Aug 2015 – Oct 2015</div>
+        <p>GPS-based mapping of Kenya Power's electrical distribution network infrastructure.</p>
+        <details><summary>View Achievements</summary>
+          <div class="more">
+            <ul>
+              <li>Successfully mapped 200+ kilometers of electrical distribution network</li>
+              <li>Updated critical asset layers to improve infrastructure planning accuracy</li>
+              <li>Provided detailed network analysis for power distribution optimization</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </div>
   </section>
 </main>
 
