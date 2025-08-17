@@ -3,57 +3,258 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Elizabeth Edge — About</title>
+  <title>About Elizabeth Edge - Digital Marketing Strategist | GIS Expert | Virtual Assistant</title>
+  <meta name="description" content="Meet Elizabeth Edge, a passionate digital marketing strategist with GIS expertise and virtual assistant services. Discover my story, mission, and value proposition.">
+  <meta name="keywords" content="about Elizabeth Edge, digital marketing strategist, GIS expert, virtual assistant, professional background, Nairobi Kenya">
+
   <style>
     :root{
-      --burgundy:#660B05;
-      --gold:#d4af37;
-      --card:#FFF5F2;
-      --ink:#1a1a1a;
-      --muted:#555;
+      --burgundy:#660B05;   /* header/footer */
+      --gold:#d4af37;       /* accents & CTA */
+      --card:#FFF5F2;       /* off-white cards */
+      --ink:#1a1a1a;        /* main text */
+      --muted:#555;         /* secondary text */
     }
     *{box-sizing:border-box}
-    body{margin:0; font-family:Arial,Helvetica,sans-serif; color:var(--ink); background:#fff}
-    .container{max-width:1000px; margin:0 auto; padding:1.5rem}
+    html, body{height:100%; margin:0; padding:0}
+    body{
+      font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+      color:var(--ink); background:#fff; line-height:1.5;
+      display:flex; flex-direction:column;
+    }
+    .container{max-width:1200px; margin:0 auto; padding:0 1.5rem}
 
-    h1,h2{margin:.5rem 0; text-align:center}
-    h1{font-size:2rem} h2{font-size:1.6rem}
-
-    /* Header */
-    header{background:var(--burgundy); color:#fff}
+    /* Header - Professional & Structured */
+    header{
+      background:var(--burgundy); color:#fff; position:sticky; top:0; z-index:1000; 
+      box-shadow:0 2px 15px rgba(0,0,0,0.15);
+      border-bottom:1px solid rgba(212, 175, 55, 0.3);
+    }
     .nav{
       display:flex; justify-content:space-between; align-items:center;
-      padding:1rem 0; height:64px;   /* match footer */
+      padding:0; height:64px; max-width:100%;
     }
-    .brand{display:flex; align-items:center; gap:.75rem; color:#fff; text-decoration:none;}
+    .brand{
+      display:flex; align-items:center; gap:0.8rem; color:#fff; text-decoration:none;
+      padding:0.5rem 0; transition:opacity 0.3s ease;
+    }
+    .brand:hover{opacity:0.9}
     .logo{
-      width:40px; height:40px; border-radius:50%;
-      display:grid; place-items:center;
-      border:2px solid var(--gold); color:#fff; font-weight:800; letter-spacing:.5px;
+      width:38px; height:38px; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      background:var(--gold); color:var(--burgundy); font-weight:700; font-size:1.1rem;
+      box-shadow:0 2px 8px rgba(212, 175, 55, 0.3);
     }
-    .brand-name{font-weight:800}
-    .links a{color:#fff; text-decoration:none; margin-left:1rem}
-    .links a.active, .links a:hover{color:var(--gold)}
+    .brand-name{font-weight:700; font-size:1.3rem; letter-spacing:-0.5px}
+    
+    /* Navigation Menu - Organized */
+    .nav-menu{
+      display:flex; list-style:none; gap:0.5rem; align-items:center; 
+      margin:0; padding:0; background:rgba(255,255,255,0.05);
+      border-radius:25px; padding:0.3rem;
+    }
+    .nav-link{
+      color:#fff; text-decoration:none; font-weight:500; font-size:0.9rem;
+      padding:0.5rem 1rem; border-radius:20px; transition:all 0.3s ease;
+      white-space:nowrap; position:relative;
+    }
+    .nav-link.active{
+      background:var(--gold); color:var(--burgundy);
+      box-shadow:0 2px 8px rgba(212, 175, 55, 0.4);
+      font-weight:600;
+    }
+    .nav-link:hover:not(.active){
+      background:rgba(255,255,255,0.1); color:var(--gold);
+      transform:translateY(-1px);
+    }
 
-    /* About section */
-    .about{background:var(--card); border-radius:12px; padding:2rem; margin-top:2rem; line-height:1.6}
-    .about h2{text-align:left; color:var(--burgundy)}
-    .about p{margin:1rem 0; color:var(--ink)}
+    /* Mobile Menu - Clean */
+    .mobile-menu-toggle{
+      display:none; flex-direction:column; cursor:pointer;
+      padding:0.5rem; border-radius:5px; transition:background 0.3s ease;
+    }
+    .mobile-menu-toggle:hover{background:rgba(255,255,255,0.1)}
+    .mobile-menu-toggle span{
+      width:22px; height:2px; background:#fff; margin:2px 0; 
+      transition:all 0.3s ease; border-radius:2px;
+    }
 
-    /* Footer */
-    footer{background:var(--burgundy); color:#fff; margin-top:2rem}
+    /* Mobile Responsive */
+    @media(max-width:1024px){
+      .nav-menu{gap:0.3rem; padding:0.25rem}
+      .nav-link{padding:0.4rem 0.8rem; font-size:0.85rem}
+    }
+
+    @media(max-width:768px){
+      .nav{height:64px; padding:0 1rem}
+      .nav-menu{
+        display:none; position:absolute; top:100%; left:0; width:100%;
+        background:var(--burgundy); flex-direction:column; padding:1rem;
+        box-shadow:0 5px 20px rgba(0,0,0,0.3); border-radius:0;
+        gap:0.5rem; border-top:1px solid rgba(212, 175, 55, 0.3);
+      }
+      .nav-menu.active{display:flex}
+      .nav-link{
+        width:100%; text-align:center; padding:0.8rem 1rem;
+        border-radius:8px; font-size:0.95rem;
+      }
+      .mobile-menu-toggle{display:flex}
+      .brand-name{font-size:1.2rem}
+      .logo{width:34px; height:34px; font-size:1rem}
+    }
+
+    @media(max-width:480px){
+      .nav{padding:0 0.8rem}
+      .brand{gap:0.6rem}
+      .brand-name{font-size:1.1rem}
+      .logo{width:32px; height:32px; font-size:0.9rem}
+    }
+
+    /* Main content */
+    main{flex:1; padding:2rem 0}
+
+    /* Hero section */
+    .hero{
+      text-align:center; margin-bottom:3rem; 
+      background:var(--card); padding:2rem; border-radius:12px;
+      box-shadow:0 4px 15px rgba(102, 11, 5, 0.08);
+      border-left:4px solid var(--burgundy);
+    }
+    .hero h1{
+      font-size:2.5rem; margin:0 0 1rem; color:var(--burgundy); 
+      font-weight:700; line-height:1.2;
+    }
+    .hero p{
+      font-size:1.2rem; color:var(--muted); max-width:800px; 
+      margin:0 auto; line-height:1.6;
+    }
+
+    /* Content sections */
+    .content-section{
+      margin-bottom:3rem;
+    }
+    .section-header{
+      text-align:center; margin-bottom:2rem;
+    }
+    .eyebrow{
+      color:var(--gold); text-transform:uppercase; letter-spacing:0.08em; 
+      font-size:0.8rem; font-weight:600; display:block; margin-bottom:0.5rem;
+    }
+    .section-title{
+      font-size:2rem; margin:0; color:var(--burgundy); font-weight:700;
+    }
+
+    /* Two column layout */
+    .two-column{
+      display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:start;
+    }
+    @media(max-width:768px){
+      .two-column{grid-template-columns:1fr}
+    }
+
+    /* Cards */
+    .card{
+      background:var(--card); border-radius:8px; padding:1.5rem;
+      box-shadow:0 4px 15px rgba(102, 11, 5, 0.08); 
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
+      border-left:3px solid var(--burgundy); position:relative;
+      height:fit-content;
+    }
+    .card:hover{
+      transform:translateY(-2px); 
+      box-shadow:0 6px 20px rgba(102, 11, 5, 0.12);
+    }
+    .card h3{
+      margin:0 0 1rem; font-size:1.3rem; color:var(--burgundy); 
+      font-weight:600; line-height:1.3;
+    }
+    .card p{
+      color:var(--ink); line-height:1.6; font-size:1rem; 
+      margin:0 0 1rem;
+    }
+
+    /* Stats grid */
+    .stats{
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+      gap:1.5rem; margin:2rem 0;
+    }
+    .stat{
+      text-align:center; background:var(--card); padding:1.5rem;
+      border-radius:8px; box-shadow:0 4px 15px rgba(102, 11, 5, 0.08);
+      border-left:3px solid var(--gold);
+    }
+    .stat-number{
+      font-size:2.5rem; font-weight:700; color:var(--gold);
+      display:block; line-height:1;
+    }
+    .stat-label{
+      color:var(--muted); font-size:0.9rem; margin-top:0.5rem;
+    }
+
+    /* CTA section */
+    .cta{
+      background:var(--burgundy); color:#fff; padding:2rem;
+      border-radius:12px; text-align:center; margin:3rem 0;
+    }
+    .cta h3{
+      font-size:1.8rem; margin:0 0 1rem; color:#fff;
+    }
+    .cta p{
+      font-size:1.1rem; margin:0 0 1.5rem; opacity:0.9;
+    }
+    .btn{
+      display:inline-block; padding:12px 24px; border-radius:30px; 
+      font-weight:600; text-decoration:none; margin:0.3rem;
+      transition:all 0.3s ease; font-size:0.95rem;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:var(--gold); color:var(--burgundy)}
+    .btn-primary:hover{box-shadow:0 4px 15px rgba(212,175,55,.3)}
+    .btn-outline{border:2px solid var(--gold); color:var(--gold)}
+    .btn-outline:hover{background:var(--gold); color:var(--burgundy)}
+
+    /* Mobile adjustments */
+    @media(max-width:768px){
+      main{padding:1.5rem 0}
+      .hero{padding:1.5rem; margin-bottom:2rem}
+      .hero h1{font-size:2rem}
+      .hero p{font-size:1.1rem}
+      .section-title{font-size:1.8rem}
+      .content-section{margin-bottom:2rem}
+    }
+
+    /* Footer - matching guidelines */
+    footer{
+      background:var(--burgundy); color:#fff; margin-top:auto;
+      flex-shrink:0;
+    }
     .footer-wrap{
-      display:flex; justify-content:space-between; align-items:center;
-      padding:1rem 0; height:64px;
+      display:grid; grid-template-columns:1fr auto 1fr; align-items:center;
+      gap:1.5rem; padding:0; height:64px;
     }
-    .footer-left{flex:1; text-align:left}
-    .footer-center{flex:1; text-align:center}
-    .footer-right{flex:1; text-align:right}
-    .footer-btn{
-      cursor:pointer; border-radius:999px; padding:.4rem .9rem; font-size:.85rem; font-weight:700;
-      background:var(--gold); color:#000; text-decoration:none; display:inline-block;
+    .footer-left{text-align:left; font-size:0.85rem; color:rgba(255,255,255,0.8)}
+    .footer-center{display:flex; gap:0.8rem; justify-content:center}
+    .footer-right{text-align:right}
+    .footer-badge{
+      cursor:pointer; border-radius:999px; padding:0.3rem 0.7rem; 
+      font-size:0.75rem; font-weight:700;
+      background:var(--gold); color:var(--burgundy); text-decoration:none; 
+      display:inline-block; transition:all 0.3s ease;
     }
-    .footer-btn:hover{opacity:.85}
+    .footer-badge:hover{opacity:.85; transform:translateY(-1px)}
+
+    @media(max-width:768px){
+      .footer-wrap{
+        grid-template-columns:1fr; height:auto; padding:0.8rem 0; 
+        gap:0.8rem; text-align:center;
+      }
+      .footer-left, .footer-right{text-align:center}
+      .footer-center{order:-1}
+      .footer-left{font-size:0.8rem}
+    }
+
+    /* Smooth scrolling */
+    html{scroll-behavior:smooth}
   </style>
 </head>
 <body>
@@ -64,37 +265,113 @@
       <span class="logo">EE</span>
       <span class="brand-name">Elizabeth Edge</span>
     </a>
-    <div class="links">
-      <a href="index.html">Home</a>
-      <a href="about.html" class="active">About</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="educationexperience.html">Education & Experience</a>
-      <a href="contact.html">Contact</a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link active">About</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="experience.html" class="nav-link">Education & Experience</a></li>
+      <li><a href="projects.html" class="nav-link">Projects</a></li>
+      <li><a href="success-stories.html" class="nav-link">Success Stories</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li><a href="blog.html" class="nav-link">Blog</a></li>
+    </ul>
+    <div class="mobile-menu-toggle" id="mobileToggle">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   </nav>
 </header>
 
 <main class="container">
-  <section class="about">
-    <h2>My Story: From Geospatial Data to Digital Dominance</h2>
-    <p>
-      I am a results driven digital marketing strategist with a unique background that blends creative vision, data analytics, and GIS powered audience targeting. My career began in the world of geospatial intelligence, where I mastered the art of using location data to tell stories and solve complex problems for government and real estate sectors.
-    </p>
-    <p>
-      Today, I apply that same precision to the digital marketing landscape. I saw a huge opportunity to move beyond traditional marketing and use location intelligence to create targeted, conversion focused campaigns. My approach merges this technical expertise with proven strategies across Meta Ads, email automation, social media, and SEO helping brands reach the right audience at the right time with the right message.
-    </p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>About Elizabeth Edge</h1>
+    <p>A passionate digital marketing strategist who combines creative strategy with data intelligence and GIS precision to deliver measurable results for businesses across Kenya and beyond.</p>
+  </section>
 
-    <h2>My Value Proposition</h2>
-    <p>
-      I fuse creative marketing strategy with data intelligence and GIS precision to build campaigns that are engaging, measurable, and conversion driven.
-    </p>
+  <!-- My Story -->
+  <section class="content-section">
+    <div class="section-header">
+      <span class="eyebrow">My Journey</span>
+      <h2 class="section-title">My Story & Mission</h2>
+    </div>
+    <div class="two-column">
+      <div class="card">
+        <h3>From Maps to Marketing</h3>
+        <p>My unique journey began in cartography and GIS analysis, where I developed a keen eye for data patterns and spatial relationships. This analytical foundation became the cornerstone of my approach to digital marketing.</p>
+        <p>Working with government agencies and private companies, I discovered how location-based insights could revolutionize marketing strategies. This led me to bridge the gap between traditional GIS expertise and modern digital marketing.</p>
+      </div>
+      <div class="card">
+        <h3>Data-Driven Marketing Philosophy</h3>
+        <p>I believe that successful marketing isn't just about creativity—it's about understanding your audience through data. Every campaign I design is backed by thorough research, strategic planning, and continuous optimization.</p>
+        <p>My GIS background gives me a unique perspective on audience segmentation and geographic targeting that most marketers lack, allowing me to deliver highly targeted campaigns with exceptional ROI.</p>
+      </div>
+    </div>
+  </section>
 
-    <h2>My Mission</h2>
-    <p>
-      My mission is to help businesses grow with smart, human, data informed marketing. I build strategies that connect with customers, strengthen brand trust, and achieve measurable results.
-    </p>
+  <!-- Stats -->
+  <section class="content-section">
+    <div class="section-header">
+      <span class="eyebrow">Track Record</span>
+      <h2 class="section-title">Results That Speak</h2>
+    </div>
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-number">300%</span>
+        <div class="stat-label">Lead Generation Increase</div>
+      </div>
+      <div class="stat">
+        <span class="stat-number">40%</span>
+        <div class="stat-label">Website Conversion Boost</div>
+      </div>
+      <div class="stat">
+        <span class="stat-number">25%</span>
+        <div class="stat-label">Targeting Efficiency Gain</div>
+      </div>
+      <div class="stat">
+        <span class="stat-number">50+</span>
+        <div class="stat-label">Successful Projects</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Proposition -->
+  <section class="content-section">
+    <div class="section-header">
+      <span class="eyebrow">What Sets Me Apart</span>
+      <h2 class="section-title">My Unique Value Proposition</h2>
+    </div>
+    <div class="two-column">
+      <div class="card">
+        <h3>GIS-Enhanced Marketing</h3>
+        <p>Unlike traditional marketers, I bring geospatial analysis to digital campaigns. This means better audience targeting, location-based strategies, and deeper insights into customer behavior patterns.</p>
+      </div>
+      <div class="card">
+        <h3>Full-Stack Digital Solutions</h3>
+        <p>From SEO and Google Ads to social media management and email automation, I offer comprehensive digital marketing services that work together seamlessly.</p>
+      </div>
+    </div>
+    <div class="two-column">
+      <div class="card">
+        <h3>Virtual Assistant Excellence</h3>
+        <p>Beyond marketing, I provide virtual assistant services that help businesses streamline operations, manage projects, and maintain professional communications.</p>
+      </div>
+      <div class="card">
+        <h3>Continuous Learning & Innovation</h3>
+        <p>I stay ahead of industry trends through continuous education, from AI marketing tools to the latest SEO techniques, ensuring my clients always benefit from cutting-edge strategies.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <h3>Ready to Transform Your Digital Presence?</h3>
+    <p>Let's discuss how my unique blend of marketing expertise and analytical precision can drive your business growth.</p>
+    <div>
+      <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+      <a href="services.html" class="btn btn-outline">View Services</a>
+    </div>
   </section>
 </main>
 
@@ -102,13 +379,41 @@
   <div class="container footer-wrap">
     <div class="footer-left">© 2025 Elizabeth Edge. All rights reserved.</div>
     <div class="footer-center">
-      <a href="https://linkedin.com/in/elizabeth-wairimu-2069a6289" target="_blank" class="footer-btn">LinkedIn</a>
+      <a href="https://linkedin.com/in/elizabeth-wairimu-2069a6289" target="_blank" class="footer-badge" rel="noopener">
+        LinkedIn
+      </a>
     </div>
     <div class="footer-right">
-      <a href="mailto:elizabethwairimu.int@gmail.com" class="footer-btn">Email</a>
+      <a href="mailto:elizabethwairimu.int@gmail.com" class="footer-badge">
+        Email
+      </a>
     </div>
   </div>
 </footer>
+
+<script>
+  // Mobile menu toggle
+  const mobileToggle = document.getElementById('mobileToggle');
+  const navMenu = document.getElementById('navMenu');
+  
+  mobileToggle.addEventListener('click', function() {
+    navMenu.classList.toggle('active');
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('header') && navMenu.classList.contains('active')) {
+      navMenu.classList.remove('active');
+    }
+  });
+
+  // Close mobile menu when clicking on nav links
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function() {
+      navMenu.classList.remove('active');
+    });
+  });
+</script>
 
 </body>
 </html>
