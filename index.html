@@ -4,146 +4,136 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Elizabeth Wairimu — Digital Marketing Strategist</title>
+
   <style>
-    :root {
-      --burgundy: #660B05;   /* Header & Footer */
-      --gold: #d4af37;       /* Highlight color */
-      --card: #FFF5F2;       /* Card background */
-      --ink: #1a1a1a;        /* Main text */
-      --muted: #555;         /* Sub text */
+    :root{
+      --burgundy:#660B05;   /* header/footer */
+      --gold:#d4af37;       /* accents & CTA */
+      --card:#FFF5F2;       /* off-white cards */
+      --ink:#1a1a1a;        /* main text */
+      --muted:#555;         /* secondary text */
     }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--ink);
-      background: #fff;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1.5rem;
-    }
+    *{box-sizing:border-box}
+    body{margin:0; font-family:Arial,Helvetica,sans-serif; color:var(--ink); background:#fff}
+    .container{max-width:1100px; margin:0 auto; padding:1.25rem}
 
     /* Header */
-    header {
-      background: var(--burgundy);
-      color: #fff;
+    header{background:var(--burgundy); color:#fff}
+    .nav{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:1.25rem 0; height:84px;
     }
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem 1rem;
-      height: 80px; /* match footer later */
+    .brand{
+      display:flex; align-items:center; gap:.75rem; color:#fff; text-decoration:none;
     }
-    .nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 1rem;
+    .logo{
+      width:40px; height:40px; border-radius:50%;
+      display:grid; place-items:center;
+      border:2px solid var(--gold); color:#fff; font-weight:800; letter-spacing:.5px;
     }
-    .nav a.active {
-      color: var(--gold);
+    .brand-name{font-weight:800}
+    .links a{
+      color:#fff; text-decoration:none; margin-left:1rem; font-size:.95rem;
     }
+    .links a.active, .links a:hover{color:var(--gold)}
 
-    /* Hero Section */
-    .hero {
-      text-align: center;
-      padding: 3rem 1rem;
+    /* Hero */
+    .hero{
+      margin-top:2rem; background:var(--card); border:1px solid #f0e7e2; border-radius:14px;
+      padding:2.25rem 1.25rem; text-align:center;
     }
-    .hero h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
+    .hero h1{font-size:2.4rem; margin:.25rem 0; color:var(--burgundy)}
+    .hero h2{font-size:1.15rem; margin:.25rem 0 1rem; color:var(--muted); font-weight:600}
+    .hero p{max-width:760px; margin:0 auto 1.2rem; line-height:1.6}
+    .buttons{margin-top:1rem}
+    .btn{
+      display:inline-block; padding:.75rem 1.35rem; border-radius:9px; font-weight:700;
+      text-decoration:none; margin:.35rem; transition:transform .08s ease, box-shadow .2s ease;
     }
-    .hero p {
-      font-size: 1.1rem;
-      color: var(--muted);
-      max-width: 700px;
-      margin: 0.5rem auto 2rem;
+    .btn:active{transform:translateY(1px)}
+    .btn-primary{background:var(--gold); color:#000}
+    .btn-primary:hover{box-shadow:0 6px 18px rgba(212,175,55,.35)}
+    .btn-outline{border:2px solid var(--gold); color:var(--gold)}
+    .btn-outline:hover{background:var(--gold); color:#000}
+
+    /* Value bullets */
+    .value{
+      display:grid; gap:1rem; grid-template-columns:1fr; margin-top:1.25rem;
     }
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
+    @media(min-width:800px){ .value{ grid-template-columns:1fr 1fr 1fr; } }
+    .v-card{
+      background:#fff; border:1px solid #eee; border-radius:12px; padding:1rem;
     }
-    .buttons a {
-      text-decoration: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 999px;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    .primary {
-      background: var(--gold);
-      color: #000;
-    }
-    .primary:hover {
-      background: #b9972f;
-    }
-    .secondary {
-      border: 1px solid var(--gold);
-      color: var(--gold);
-    }
-    .secondary:hover {
-      background: var(--gold);
-      color: #000;
-    }
+    .v-card h3{margin:.25rem 0 .4rem; font-size:1.05rem}
+    .eyebrow{color:var(--gold); text-transform:uppercase; letter-spacing:.12em; font-size:.78rem; display:block; margin-bottom:.35rem}
 
     /* Footer */
-    footer {
-      background: var(--burgundy);
-      color: #fff;
-      text-align: center;
-      padding: 1.5rem 1rem;
-      margin-top: 2rem;
-    }
-    footer a {
-      color: #fff;
-      text-decoration: none;
-    }
-    footer a:hover {
-      color: var(--gold);
-    }
+    footer{background:var(--burgundy); color:#fff; margin-top:2rem}
+    .footer-wrap{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:.75rem; padding:1.25rem 0}
+    footer a{color:#fff; text-decoration:none}
+    footer a:hover{color:var(--gold)}
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <nav class="nav container">
-      <div><strong>Elizabeth Wairimu</strong></div>
-      <div>
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="projects.html">Projects</a>
-        <a href="reviews.html">Reviews</a>
-        <a href="education-experience.html">Education & Experience</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </nav>
-  </header>
+<header>
+  <nav class="nav container">
+    <a class="brand" href="index.html" aria-label="Home">
+      <span class="logo">EH</span>
+      <span class="brand-name">Elizabeth Wairimu</span>
+    </a>
+    <div class="links">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="educationexperience.html">Education & Experience</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+</header>
 
-  <!-- Hero Section -->
-  <section class="hero container">
-    <h1>Elizabeth Wairimu</h1>
+<main class="container">
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Hi, I’m Elizabeth Wairimu</h1>
     <h2>Digital Marketing Strategist | Virtual Assistant | SEO/SEM | Social Media Management</h2>
     <p>
-      I fuse creative marketing strategy with data intelligence and GIS precision 
-      to build campaigns that are engaging, measurable, and conversion-driven.
+      I fuse creative marketing strategy with data intelligence and GIS precision to build campaigns that are engaging, measurable, and conversion-driven.
     </p>
     <div class="buttons">
-      <a href="projects.html" class="primary">View My Work</a>
-      <a href="contact.html" class="secondary">Get In Touch</a>
+      <a href="projects.html" class="btn btn-primary">View My Work</a>
+      <a href="contact.html" class="btn btn-outline">Get In Touch</a>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
+  <!-- Quick value props -->
+  <section class="value" aria-label="Why work with me">
+    <article class="v-card">
+      <span class="eyebrow">Mission</span>
+      <h3>Smart, Human, Data-Informed Marketing</h3>
+      <p>Strategies that connect with customers, strengthen brand trust, and deliver measurable results.</p>
+    </article>
+    <article class="v-card">
+      <span class="eyebrow">Value</span>
+      <h3>Creative + Intelligence</h3>
+      <p>I fuse creative strategy with analytics and GIS precision to build campaigns that convert.</p>
+    </article>
+    <article class="v-card">
+      <span class="eyebrow">Focus</span>
+      <h3>Performance You Can See</h3>
+      <p>From SEO/SEM to social and email, I optimize for ROI with clear KPIs and transparent reporting.</p>
+    </article>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-wrap">
     <div>© 2025 Elizabeth Wairimu. All rights reserved.</div>
-    <div><a href="https://linkedin.com/in/elizabeth-wairimu-2069a6289">LinkedIn</a></div>
-  </footer>
+    <div><a href="mailto:elizabethwairimu.int@gmail.com">elizabethwairimu.int@gmail.com</a> · <a href="https://linkedin.com/in/elizabeth-wairimu-2069a6289">LinkedIn</a></div>
+  </div>
+</footer>
 
 </body>
 </html>
