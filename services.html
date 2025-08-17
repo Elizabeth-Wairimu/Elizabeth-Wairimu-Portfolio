@@ -1,113 +1,608 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Elizabeth Edge — Services</title>
-  <style>
-    :root {
-      --burgundy:#660B05;  /* unified brand color */
-      --gold:#d4af37;
-      --card:#FFF5F2;
-      --ink:#1a1a1a;
-      --muted:#555;
-    }
-    body{margin:0; font-family:Arial,Helvetica,sans-serif; color:var(--ink); background:#fff}
-    .container{max-width:1200px; margin:0 auto; padding:1rem}
-    h1,h2{text-align:center; margin:.5rem 0}
-    h1{font-size:2rem} h2{font-size:1.6rem}
-    .eyebrow{color:var(--gold); text-transform:uppercase; font-size:.8rem; letter-spacing:.1em; display:block; text-align:center; margin-bottom:.3rem}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Elizabeth Edge | Digital Marketing & GIS Expert</title>
+    <meta name="description" content="Professional digital marketing, GIS analysis, and virtual assistance services. Boost your business with proven strategies that deliver measurable results.">
+    <meta name="keywords" content="digital marketing services, GIS analysis, virtual assistance, Elizabeth Edge, SEO, social media management">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Header */
-    header{background:var(--burgundy); color:#fff}
-    .nav{
-      display:flex; justify-content:space-between; align-items:center;
-      padding:1.5rem 1rem;   /* match footer padding */
-      height:auto;           /* no fixed height */
-    }
-    .nav a{color:#fff; text-decoration:none; margin-left:1rem}
-    .nav a.active{color:var(--gold)}
+        /* Brand Colors - Updated to match guidelines */
+        :root {
+            --burgundy: #3B060A;
+            --gold: #d4af37;
+            --off-white: #FFF5F2;
+            --white: #ffffff;
+            --ink: #1a1a1a;
+            --muted: #555;
+        }
 
-    /* Grid */
-    .grid{display:grid; gap:1rem; grid-template-columns:1fr}
-    @media(min-width:700px){.grid{grid-template-columns:1fr 1fr}}
-    @media(min-width:1000px){.grid{grid-template-columns:1fr 1fr 1fr}}
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--ink);
+            background: var(--white);
+        }
 
-    /* Card */
-    .card{background:var(--card); border-radius:12px; padding:1rem; border:1px solid #eee}
-    .card h3{margin:.3rem 0}
-    .divider{height:1px; background:#e2d7d0; margin:.7rem 0}
+        /* Header */
+        .header {
+            background-color: var(--burgundy);
+            color: white;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            height: 64px;
+        }
 
-    /* Footer */
-    footer{background:var(--burgundy); color:#fff; text-align:center; padding:1.5rem 1rem; margin-top:2rem}
-    footer a{color:#fff; text-decoration:none}
-    footer a:hover{color:var(--gold)}
-  </style>
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            height: 64px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            background: var(--gold);
+            color: var(--burgundy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            border: 2px solid var(--gold);
+        }
+
+        .brand-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: color 0.3s, transform 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .nav-link:hover {
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--gold);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Main Content */
+        .main-content {
+            min-height: calc(100vh - 128px);
+            padding: 4rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            color: var(--burgundy);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--muted);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .service-card {
+            background: var(--off-white);
+            padding: 1.8rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(59, 6, 10, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid var(--burgundy);
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(59, 6, 10, 0.12);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gold), #b8941f);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            color: var(--burgundy);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .service-description {
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 1.2rem;
+        }
+
+        .service-features li {
+            color: var(--muted);
+            font-size: 0.9rem;
+            padding: 0.2rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-features li::before {
+            content: "✓";
+            color: var(--gold);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .read-more-btn {
+            background: var(--gold);
+            color: var(--burgundy);
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .read-more-btn:hover {
+            background: #b8941f;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--burgundy), #4B0812);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .cta-description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--burgundy);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #b8941f;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--burgundy);
+            color: white;
+            padding: 0;
+            height: 64px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            height: 64px;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .footer-left {
+            text-align: left;
+        }
+
+        .footer-center {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .footer-right {
+            text-align: right;
+        }
+
+        .footer-badge {
+            background: var(--gold);
+            color: var(--burgundy);
+            padding: 8px 16px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+        }
+
+        .footer-badge:hover {
+            background: #b8941f;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .footer-copyright {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--burgundy);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .logo-container {
+                gap: 0.5rem;
+            }
+
+            .brand-name {
+                font-size: 1.2rem;
+            }
+
+            .page-title {
+                font-size: 2.2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .cta-title {
+                font-size: 2rem;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                height: auto;
+                padding: 1rem 2rem;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .footer-left,
+            .footer-right {
+                text-align: center;
+            }
+
+            .footer-center {
+                order: -1;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="index.html" class="logo">EE</a>
+                <a href="index.html" class="brand-name">Elizabeth Edge</a>
+            </div>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link active">Services</a></li>
+                    <li><a href="experience.html" class="nav-link">Education & Experience</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="success-stories.html" class="nav-link">Success Stories</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
 
-<header>
-  <nav class="nav container">
-    <div></div> <!-- brand text removed -->
-    <div>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html" class="active">Services</a>
-      <a href="projects.html">Projects</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="educationexperience.html">Education & Experience</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </nav>
-</header>
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <section class="page-header fade-in">
+                <span class="eyebrow">What I Do</span>
+                <h1 class="page-title">My Services</h1>
+                <p class="page-subtitle">Comprehensive digital marketing and business optimization solutions designed to drive growth and deliver measurable results for your business.</p>
+            </section>
 
-<main class="container">
-  <span class="eyebrow">What I Do</span>
-  <h2>My Services</h2>
+            <!-- Services Grid -->
+            <section class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">📈</div>
+                    <h3>Digital Marketing Strategy & Content</h3>
+                    <p class="service-description">Full-funnel campaigns with CRO, A/B testing, and compelling copy that drives action.</p>
+                    <ul class="service-features">
+                        <li>Campaign strategy & planning</li>
+                        <li>Content creation & copywriting</li>
+                        <li>A/B testing & optimization</li>
+                    </ul>
+                    <a href="contact.html" class="read-more-btn">Learn More →</a>
+                </div>
 
-  <div class="grid">
-    <div class="card">
-      <h3>Digital Marketing Strategy & Content</h3>
-      <div class="divider"></div>
-      <p>Full-funnel, omni-channel campaign design focused on results, including CRO, A/B testing, and compelling copy that drives action.</p>
-    </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🎯</div>
+                    <h3>Performance Marketing (SEO/SEM)</h3>
+                    <p class="service-description">Data-driven Google and Meta campaigns to maximize visibility and reduce CPC by up to 28%.</p>
+                    <ul class="service-features">
+                        <li>Google Ads & Meta campaigns</li>
+                        <li>SEO optimization</li>
+                        <li>PPC management</li>
+                    </ul>
+                    <a href="contact.html" class="read-more-btn">Learn More →</a>
+                </div>
 
-    <div class="card">
-      <h3>Performance Marketing (SEO/SEM)</h3>
-      <div class="divider"></div>
-      <p>Data-driven campaigns on Google and Meta to maximize visibility, boost organic traffic, and reduce CPC by up to 28%.</p>
-    </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🗺️</div>
+                    <h3>GIS-Powered & Location Targeting</h3>
+                    <p class="service-description">Market penetration mapping and hyperlocal campaigns with 35% higher conversions.</p>
+                    <ul class="service-features">
+                        <li>Geographic data analysis</li>
+                        <li>Location-based targeting</li>
+                        <li>Market penetration mapping</li>
+                    </ul>
+                    <a href="contact.html" class="read-more-btn">Learn More →</a>
+                </div>
 
-    <div class="card">
-      <h3>GIS-Powered & Location Targeting</h3>
-      <div class="divider"></div>
-      <p>Market penetration mapping and hyperlocal campaigns that deliver up to 35% higher location-based conversions.</p>
-    </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">📧</div>
+                    <h3>Email Marketing & Automation</h3>
+                    <p class="service-description">Smart automation and AI-based segmentation to nurture leads and increase open rates by 45%.</p>
+                    <ul class="service-features">
+                        <li>Email campaign design</li>
+                        <li>Marketing automation</li>
+                        <li>Lead nurturing sequences</li>
+                    </ul>
+                    <a href="contact.html" class="read-more-btn">Learn More →</a>
+                </div>
 
-    <div class="card">
-      <h3>Email Marketing & Automation</h3>
-      <div class="divider"></div>
-      <p>Smart automation, drip workflows, and AI-based segmentation to nurture leads and increase open rates by 45%.</p>
-    </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">📱</div>
+                    <h3>Social Media Management</h3>
+                    <p class="service-description">Strategic content planning and engagement to build a thriving online community.</p>
+                    <ul class="service-features">
+                        <li>Content strategy & creation</li>
+                        <li>Social media scheduling</li>
+                        <li>Community management</li>
+                    </ul>
+                    <a href="contact.html" class="read-more-btn">Learn More →</a>
+                </div>
 
-    <div class="card">
-      <h3>Social Media Management</h3>
-      <div class="divider"></div>
-      <p>Strategic content planning, scheduling, and engagement to build a thriving online community and double your impact.</p>
-    </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">⚡</div>
+                    <h3>Virtual Assistance & Optimization</h3>
+                    <p class="service-description">Streamline operations with admin support and automation to improve efficiency.</p>
+                    <ul class="service-features">
+                        <li>Administrative support</li>
+                        <li>Process optimization</li>
+                        <li>Workflow automation</li>
+                    </ul>
+                    <a href="contact.html" class="read-more-btn">Learn More →</a>
+                </div>
+            </section>
 
-    <div class="card">
-      <h3>Virtual Assistance & Optimization</h3>
-      <div class="divider"></div>
-      <p>Streamlining operations with admin support and automation to improve efficiency and free your time for growth.</p>
-    </div>
-  </div>
-</main>
+            <!-- CTA Section -->
+            <section class="cta-section fade-in">
+                <h2 class="cta-title">Ready to Transform Your Business?</h2>
+                <p class="cta-description">Let's discuss how these services can be customized to meet your specific business goals and drive the growth you're looking for.</p>
+                <a href="contact.html" class="cta-button">Get Started Today</a>
+            </section>
+        </div>
+    </main>
 
-<footer>
-  <div>© 2025 Elizabeth Edge. All rights reserved.</div>
-  <div><a href="https://linkedin.com/in/elizabeth-wairimu-2069a6289">LinkedIn</a></div>
-</footer>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <p class="footer-copyright">&copy; 2025 Elizabeth Edge. All rights reserved.</p>
+            </div>
+            <div class="footer-center">
+                <a href="https://linkedin.com/in/elizabeth-edge" target="_blank" class="footer-badge" rel="noopener">
+                    📧 LinkedIn
+                </a>
+            </div>
+            <div class="footer-right">
+                <a href="mailto:elizabeth.edge@gmail.com" class="footer-badge">
+                    ✉️ Email
+                </a>
+            </div>
+        </div>
+    </footer>
 
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.header') && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
