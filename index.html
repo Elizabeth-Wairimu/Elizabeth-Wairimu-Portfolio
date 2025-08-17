@@ -21,7 +21,7 @@
     header{background:var(--burgundy); color:#fff}
     .nav{
       display:flex; justify-content:space-between; align-items:center;
-      padding:1.2rem 0; height:auto;   /* standardized */
+      padding:1rem 0; height:64px;   /* smaller, consistent height */
     }
     .brand{
       display:flex; align-items:center; gap:.75rem; color:#fff; text-decoration:none;
@@ -68,13 +68,16 @@
     .eyebrow{color:var(--gold); text-transform:uppercase; letter-spacing:.12em; font-size:.78rem; display:block; margin-bottom:.35rem}
 
     /* Footer */
-    footer{background:var(--burgundy); color:#fff; margin-top:2rem; text-align:center; padding:1.5rem 1rem}
-    .footer-wrap{display:flex; flex-direction:column; align-items:center; gap:.75rem}
+    footer{background:var(--burgundy); color:#fff; margin-top:2rem}
+    .footer-wrap{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:1rem 0; height:64px;   /* same height as header */
+    }
     .footer-btn{
       cursor:pointer; border-radius:999px; padding:.4rem .9rem; font-size:.85rem; font-weight:700;
-      background:var(--gold); color:#000; text-decoration:none; display:inline-block; margin:.3rem;
+      background:var(--gold); color:#000; text-decoration:none; display:inline-block;
     }
-    footer a:hover{opacity:0.85}
+    .footer-btn:hover{opacity:.85}
   </style>
 </head>
 <body>
@@ -83,7 +86,7 @@
   <nav class="nav container">
     <a class="brand" href="index.html" aria-label="Home">
       <span class="logo">EE</span>
-      <span class="brand-name">Elizabeth Wairimu</span>
+      <span class="brand-name">Elizabeth Edge</span>
     </a>
     <div class="links">
       <a href="index.html" class="active">Home</a>
@@ -103,7 +106,7 @@
     <h1>Hi, I’m Elizabeth Wairimu</h1>
     <h2>Digital Marketing Strategist | Virtual Assistant | SEO/SEM | Social Media Management</h2>
     <p>
-      I fuse creative marketing strategy with data intelligence and GIS precision to build campaigns that are engaging, measurable, and conversion-driven.
+      I fuse creative marketing strategy with data intelligence and GIS precision to build campaigns that are engaging, measurable, and conversion driven.
     </p>
     <div class="buttons">
       <a href="projects.html" class="btn btn-primary">View My Work</a>
@@ -136,6 +139,8 @@
     <div>© 2025 Elizabeth Wairimu. All rights reserved.</div>
     <div>
       <a href="mailto:elizabethwairimu.int@gmail.com" class="footer-btn">Email</a>
+    </div>
+    <div>
       <a href="https://linkedin.com/in/elizabeth-wairimu-2069a6289" target="_blank" class="footer-btn">LinkedIn</a>
     </div>
   </div>
