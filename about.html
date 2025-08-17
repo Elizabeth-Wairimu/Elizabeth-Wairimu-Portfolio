@@ -19,10 +19,19 @@
 
     /* Header */
     header{background:var(--burgundy); color:#fff}
-    .nav{display:flex; justify-content:space-between; align-items:center; padding:1rem 1rem; height:60px;} /* matched footer height */
-    .nav div{display:flex; align-items:center;}
-    .nav a{color:#fff; text-decoration:none; margin-left:1rem}
-    .nav a.active{color:var(--gold)}
+    .nav{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:1rem; height:60px; /* match footer height */
+    }
+    .brand{display:flex; align-items:center; gap:.75rem; color:#fff; text-decoration:none;}
+    .logo{
+      width:40px; height:40px; border-radius:50%;
+      display:grid; place-items:center;
+      border:2px solid var(--gold); color:#fff; font-weight:800; letter-spacing:.5px;
+    }
+    .brand-name{font-weight:800}
+    .links a{color:#fff; text-decoration:none; margin-left:1rem}
+    .links a.active, .links a:hover{color:var(--gold)}
 
     /* About section */
     .about{background:var(--card); border-radius:12px; padding:2rem; margin-top:2rem; line-height:1.6}
@@ -31,7 +40,11 @@
     .highlight{color:var(--burgundy); font-weight:bold}
 
     /* Footer */
-    footer{background:var(--burgundy); color:#fff; text-align:center; padding:1rem; margin-top:2rem; height:60px;} /* matches header */
+    footer{
+      background:var(--burgundy); color:#fff; text-align:center;
+      height:60px; display:flex; align-items:center; justify-content:center;
+      flex-direction:column; margin-top:2rem;
+    }
     footer a{color:#fff; text-decoration:none}
     footer a:hover{color:var(--gold)}
   </style>
@@ -40,8 +53,11 @@
 
 <header>
   <nav class="nav container">
-    <div><strong>Elizabeth Edge</strong></div> <!-- Updated brand -->
-    <div>
+    <a class="brand" href="index.html" aria-label="Home">
+      <span class="logo">EE</span>
+      <span class="brand-name">Elizabeth Edge</span>
+    </a>
+    <div class="links">
       <a href="index.html">Home</a>
       <a href="about.html" class="active">About</a>
       <a href="services.html">Services</a>
