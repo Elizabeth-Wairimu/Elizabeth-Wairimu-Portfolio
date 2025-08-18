@@ -867,4 +867,122 @@
             <section class="cta-section fade-in">
                 <div class="cta-content">
                     <h3 class="cta-title">Ready to Transform Your Digital Presence?</h3>
-                    <p class="cta-description
+                    <p class="cta-description">Let's discuss how my unique blend of marketing expertise and analytical precision can drive your business growth.</p>
+                    <div>
+                        <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+                        <a href="portfolio.html" class="btn btn-outline">View Portfolio</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <p class="footer-copyright">&copy; 2025 Elizabeth Edge. All rights reserved.</p>
+            </div>
+            <div class="footer-center">
+                <a href="https://linkedin.com/in/elizabeth-edge" target="_blank" class="footer-badge" rel="noopener">
+                    LinkedIn
+                </a>
+            </div>
+            <div class="footer-right">
+                <a href="mailto:elizabeth.edge@gmail.com" class="footer-badge">
+                    Email
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Service card expand/collapse functionality
+        document.querySelectorAll('.service-card').forEach(card => {
+            const expandBtn = card.querySelector('.read-more-btn');
+            const details = card.querySelector('.service-details');
+            
+            expandBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                
+                // Close all other cards
+                document.querySelectorAll('.service-card').forEach(otherCard => {
+                    if (otherCard !== card) {
+                        otherCard.querySelector('.service-details').classList.remove('expanded');
+                        otherCard.querySelector('.read-more-btn').textContent = 'Read More';
+                    }
+                });
+                
+                // Toggle current card
+                const isExpanded = details.classList.contains('expanded');
+                if (isExpanded) {
+                    details.classList.remove('expanded');
+                    expandBtn.textContent = 'Read More';
+                } else {
+                    details.classList.add('expanded');
+                    expandBtn.textContent = 'Show Less';
+                }
+            });
+        });
+
+        // Mobile menu toggle with animation
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            navMenu.classList.toggle('active');
+            mobileToggle.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on nav links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                navMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.header')) {
+                navMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+            }
+        });
+
+        // Enhanced mobile responsiveness
+        function handleResize() {
+            if (window.innerWidth > 768) {
+                navMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '1';
+        });
+    </script>
+</body>
+</html>
