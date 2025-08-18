@@ -1,1 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Elizabeth Edge - Digital Marketing Strategist | Get Your Free Consultation</title>
+  <meta name="description" content="Contact Elizabeth Edge for digital marketing services, GIS expertise, and virtual assistant solutions. Get your free consultation today and transform your business growth.">
+  <meta name="keywords" content="contact Elizabeth Edge, digital marketing consultation, GIS expert Nairobi, virtual assistant services, free consultation, business growth">
 
+  <style>
+    :root{
+      --burgundy:#3B060A;
+      --gold:#d4af37;
+      --card:#FFF5F2;
+      --ink:#1a1a1a;
+      --muted:#555;
+      --success:#28a745;
+      --error:#dc3545;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color:var(--ink); background:#fff}
+    html, body{height:100%; margin:0; padding:0}
+    body{
+      color:var(--ink); background:#fff; line-height:1.5;
+      display:flex; flex-direction:column;
+    }
+    .container{max-width:1200px; margin:0 auto; padding:0 1.5rem}
+
+    /* Header - Professional & Structured */
+    header{
+      background:var(--burgundy); color:#fff; position:sticky; top:0; z-index:1000; 
+      box-shadow:0 2px 15px rgba(0,0,0,0.15);
+      border-bottom:1px solid rgba(212, 175, 55, 0.3);
+    }
+    .nav{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:0; height:64px; max-width:100%;
+    }
+    .brand{
+      display:flex; align-items:center; gap:.75rem; color:#fff; text-decoration:none;
+    }
+    .brand:hover{opacity:0.9}
+    .logo{
+      width:38px; height:38px; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      background:var(--gold); color:var(--burgundy); font-weight:700; font-size:1.1rem;
+      box-shadow:0 2px 8px rgba(212, 175, 55, 0.3);
+    }
+    .brand-name{font-weight:700; font-size:1.3rem; letter-spacing:-0.5px}
+    
+    /* Navigation Menu - Organized */
+    .nav-menu{
+      display:flex; list-style:none; gap:0.5rem; align-items:center; 
+      margin:0; padding:0; background:rgba(255,255,255,0.05);
+      border-radius:25px; padding:0.3rem;
+    }
+    .nav-link{
+      color:#fff; text-decoration:none; font-weight:500; font-size:0.9rem;
+      padding:0.5rem 1rem; border-radius:20px; transition:all 0.3s ease;
+      white-space:nowrap; position:relative;
+    }
+    .nav-link.active{
+      background:var(--gold); color:var(--burgundy);
+      box-shadow:0 2px 8px rgba(212, 175, 55, 0.4);
+      font-weight:600;
+    }
+    .nav-link:hover:not(.active){
+      background:rgba(255,255,255,0.1); color:var(--gold);
+      transform:translateY(-1px);
+    }
+
+    /* Mobile Menu - Clean */
+    .mobile-menu-toggle{
+      display:none; flex-direction:column; cursor:pointer;
+      padding:0.5rem; border-radius:5px; transition:background 0.3s ease;
+      background:transparent; border:none;
+    }
+    .mobile-menu-toggle:hover{background:rgba(255,255,255,0.1)}
+    .mobile-menu-toggle span{
+      width:22px; height:2px; background:#fff; margin:2px 0; 
+      transition:all 0.3s ease; border-radius:2px;
+    }
+
+    /* Mobile menu animation */
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* Mobile Responsive */
+    @media(max-width:1024px){
+      .nav-menu{gap:0.3rem; padding:0.25rem}
+      .nav-link{padding:0.4rem 0.8rem; font-size:0.85rem}
+    }
+
+    @media(max-width:768px){
+      .nav{height:64px; padding:0 1rem}
+      .nav-menu{
+        display:none; position:absolute; top:100%; left:0; width:100%;
+        background:var(--burgundy); flex-direction:column; padding:1rem;
+        box-shadow:0 5px 20px rgba(0,0,0,0.3); border-radius:0;
+        gap:0.5rem; border-top:1px solid rgba(212, 175, 55, 0.3);
+      }
+      .nav-menu.active{display:flex}
+      .nav-link{
+        width:100%; text-align:center; padding:0.8rem 1rem;
+        border-radius:8px; font-size:0.95rem;
+      }
+      .mobile-menu-toggle{display:flex}
+      .brand-name{font-size:1.2rem}
+      .logo{width:34px; height:34px; font-size:1rem}
+    }
+
+    @media(max-width:480px){
+      .nav{padding:0 0.8rem}
+      .brand{gap:0.6rem}
+      .brand-name{font-size:1.1rem}
+      .logo{width:32px; height:32px; font-size:0.9rem}
+    }
+
+    /* Main content */
+    main{flex:1; padding:2rem 0}
+
+    /* Hero section */
+    .hero{
+      text-align:center; margin-bottom:3rem; 
+      background:var(--card); padding:2rem; border-radius:12px;
+      box-shadow:0 4px 15px rgba(59, 6, 10, 0.08);
+      border-left:4px solid var(--burgundy);
+    }
+    .hero h1{
+      font-size:2.5rem; margin:0 0 1rem; color:var(--burgundy); 
+      font-weight:700; line-height:1.2;
+    }
+    .hero p{
+      font-size:1.2rem; color:var(--muted); max-width:800px; 
+      margin:0 auto; line-height:1.6;
+    }
+
+    /* Content sections */
+    .content-section{
+      margin-bottom:3rem;
+    }
+    .section-header{
+      text-align:center; margin-bottom:2rem;
+    }
+    .eyebrow{
+      color:var(--gold); text-transform:uppercase; letter-spacing:0.08em; 
+      font-size:0.8rem; font-weight:600; display:block; margin-bottom:0.5rem;
+    }
+    .section-title{
+      font-size:2rem; margin:0; color:var(--burgundy); font-weight:700;
+    }
+
+    /* Two column layout */
+    .two-column{
+      display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:start;
+    }
+    @media(max-width:768px){
+      .two-column{grid-template-columns:1fr}
+    }
+
+    /* Contact Info Cards */
+    .contact-info{
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+      gap:1.5rem; margin:2rem 0;
+    }
+    .contact-card{
+      background:var(--card); border-radius:12px; padding:1.8rem;
+      box-shadow:0 4px 15px rgba(59, 6, 10, 0.08); 
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
+      border-left:4px solid var(--gold); text-align:center;
+    }
+    .contact-card:hover{
+      transform:translateY(-3px); 
+      box-shadow:0 8px 25px rgba(59, 6, 10, 0.12);
+    }
+    .contact-icon{
+      width:60px; height:60px; margin:0 auto 1rem;
+      background:var(--burgundy); border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      color:var(--gold); font-size:1.5rem; font-weight:700;
+    }
+    .contact-card h3{
+      margin:0 0 0.5rem; font-size:1.2rem; color:var(--burgundy); 
+      font-weight:600;
+    }
+    .contact-card p{
+      color:var(--muted); line-height:1.5; margin:0 0 1rem;
+    }
+    .contact-link{
+      display:inline-block; padding:8px 16px; background:var(--gold);
+      color:var(--burgundy); text-decoration:none; border-radius:20px;
+      font-weight:600; font-size:0.9rem; transition:all 0.3s ease;
+    }
+    .contact-link:hover{
+      transform:translateY(-1px); box-shadow:0 4px 12px rgba(212,175,55,.3);
+    }
+
+    /* Contact Form */
+    .contact-form{
+      background:var(--card); border-radius:12px; padding:2rem;
+      box-shadow:0 4px 15px rgba(59, 6, 10, 0.08);
+      border-left:4px solid var(--burgundy); max-width:600px; margin:0 auto;
+    }
+    .form-group{
+      margin-bottom:1.5rem;
+    }
+    .form-label{
+      display:block; margin-bottom:0.5rem; font-weight:600; 
+      color:var(--burgundy); font-size:0.95rem;
+    }
+    .form-input, .form-textarea, .form-select{
+      width:100%; padding:12px 16px; border:2px solid #e5e5e5;
+      border-radius:8px; font-size:1rem; font-family:inherit;
+      transition:border-color 0.3s ease, box-shadow 0.3s ease;
+      background:#fff;
+    }
+    .form-input:focus, .form-textarea:focus, .form-select:focus{
+      outline:none; border-color:var(--gold);
+      box-shadow:0 0 0 3px rgba(212, 175, 55, 0.1);
+    }
+    .form-textarea{
+      min-height:120px; resize:vertical;
+    }
+    .form-select{
+      cursor:pointer;
+    }
+    .form-button{
+      width:100%; padding:14px; background:var(--burgundy); color:#fff;
+      border:none; border-radius:8px; font-size:1.1rem; font-weight:600;
+      cursor:pointer; transition:all 0.3s ease; font-family:inherit;
+    }
+    .form-button:hover{
+      background:#2a0507; transform:translateY(-1px);
+      box-shadow:0 4px 15px rgba(59, 6, 10, 0.2);
+    }
+    .form-button:active{transform:translateY(0)}
+
+    /* Form validation styles */
+    .form-input.error, .form-textarea.error, .form-select.error{
+      border-color:var(--error);
+    }
+    .error-message{
+      color:var(--error); font-size:0.85rem; margin-top:0.3rem;
+      display:none;
+    }
+    .success-message{
+      background:var(--success); color:#fff; padding:1rem;
+      border-radius:8px; margin-bottom:1rem; display:none;
+      text-align:center; font-weight:500;
+    }
+
+    /* CTA section */
+    .cta{
+      background:var(--burgundy); color:#fff; padding:2rem;
+      border-radius:12px; text-align:center; margin:3rem 0;
+    }
+    .cta h3{
+      font-size:1.8rem; margin:0 0 1rem; color:#fff;
+    }
+    .cta p{
+      font-size:1.1rem; margin:0 0 1.5rem; opacity:0.9;
+    }
+    .btn{
+      display:inline-block; padding:12px 24px; border-radius:30px; 
+      font-weight:600; text-decoration:none; margin:0.3rem;
+      transition:all 0.3s ease; font-size:0.95rem;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:var(--gold); color:var(--burgundy)}
+    .btn-primary:hover{box-shadow:0 4px 15px rgba(212,175,55,.3)}
+    .btn-outline{border:2px solid var(--gold); color:var(--gold)}
+    .btn-outline:hover{background:var(--gold); color:var(--burgundy)}
+
+    /* Footer - matching guidelines */
+    footer{
+      background:var(--burgundy); color:#fff; margin-top:auto;
+      flex-shrink:0;
+    }
+    .footer-wrap{
+      display:grid; grid-template-columns:1fr auto 1fr; align-items:center;
+      gap:1.5rem; padding:0; height:64px;
+    }
+    .footer-left{text-align:left; font-size:0.85rem; color:rgba(255,255,255,0.8)}
+    .footer-center{display:flex; gap:0.8rem; justify-content:center}
+    .footer-right{text-align:right}
+    .footer-badge{
+      cursor:pointer; border-radius:999px; padding:0.3rem 0.7rem; 
+      font-size:0.75rem; font-weight:700;
+      background:var(--gold); color:var(--burgundy); text-decoration:none; 
+      display:inline-block; transition:all 0.3s ease;
+    }
+    .footer-badge:hover{opacity:.85; transform:translateY(-1px)}
+
+    /* Mobile adjustments */
+    @media(max-width:768px){
+      main{padding:1.5rem 0}
+      .hero{padding:1.5rem; margin-bottom:2rem}
+      .hero h1{font-size:2rem}
+      .hero p{font-size:1.1rem}
+      .section-title{font-size:1.8rem}
+      .content-section{margin-bottom:2rem}
+      .contact-form{padding:1.5rem}
+      .contact-info{grid-template-columns:1fr; gap:1rem}
+      .footer-wrap{
+        grid-template-columns:1fr; height:auto; padding:0.8rem 0; 
+        gap:0.8rem; text-align:center;
+      }
+      .footer-left, .footer-right{text-align:center}
+      .footer-center{order:-1}
+      .footer-left{font-size:0.8rem}
+    }
+
+    @media(max-width:480px){
+      .nav{padding:0 0.8rem}
+      .brand{gap:0.6rem}
+      .brand-name{font-size:1.1rem}
+      .logo{width:32px; height:32px; font-size:0.9rem}
+      .contact-card{padding:1.5rem}
+      .contact-icon{width:50px; height:50px; font-size:1.3rem}
+    }
+
+    /* Smooth scrolling */
+    html{scroll-behavior:smooth}
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-in{
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav class="nav">
+      <a href="index.html" class="brand">
+        <span class="logo">EE</span>
+        <span class="brand-name">Elizabeth Edge</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="educationexperience.html" class="nav-link">Education & Experience</a></li>
+        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+        <li><a href="success-stories.html" class="nav-link">Success Stories</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+      <button class="mobile-menu-toggle" id="mobileToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <!-- Hero Section -->
+  <section class="hero animate-in">
+    <h1>Let's Start Your Digital Transformation</h1>
+    <p>Ready to elevate your business with data-driven marketing strategies? I'm here to help you achieve measurable growth and success.</p>
+  </section>
+
+  <!-- Contact Info Cards -->
+  <section class="content-section">
+    <div class="section-header">
+      <span class="eyebrow">Get In Touch</span>
+      <h2 class="section-title">Multiple Ways to Connect</h2>
+    </div>
+    <div class="contact-info">
+      <div class="contact-card animate-in">
+        <div class="contact-icon">📧</div>
+        <h3>Email Me Directly</h3>
+        <p>Get a response within 24 hours for all business inquiries and project discussions.</p>
+        <a href="mailto:elizabethwairimu.int@gmail.com" class="contact-link">Send Email</a>
+      </div>
+      <div class="contact-card animate-in">
+        <div class="contact-icon">💼</div>
+        <h3>LinkedIn Professional</h3>
+        <p>Connect with me on LinkedIn for professional networking and industry insights.</p>
+        <a href="https://linkedin.com/in/elizabeth-wairimu-2069a6289" target="_blank" class="contact-link" rel="noopener">View Profile</a>
+      </div>
+      <div class="contact-card animate-in">
+        <div class="contact-icon">📞</div>
+        <h3>Schedule a Call</h3>
+        <p>Book a free 30-minute consultation to discuss your marketing goals and challenges.</p>
+        <a href="#contact-form" class="contact-link">Book Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="content-section" id="contact-form">
+    <div class="section-header">
+      <span class="eyebrow">Start Your Project</span>
+      <h2 class="section-title">Free Consultation Request</h2>
+    </div>
+    <div class="contact-form animate-in">
+      <div class="success-message" id="successMessage">
+        Thank you! Your message has been sent successfully. I'll get back to you within 24 hours.
+      </div>
+      
+      <form id="contactForm" novalidate>
+        <div class="form-group">
+          <label for="name" class="form-label">Full Name *</label>
+          <input type="text" id="name" name="name" class="form-input" required>
+          <div class="error-message" id="nameError">Please enter your full name</div>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">Email Address *</label>
+          <input type="email" id="email" name="email" class="form-input" required>
+          <div class="error-message" id="emailError">Please enter a valid email address</div>
+        </div>
+
+        <div class="form-group">
+          <label for="company" class="form-label">Company/Organization</label>
+          <input type="text" id="company" name="company" class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="tel" id="phone" name="phone" class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label for="service" class="form-label">Service of Interest *</label>
+          <select id="service" name="service" class="form-select" required>
+            <option value="">Select a service...</option>
+            <option value="digital-marketing">Digital Marketing Strategy</option>
+            <option value="seo">SEO & Content Marketing</option>
+            <option value="paid-ads">Google & Meta Ads Management</option>
+            <option value="social-media">Social Media Management</option>
+            <option value="email-marketing">Email Marketing Automation</option>
+            <option value="gis-analysis">GIS Analysis & Mapping</option>
+            <option value="virtual-assistant">Virtual Assistant Services</option>
+            <option value="website-optimization">Website Optimization</option>
+            <option value="consultation">General Consultation</option>
+          </select>
+          <div class="error-message" id="serviceError">Please select a service</div>
+        </div>
+
+        <div class="form-group">
+          <label for="budget" class="form-label">Project Budget Range</label>
+          <select id="budget" name="budget" class="form-select">
+            <option value="">Select budget range...</option>
+            <option value="under-500">Under $500</option>
+            <option value="500-1000">$500 - $1,000</option>
+            <option value="1000-2500">$1,000 - $2,500</option>
+            <option value="2500-5000">$2,500 - $5,000</option>
+            <option value="5000-plus">$5,000+</option>
+            <option value="ongoing">Ongoing Monthly Retainer</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="timeline" class="form-label">Project Timeline</label>
+          <select id="timeline" name="timeline" class="form-select">
+            <option value="">Select timeline...</option>
+            <option value="asap">ASAP (Rush Project)</option>
+            <option value="1-month">Within 1 Month</option>
+            <option value="1-3-months">1-3 Months</option>
+            <option value="3-6-months">3-6 Months</option>
+            <option value="flexible">Flexible Timeline</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message" class="form-label">Project Details *</label>
+          <textarea id="message" name="message" class="form-textarea" 
+                    placeholder="Tell me about your business, current challenges, goals, and what you're hoping to achieve. The more details you provide, the better I can help you." required></textarea>
+          <div class="error-message" id="messageError">Please describe your project details</div>
+        </div>
+
+        <button type="submit" class="form-button">Send Message & Request Consultation</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Why Choose Elizabeth -->
+  <section class="content-section">
+    <div class="section-header">
+      <span class="eyebrow">Why Work With Me</span>
+      <h2 class="section-title">What You Can Expect</h2>
+    </div>
+    <div class="two-column">
+      <div class="contact-card animate-in">
+        <div class="contact-icon">⚡</div>
+        <h3>Quick Response Time</h3>
+        <p>I respond to all inquiries within 24 hours and provide detailed project proposals within 48 hours of our initial discussion.</p>
+      </div>
+      <div class="contact-card animate-in">
+        <div class="contact-icon">🎯</div>
+        <h3>Tailored Solutions</h3>
+        <p>Every strategy is customized to your specific business needs, industry, and growth objectives. No cookie-cutter approaches.</p>
+      </div>
+    </div>
+    <div class="two-column">
+      <div class="contact-card animate-in">
+        <div class="contact-icon">📊</div>
+        <h3>Data-Driven Results</h3>
+        <p>All campaigns are backed by thorough analysis and continuous optimization to ensure maximum ROI and measurable growth.</p>
+      </div>
+      <div class="contact-card animate-in">
+        <div class="contact-icon">🤝</div>
+        <h3>Partnership Approach</h3>
+        <p>I work as an extension of your team, providing transparent communication and regular updates throughout our collaboration.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location & Availability -->
+  <section class="cta">
+    <h3>Ready to Get Started?</h3>
+    <p>Based in Nairobi, Kenya, serving clients globally. Available for projects of all sizes from startups to established enterprises.</p>
+    <div>
+      <a href="mailto:elizabethwairimu.int@gmail.com" class="btn btn-primary">Start Your Project Today</a>
+      <a href="services.html" class="btn btn-outline">View All Services</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-wrap">
+    <div class="footer-left">© 2025 Elizabeth Edge. All rights reserved.</div>
+    <div class="footer-center">
+      <a href="https://linkedin.com/in/elizabeth-wairimu-2069a6289" target="_blank" class="footer-badge" rel="noopener">
+        LinkedIn
+      </a>
+    </div>
+    <div class="footer-right">
+      <a href="mailto:elizabethwairimu.int@gmail.com" class="footer-badge">
+        Email
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle with proper functionality
+  const mobileToggle = document.getElementById('mobileToggle');
+  const navMenu = document.getElementById('navMenu');
+  
+  mobileToggle.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    navMenu.classList.toggle('active');
+    mobileToggle.classList.toggle('active');
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('header')) {
+      navMenu.classList.remove('active');
+      mobileToggle.classList.remove('active');
+    }
+  });
+
+  // Close mobile menu when clicking on nav links
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function() {
+      navMenu.classList.remove('active');
+      mobileToggle.classList.remove('active');
+    });
+  });
+
+  // Handle window resize
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+      navMenu.classList.remove('active');
+      mobileToggle.classList.remove('active');
+    }
+  });
+
+  // Contact form validation and submission
+  const contactForm = document.getElementById('contactForm');
+  const successMessage = document.getElementById('successMessage');
+
+  function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
+
+  function showError(fieldId, message) {
+    const field = document.getElementById(fieldId);
+    const errorDiv = document.getElementById(fieldId + 'Error');
+    field.classList.add('error');
+    errorDiv.textContent = message;
+    errorDiv.style.display = 'block';
+  }
+
+  function clearError(fieldId) {
+    const field = document.getElementById(fieldId);
+    const errorDiv = document.getElementById(fieldId + 'Error');
+    field.classList.remove('error');
+    errorDiv.style.display = 'none';
+  }
+
+  function validateForm() {
+    let isValid = true;
+    
+    // Clear all previous errors
+    ['name', 'email', 'service', 'message'].forEach(clearError);
+
+    // Validate name
+    const name = document.getElementById('name').value.trim();
+    if (!name) {
+      showError('name', 'Please enter your full name');
+      isValid = false;
+    }
+
+    // Validate email
+    const email = document.getElementById('email').value.trim();
+    if (!email) {
+      showError('email', 'Please enter your email address');
+      isValid = false;
+    } else if (!validateEmail(email)) {
+      showError('email', 'Please enter a valid email address');
+      isValid = false;
+    }
+
+    // Validate service
+    const service = document.getElementById('service').value;
+    if (!service) {
+      showError('service', 'Please select a service');
+      isValid = false;
+    }
+
+    // Validate message
+    const message = document.getElementById('message').value.trim();
+    if (!message) {
+      showError('message', 'Please describe your project details');
+      isValid = false;
+    } else if (message.length < 20) {
+      showError('message', 'Please provide more details (minimum 20 characters)');
+      isValid = false;
+    }
+
+    return isValid;
+  }
+
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    if (validateForm()) {
+      // Simulate form submission
+      const submitButton = contactForm.querySelector('.form-button');
+      const originalText = submitButton.textContent;
+      
+      submitButton.textContent = 'Sending...';
+      submitButton.disabled = true;
