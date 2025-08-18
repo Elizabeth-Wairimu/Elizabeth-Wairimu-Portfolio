@@ -658,10 +658,10 @@
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="services.html" class="nav-link active">Services</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
                     <li><a href="educationexperience.html" class="nav-link">Education & Experience</a></li>
                     <li><a href="success-stories.html" class="nav-link">Success Stories</a></li>
-                    <li><a href="#" class="nav-link" onclick="alert('Blog page coming soon!')">Blog</a></li>
-                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
             <div class="mobile-menu-toggle" id="mobileToggle">
@@ -703,7 +703,7 @@
                             <div class="pricing-label">Starting from</div>
                             <div class="pricing-value">$1,500/month</div>
                         </div>
-                        <a href="index.html#contact" class="get-started-btn">Get Started</a>
+                        <a href="contact.html" class="get-started-btn">Get Started</a>
                     </div>
                 </div>
 
@@ -727,7 +727,7 @@
                             <div class="pricing-label">Starting from</div>
                             <div class="pricing-value">$2,000/month</div>
                         </div>
-                        <a href="index.html#contact" class="get-started-btn">Get Started</a>
+                        <a href="contact.html" class="get-started-btn">Get Started</a>
                     </div>
                 </div>
 
@@ -751,7 +751,7 @@
                             <div class="pricing-label">Starting from</div>
                             <div class="pricing-value">$1,800/month</div>
                         </div>
-                        <a href="index.html#contact" class="get-started-btn">Get Started</a>
+                        <a href="contact.html" class="get-started-btn">Get Started</a>
                     </div>
                 </div>
 
@@ -775,7 +775,7 @@
                             <div class="pricing-label">Starting from</div>
                             <div class="pricing-value">$1,200/month</div>
                         </div>
-                        <a href="index.html#contact" class="get-started-btn">Get Started</a>
+                        <a href="contact.html" class="get-started-btn">Get Started</a>
                     </div>
                 </div>
 
@@ -799,7 +799,7 @@
                             <div class="pricing-label">Starting from</div>
                             <div class="pricing-value">$1,000/month</div>
                         </div>
-                        <a href="index.html#contact" class="get-started-btn">Get Started</a>
+                        <a href="contact.html" class="get-started-btn">Get Started</a>
                     </div>
                 </div>
 
@@ -826,6 +826,30 @@
                         <a href="index.html#contact" class="get-started-btn">Get Started</a>
                     </div>
                 </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-badge">Creative Design</div>
+                    <h3>Graphic Design & Brand Identity</h3>
+                    <p class="service-brief">Professional graphic design services that create compelling visual identities and marketing materials.</p>
+                    <button class="read-more-btn">Read More</button>
+                    
+                    <div class="service-details">
+                        <p class="service-description">Comprehensive graphic design and brand identity services that bring your vision to life. From logo design to complete brand systems, we create visually stunning materials that communicate your brand message effectively and leave lasting impressions on your target audience.</p>
+                        <ul class="service-features">
+                            <li>Custom logo design and brand identity development</li>
+                            <li>Marketing collateral and print design (brochures, flyers, business cards)</li>
+                            <li>Digital graphics for web and social media</li>
+                            <li>Brand guidelines and style guide creation</li>
+                            <li>Packaging design and product graphics</li>
+                            <li>Presentation design and infographic creation</li>
+                        </ul>
+                        <div class="service-pricing">
+                            <div class="pricing-label">Starting from</div>
+                            <div class="pricing-value">$500/project</div>
+                        </div>
+                        <a href="contact.html" class="get-started-btn">Get Started</a>
+                    </div>
+                </div>
             </section>
 
             <!-- CTA Section -->
@@ -834,7 +858,7 @@
                     <h3 class="cta-title">Ready to Transform Your Digital Presence?</h3>
                     <p class="cta-description">Let's discuss how my unique blend of marketing expertise and analytical precision can drive your business growth.</p>
                     <div>
-                        <a href="index.html#contact" class="btn btn-primary">Start Your Project</a>
+                        <a href="contact.html" class="btn btn-primary">Start Your Project</a>
                         <a href="success-stories.html" class="btn btn-outline">View Success Stories</a>
                     </div>
                 </div>
@@ -1001,7 +1025,7 @@
                 link.addEventListener('click', function(e) {
                     // For demo purposes, we'll allow navigation to existing pages
                     // In a real scenario, you might want to check if the file exists
-                    const existingPages = ['index.html', 'about.html', 'services.html', 'educationexperience.html', 'success-stories.html'];
+                    const existingPages = ['index.html', 'about.html', 'services.html', 'portfolio.html', 'educationexperience.html', 'success-stories.html', 'contact.html'];
                     
                     if (!existingPages.includes(href) && !href.includes('#')) {
                         e.preventDefault();
