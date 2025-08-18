@@ -660,7 +660,7 @@
                     <li><a href="services.html" class="nav-link active">Services</a></li>
                     <li><a href="educationexperience.html" class="nav-link">Education & Experience</a></li>
                     <li><a href="success-stories.html" class="nav-link">Success Stories</a></li>
-                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="#" class="nav-link" onclick="alert('Blog page coming soon!')">Blog</a></li>
                     <li><a href="index.html#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
@@ -828,37 +828,6 @@
                 </div>
             </section>
 
-            <!-- Process Section -->
-            <section class="process-section fade-in">
-                <h2 class="process-title">How We Work Together</h2>
-                <div class="process-steps">
-                    <div class="process-step">
-                        <div class="step-number">1</div>
-                        <h3 class="step-title">Discovery & Strategy</h3>
-                        <p class="step-description">We start with a comprehensive analysis of your business, goals, and market to create a customized strategy.</p>
-                        <p class="step-kpi">Goal: 100% client alignment & clear success metrics</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">2</div>
-                        <h3 class="step-title">Implementation</h3>
-                        <p class="step-description">Our team executes the strategy with precision, setting up campaigns and systems for optimal performance.</p>
-                        <p class="step-kpi">Timeline: Launch within 2-3 weeks</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">3</div>
-                        <h3 class="step-title">Optimization</h3>
-                        <p class="step-description">Continuous monitoring and optimization ensure maximum ROI and sustained growth for your business.</p>
-                        <p class="step-kpi">Target: 15-25% improvement in first 60 days</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">4</div>
-                        <h3 class="step-title">Scale & Grow</h3>
-                        <p class="step-description">Once we achieve consistent results, we scale successful strategies to accelerate your business growth.</p>
-                        <p class="step-kpi">Outcome: 50-200% ROI increase</p>
-                    </div>
-                </div>
-            </section>
-
             <!-- CTA Section -->
             <section class="cta-section fade-in">
                 <div class="cta-content">
@@ -933,7 +902,13 @@
 
         // Close mobile menu when clicking on nav links
         document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
+            link.addEventListener('click', (e) => {
+                // Don't close menu for placeholder links
+                if (link.getAttribute('href') === '#') {
+                    e.preventDefault();
+                    return;
+                }
+                
                 navMenu.classList.remove('active');
                 mobileToggle.classList.remove('active');
             });
@@ -1003,6 +978,69 @@
         window.addEventListener('load', function() {
             document.body.style.opacity = '1';
         });
+
+        // Navigation error handling for missing pages
+        function handleNavigationError(pageName) {
+            const message = `The ${pageName} page is currently under development. Please check back soon!`;
+            alert(message);
+        }
+
+        // Check if pages exist and handle accordingly
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                
+                // Skip internal links and already handled links
+                if (href.startsWith('#') || href.includes('onclick')) {
+                    return;
+                }
+                
+                // Add click handler to check if page exists
+                link.addEventListener('click', function(e) {
+                    // For demo purposes, we'll allow navigation to existing pages
+                    // In a real scenario, you might want to check if the file exists
+                    const existingPages = ['index.html', 'about.html', 'services.html', 'educationexperience.html', 'success-stories.html'];
+                    
+                    if (!existingPages.includes(href) && !href.includes('#')) {
+                        e.preventDefault();
+                        const pageName = href.replace('.html', '').replace('-', ' ');
+                        handleNavigationError(pageName);
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
+
+            <!-- Process Section -->
+            <section class="process-section fade-in">
+                <h2 class="process-title">How We Work Together</h2>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Discovery & Strategy</h3>
+                        <p class="step-description">We start with a comprehensive analysis of your business, goals, and market to create a customized strategy.</p>
+                        <p class="step-kpi">Goal: 100% client alignment & clear success metrics</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Implementation</h3>
+                        <p class="step-description">Our team executes the strategy with precision, setting up campaigns and systems for optimal performance.</p>
+                        <p class="step-kpi">Timeline: Launch within 2-3 weeks</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">Optimization</h3>
+                        <p class="step-description">Continuous monitoring and optimization ensure maximum ROI and sustained growth for your business.</p>
+                        <p class="step-kpi">Target: 15-25% improvement in first 60 days</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3 class="step-title">Scale & Grow</h3>
+                        <p class="step-description">Once we achieve consistent results, we scale successful strategies to accelerate your business growth.</p>
+                        <p class="step-kpi">Outcome: 50-200% ROI increase</p>
+                    </div>
+                </div>
