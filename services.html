@@ -1021,16 +1021,19 @@
                     return;
                 }
                 
-                // Add click handler to check if page exists
+                // List of existing pages - removed navigation blocking
+                const existingPages = ['index.html', 'about.html', 'services.html', 'portfolio.html', 'educationexperience.html', 'success-stories.html', 'contact.html'];
+                
+                // Only prevent navigation to truly non-existent pages
                 link.addEventListener('click', function(e) {
-                    // For demo purposes, we'll allow navigation to existing pages
-                    // In a real scenario, you might want to check if the file exists
-                    const existingPages = ['index.html', 'about.html', 'services.html', 'portfolio.html', 'educationexperience.html', 'success-stories.html', 'contact.html'];
-                    
-                    if (!existingPages.includes(href) && !href.includes('#')) {
-                        e.preventDefault();
-                        const pageName = href.replace('.html', '').replace('-', ' ');
-                        handleNavigationError(pageName);
+                    // Only block if page definitely doesn't exist AND it's not a relative link
+                    if (!existingPages.includes(href) && !href.includes('#') && href.endsWith('.html')) {
+                        // Only block if it's clearly a missing page
+                        if (href === 'blog.html' || href === 'missing.html') {
+                            e.preventDefault();
+                            const pageName = href.replace('.html', '').replace('-', ' ');
+                            handleNavigationError(pageName);
+                        }
                     }
                 });
             });
