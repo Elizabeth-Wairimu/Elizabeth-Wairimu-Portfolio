@@ -1,1 +1,1360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Elizabeth Edge | Digital Marketing & GIS Expert</title>
+    <meta name="description" content="Explore Elizabeth Edge's portfolio featuring digital marketing campaigns, GIS projects, graphic designs, and proven results across multiple industries.">
+    <meta name="keywords" content="digital marketing portfolio, GIS projects, graphic design, Mailchimp campaigns, Meta insights, Canva designs">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        /* Brand Colors */
+        :root {
+            --burgundy: #3B060A;
+            --gold: #d4af37;
+            --off-white: #FFF5F2;
+            --white: #ffffff;
+            --ink: #1a1a1a;
+            --muted: #555;
+            --light-gray: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--ink);
+            background: var(--white);
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--burgundy);
+            color: white;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            height: 64px;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            height: 64px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            background: var(--gold);
+            color: var(--burgundy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            border: 2px solid var(--gold);
+        }
+
+        .brand-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: color 0.3s, transform 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .nav-link:hover {
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--gold);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Main Content */
+        .main-content {
+            min-height: calc(100vh - 128px);
+            padding: 4rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--burgundy);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .page-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: var(--muted);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Filter Tabs */
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            padding: 0.8rem 1.5rem;
+            background: transparent;
+            border: 2px solid var(--burgundy);
+            color: var(--burgundy);
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .filter-tab.active,
+        .filter-tab:hover {
+            background: var(--burgundy);
+            color: white;
+        }
+
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .portfolio-item {
+            background: var(--off-white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(59, 6, 10, 0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(59, 6, 10, 0.12);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--burgundy), var(--gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: 700;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portfolio-image.placeholder::before {
+            content: attr(data-icon);
+            font-size: 3rem;
+        }
+
+        .portfolio-content {
+            padding: 1.5rem;
+        }
+
+        .portfolio-category {
+            background: var(--gold);
+            color: var(--burgundy);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .portfolio-title {
+            color: var(--burgundy);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            line-height: 1.3;
+        }
+
+        .portfolio-description {
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-stats {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            flex: 1;
+            min-width: 80px;
+        }
+
+        .stat-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--burgundy);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .portfolio-links {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .portfolio-link {
+            padding: 6px 12px;
+            background: var(--burgundy);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-link:hover {
+            background: #2a0507;
+            transform: translateY(-1px);
+        }
+
+        .portfolio-link.secondary {
+            background: transparent;
+            color: var(--burgundy);
+            border: 1px solid var(--burgundy);
+        }
+
+        .portfolio-link.secondary:hover {
+            background: var(--burgundy);
+            color: white;
+        }
+
+        /* Tools & Platforms Section */
+        .tools-section {
+            background: var(--light-gray);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            margin: 4rem 0;
+        }
+
+        .tools-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--burgundy);
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .tool-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 15px rgba(59, 6, 10, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .tool-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(59, 6, 10, 0.1);
+        }
+
+        .tool-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--burgundy);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+
+        .tool-name {
+            color: var(--burgundy);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tool-description {
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--burgundy);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .cta-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .cta-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            margin: 0.3rem;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--burgundy);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 4px 15px rgba(212, 175, 55, .3);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--gold);
+            color: var(--gold);
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: var(--burgundy);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--burgundy);
+            color: white;
+            padding: 0;
+            height: 64px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            height: 64px;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .footer-left {
+            text-align: left;
+        }
+
+        .footer-center {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .footer-right {
+            text-align: right;
+        }
+
+        .footer-badge {
+            background: var(--gold);
+            color: var(--burgundy);
+            padding: 6px 12px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .footer-badge:hover {
+            background: #b8941f;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .footer-copyright {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Modal for Portfolio Details */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-header {
+            padding: 2rem 2rem 1rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--muted);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: var(--light-gray);
+            color: var(--burgundy);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--burgundy);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .logo-container {
+                gap: 0.5rem;
+            }
+
+            .brand-name {
+                font-size: 1.2rem;
+            }
+
+            .main-content {
+                padding: 2rem 1rem;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .filter-tabs {
+                gap: 0.5rem;
+            }
+
+            .filter-tab {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .tools-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+
+            .tool-item {
+                padding: 1rem;
+            }
+
+            .tool-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .cta-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                height: auto;
+                padding: 1rem;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .footer-left,
+            .footer-right {
+                text-align: center;
+            }
+
+            .footer-center {
+                order: -1;
+            }
+
+            .modal {
+                padding: 1rem;
+            }
+
+            .modal-header,
+            .modal-body {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-container {
+                padding: 0 1rem;
+            }
+
+            .main-content {
+                padding: 1.5rem 1rem;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .portfolio-stats {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .portfolio-links {
+                flex-direction: column;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile menu animation */
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Hide/Show portfolio items based on filter */
+        .portfolio-item.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="index.html" class="logo">EE</a>
+                <a href="index.html" class="brand-name">Elizabeth Edge</a>
+            </div>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="educationexperience.html" class="nav-link">Education & Experience</a></li>
+                    <li><a href="success-stories.html" class="nav-link">Success Stories</a></li>
+                    <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <section class="page-header fade-in">
+                <span class="eyebrow">My Work</span>
+                <h1 class="page-title">Portfolio</h1>
+                <p class="page-subtitle">Explore real projects and measurable results across digital marketing, GIS analysis, and creative design. Each project demonstrates strategic thinking and data-driven execution.</p>
+            </section>
+
+            <!-- Filter Tabs -->
+            <section class="filter-tabs fade-in">
+                <button class="filter-tab active" data-filter="all">All Projects</button>
+                <button class="filter-tab" data-filter="digital-marketing">Digital Marketing</button>
+                <button class="filter-tab" data-filter="gis">GIS Analysis</button>
+                <button class="filter-tab" data-filter="design">Graphic Design</button>
+                <button class="filter-tab" data-filter="email">Email Marketing</button>
+                <button class="filter-tab" data-filter="social">Social Media</button>
+            </section>
+
+            <!-- Portfolio Grid -->
+            <section class="portfolio-grid">
+                <!-- Digital Marketing Projects -->
+                <div class="portfolio-item fade-in" data-category="digital-marketing">
+                    <div class="portfolio-image placeholder" data-icon="📊">
+                        <!-- Replace with: <img src="images/blog-content.jpg" alt="Content Marketing Blog"> -->
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">Content Marketing</span>
+                        <h3 class="portfolio-title">Strategic Blog Content & SEO</h3>
+                        <p class="portfolio-description">Content marketing strategy that increased organic traffic by 250% and generated high-quality leads through strategic blog content.</p>
+                        <div class="portfolio-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">250%</span>
+                                <span class="stat-label">Traffic ↗</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">85%</span>
+                                <span class="stat-label">Lead Quality</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">24</span>
+                                <span class="stat-label">Articles</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-links">
+                            <a href="#" class="portfolio-link" onclick="openModal('blogDetails')">Read Articles</a>
+                            <a href="YOUR_BLOG_LINK" target="_blank" class="portfolio-link secondary">Visit Blog</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Virtual Assistance -->
+                <div class="portfolio-item fade-in" data-category="digital-marketing">
+                    <div class="portfolio-image placeholder" data-icon="⚙️">
+                        <!-- Replace with: <img src="images/process-optimization.jpg" alt="Business Process Optimization"> -->
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">Process Optimization</span>
+                        <h3 class="portfolio-title">Business Automation & VA Services</h3>
+                        <p class="portfolio-description">Streamlined business operations saving 20+ hours weekly through automated workflows and efficient virtual assistance.</p>
+                        <div class="portfolio-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">20+</span>
+                                <span class="stat-label">Hours Saved</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">60%</span>
+                                <span class="stat-label">Efficiency ↗</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">5</span>
+                                <span class="stat-label">Workflows</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-links">
+                            <a href="#" class="portfolio-link" onclick="openModal('vaDetails')">View Process</a>
+                            <a href="contact.html" class="portfolio-link secondary">Hire Me</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tools & Platforms Section -->
+            <section class="tools-section fade-in">
+                <h2 class="tools-title">Tools & Platforms I Use</h2>
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <div class="tool-icon">📊</div>
+                        <h4 class="tool-name">Google Ads</h4>
+                        <p class="tool-description">Campaign management & optimization</p>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">📘</div>
+                        <h4 class="tool-name">Meta Business</h4>
+                        <p class="tool-description">Facebook & Instagram advertising</p>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">📧</div>
+                        <h4 class="tool-name">Mailchimp</h4>
+                        <p class="tool-description">Email automation & campaigns</p>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">🎨</div>
+                        <h4 class="tool-name">Canva Pro</h4>
+                        <p class="tool-description">Graphic design & branding</p>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">🗺️</div>
+                        <h4 class="tool-name">ArcGIS</h4>
+                        <p class="tool-description">Geographic analysis & mapping</p>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">📈</div>
+                        <h4 class="tool-name">Google Analytics</h4>
+                        <p class="tool-description">Performance tracking & insights</p>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">🔗</div>
+                        <h4 class="tool-name">LinkedIn</h4>
+                        <p class="tool-description">Professional networking & content</p>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">📱</div>
+                        <h4 class="tool-name">Social Platforms</h4>
+                        <p class="tool-description">Multi-platform management</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section fade-in">
+                <h3 class="cta-title">Ready to Create Something Amazing?</h3>
+                <p class="cta-description">Let's discuss your project and how we can achieve similar results for your business. Every project starts with understanding your unique goals.</p>
+                <div>
+                    <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+                    <a href="services.html" class="btn btn-outline">View Services</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <p class="footer-copyright">&copy; 2025 Elizabeth Edge. All rights reserved.</p>
+            </div>
+            <div class="footer-center">
+                <a href="https://linkedin.com/in/elizabeth-edge" target="_blank" class="footer-badge" rel="noopener">
+                    LinkedIn
+                </a>
+            </div>
+            <div class="footer-right">
+                <a href="mailto:elizabeth.edge@gmail.com" class="footer-badge">
+                    Email
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Portfolio Details -->
+    <div class="modal" id="portfolioModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <h3 id="modalTitle">Project Details</h3>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle with animation
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            navMenu.classList.toggle('active');
+            mobileToggle.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on nav links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+            });
+        });
+
+        // Portfolio Filter Functionality
+        const filterTabs = document.querySelectorAll('.filter-tab');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Update active tab
+                filterTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                const filter = tab.getAttribute('data-filter');
+
+                // Filter portfolio items
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // Modal functionality
+        function openModal(detailsId) {
+            const modal = document.getElementById('portfolioModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+
+            const details = {
+                googleAdsDetails: {
+                    title: "Google Ads E-commerce Campaign",
+                    content: `
+                        <h4>Campaign Overview</h4>
+                        <p>A comprehensive Google Ads strategy for an e-commerce client that resulted in significant cost reduction and conversion improvements.</p>
+                        
+                        <h4>Strategy & Implementation</h4>
+                        <ul>
+                            <li>Keyword research and negative keyword optimization</li>
+                            <li>Ad copy A/B testing with 15 variations</li>
+                            <li>Landing page optimization and conversion tracking</li>
+                            <li>Audience segmentation and bid adjustments</li>
+                            <li>Shopping campaigns with product feed optimization</li>
+                        </ul>
+                        
+                        <h4>Results Achieved</h4>
+                        <ul>
+                            <li><strong>28% reduction in CPC</strong> through keyword optimization</li>
+                            <li><strong>145% increase in conversions</strong> via improved targeting</li>
+                            <li><strong>3.2x ROI improvement</strong> within 90 days</li>
+                            <li><strong>60% increase in quality score</strong> across campaigns</li>
+                        </ul>
+                        
+                        <p><strong>Tools Used:</strong> Google Ads, Google Analytics, Google Tag Manager, Keyword Planner</p>
+                    `
+                },
+                gisDetails: {
+                    title: "GIS Market Penetration Analysis",
+                    content: `
+                        <h4>Project Overview</h4>
+                        <p>Geographic analysis to identify untapped markets and optimize location-based marketing strategies for maximum penetration.</p>
+                        
+                        <h4>Analysis Process</h4>
+                        <ul>
+                            <li>Demographic and psychographic mapping</li>
+                            <li>Competitor location analysis and market gaps</li>
+                            <li>Customer journey geographic tracking</li>
+                            <li>Territory optimization recommendations</li>
+                            <li>Location-based campaign targeting setup</li>
+                        </ul>
+                        
+                        <h4>Impact & Results</h4>
+                        <ul>
+                            <li><strong>35% higher conversion rates</strong> in identified markets</li>
+                            <li><strong>12 new profitable markets</strong> discovered</li>
+                            <li><strong>200% expansion</strong> in geographic coverage</li>
+                            <li><strong>$75K additional revenue</strong> from new territories</li>
+                        </ul>
+                        
+                        <p><strong>Tools Used:</strong> ArcGIS, QGIS, Google Earth, Census Data APIs</p>
+                    `
+                },
+                emailDetails: {
+                    title: "Mailchimp Email Automation Success",
+                    content: `
+                        <h4>Campaign Overview</h4>
+                        <p>Advanced email automation sequences using Mailchimp's AI features to nurture leads and drive conversions.</p>
+                        
+                        <h4>Automation Strategy</h4>
+                        <ul>
+                            <li>Welcome series with 7-email onboarding sequence</li>
+                            <li>Abandoned cart recovery automation</li>
+                            <li>Post-purchase follow-up and upsell campaigns</li>
+                            <li>Segmented newsletters based on user behavior</li>
+                            <li>Re-engagement campaigns for inactive subscribers</li>
+                        </ul>
+                        
+                        <h4>Performance Results</h4>
+                        <ul>
+                            <li><strong>45% higher open rates</strong> vs industry average</li>
+                            <li><strong>$50K additional revenue</strong> generated</li>
+                            <li><strong>12 automated sequences</strong> implemented</li>
+                            <li><strong>85% deliverability rate</strong> maintained</li>
+                        </ul>
+                        
+                        <p><strong>Tools Used:</strong> Mailchimp, Zapier, Google Analytics, A/B Testing Tools</p>
+                    `
+                },
+                designDetails: {
+                    title: "Brand Identity & Graphic Design Portfolio",
+                    content: `
+                        <h4>Design Projects</h4>
+                        <p>Complete visual brand development using Canva Pro, creating cohesive brand identities that resonate with target audiences.</p>
+                        
+                        <h4>Design Services</h4>
+                        <ul>
+                            <li>Logo design and brand identity development</li>
+                            <li>Social media template creation and brand kits</li>
+                            <li>Marketing collateral and presentation designs</li>
+                            <li>Website graphics and promotional materials</li>
+                            <li>Print design for business cards and brochures</li>
+                        </ul>
+                        
+                        <h4>Portfolio Highlights</h4>
+                        <ul>
+                            <li><strong>50+ unique designs</strong> across various industries</li>
+                            <li><strong>5 complete brand identities</strong> developed</li>
+                            <li><strong>100% client satisfaction</strong> rate</li>
+                            <li><strong>Consistent brand guidelines</strong> for all projects</li>
+                        </ul>
+                        
+                        <p><strong>Tools Used:</strong> Canva Pro, Adobe Creative Suite, Figma, Brand Kit Templates</p>
+                    `
+                },
+                socialDetails: {
+                    title: "Meta Business Growth Strategy",
+                    content: `
+                        <h4>Social Media Growth Campaign</h4>
+                        <p>Comprehensive social media strategy that dramatically increased brand awareness and engagement across Meta platforms.</p>
+                        
+                        <h4>Strategy Implementation</h4>
+                        <ul>
+                            <li>Content calendar development and strategic posting</li>
+                            <li>Community engagement and relationship building</li>
+                            <li>Influencer partnerships and collaborations</li>
+                            <li>Meta advertising campaigns with precise targeting</li>
+                            <li>Analytics tracking and performance optimization</li>
+                        </ul>
+                        
+                        <h4>Growth Metrics</h4>
+                        <ul>
+                            <li><strong>300% follower growth</strong> in 6 months</li>
+                            <li><strong>180% engagement increase</strong> across all posts</li>
+                            <li><strong>6-month transformation</strong> timeline</li>
+                            <li><strong>85% reach improvement</strong> through optimization</li>
+                        </ul>
+                        
+                        <p><strong>Tools Used:</strong> Meta Business Suite, Creator Studio, Canva, Analytics Tools</p>
+                    `
+                },
+                blogDetails: {
+                    title: "Strategic Content Marketing & SEO",
+                    content: `
+                        <h4>Content Marketing Strategy</h4>
+                        <p>Strategic blog content development focused on SEO optimization and lead generation through valuable, industry-specific content.</p>
+                        
+                        <h4>Content Strategy</h4>
+                        <ul>
+                            <li>Keyword research and content gap analysis</li>
+                            <li>Long-form educational articles and guides</li>
+                            <li>Industry insights and thought leadership pieces</li>
+                            <li>SEO-optimized content with internal linking</li>
+                            <li>Content promotion and distribution strategy</li>
+                        </ul>
+                        
+                        <h4>Content Performance</h4>
+                        <ul>
+                            <li><strong>250% organic traffic increase</strong> in 6 months</li>
+                            <li><strong>85% lead quality improvement</strong> from content</li>
+                            <li><strong>24 high-performing articles</strong> published</li>
+                            <li><strong>Top 3 rankings</strong> for target keywords</li>
+                        </ul>
+                        
+                        <p><strong>Tools Used:</strong> WordPress, SEMrush, Ahrefs, Google Search Console, Content Management Systems</p>
+                    `
+                }
+            };
+
+            const detail = details[detailsId];
+            if (detail) {
+                modalTitle.textContent = detail.title;
+                modalBody.innerHTML = detail.content;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('portfolioModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('portfolioModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal with ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.header')) {
+                navMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+            }
+        });
+
+        // Enhanced mobile responsiveness
+        function handleResize() {
+            if (window.innerWidth > 768) {
+                navMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+
+        // Prevent zoom on double tap for mobile
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+    </script>
+</body>
+</html>images/google-ads-campaign.jpg" alt="Google Ads Campaign"> -->
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">Google Ads</span>
+                        <h3 class="portfolio-title">E-commerce Growth Campaign</h3>
+                        <p class="portfolio-description">Comprehensive Google Ads strategy that reduced CPC by 28% while increasing conversions by 145% for an online retail client.</p>
+                        <div class="portfolio-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">28%</span>
+                                <span class="stat-label">CPC Reduction</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">145%</span>
+                                <span class="stat-label">Conv. Increase</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">3.2x</span>
+                                <span class="stat-label">ROI</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-links">
+                            <a href="#" class="portfolio-link" onclick="openModal('googleAdsDetails')">View Details</a>
+                            <a href="YOUR_GOOGLE_ADS_LINK" target="_blank" class="portfolio-link secondary">Live Campaign</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GIS Project -->
+                <div class="portfolio-item fade-in" data-category="gis">
+                    <div class="portfolio-image placeholder" data-icon="🗺️">
+                        <!-- Replace with: <img src="images/gis-analysis.jpg" alt="GIS Market Analysis"> -->
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">GIS Analysis</span>
+                        <h3 class="portfolio-title">Market Penetration Analysis</h3>
+                        <p class="portfolio-description">Geographic analysis that identified untapped markets, resulting in 35% higher conversion rates through location-based targeting.</p>
+                        <div class="portfolio-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">35%</span>
+                                <span class="stat-label">Higher Conv.</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">12</span>
+                                <span class="stat-label">New Markets</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">200%</span>
+                                <span class="stat-label">Coverage</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-links">
+                            <a href="#" class="portfolio-link" onclick="openModal('gisDetails')">View Analysis</a>
+                            <a href="YOUR_GIS_REPORT_LINK" target="_blank" class="portfolio-link secondary">Full Report</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email Marketing -->
+                <div class="portfolio-item fade-in" data-category="email">
+                    <div class="portfolio-image placeholder" data-icon="📧">
+                        <!-- Replace with: <img src="images/email-campaign.jpg" alt="Email Marketing Campaign"> -->
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">Email Marketing</span>
+                        <h3 class="portfolio-title">Mailchimp Automation Sequences</h3>
+                        <p class="portfolio-description">AI-powered email automation that achieved 45% higher open rates and generated $50K in additional revenue.</p>
+                        <div class="portfolio-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">45%</span>
+                                <span class="stat-label">Open Rate ↗</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">$50K</span>
+                                <span class="stat-label">Revenue</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">12</span>
+                                <span class="stat-label">Sequences</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-links">
+                            <a href="#" class="portfolio-link" onclick="openModal('emailDetails')">View Campaign</a>
+                            <a href="YOUR_MAILCHIMP_LINK" target="_blank" class="portfolio-link secondary">Mailchimp</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Graphic Design -->
+                <div class="portfolio-item fade-in" data-category="design">
+                    <div class="portfolio-image placeholder" data-icon="🎨">
+                        <!-- Replace with: <img src="images/canva-designs.jpg" alt="Canva Design Portfolio"> -->
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">Graphic Design</span>
+                        <h3 class="portfolio-title">Brand Identity & Social Media Graphics</h3>
+                        <p class="portfolio-description">Complete visual brand overhaul using Canva Pro, including logos, social media templates, and marketing materials.</p>
+                        <div class="portfolio-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">50+</span>
+                                <span class="stat-label">Designs</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">5</span>
+                                <span class="stat-label">Brands</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">100%</span>
+                                <span class="stat-label">Satisfaction</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-links">
+                            <a href="#" class="portfolio-link" onclick="openModal('designDetails')">View Gallery</a>
+                            <a href="YOUR_CANVA_PROFILE_LINK" target="_blank" class="portfolio-link secondary">Canva Profile</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div class="portfolio-item fade-in" data-category="social">
+                    <div class="portfolio-image placeholder" data-icon="📱">
+                        <!-- Replace with: <img src="images/social-media-growth.jpg" alt="Social Media Growth"> -->
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">Social Media</span>
+                        <h3 class="portfolio-title">Meta Business Growth Strategy</h3>
+                        <p class="portfolio-description">Strategic social media management that grew follower base by 300% and increased engagement by 180% in 6 months.</p>
+                        <div class="portfolio-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">300%</span>
+                                <span class="stat-label">Followers ↗</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">180%</span>
+                                <span class="stat-label">Engagement</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">6</span>
+                                <span class="stat-label">Months</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-links">
+                            <a href="#" class="portfolio-link" onclick="openModal('socialDetails')">View Results</a>
+                            <a href="YOUR_META_INSIGHTS_LINK" target="_blank" class="portfolio-link secondary">Meta Insights</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Content -->
+                <div class="portfolio-item fade-in" data-category="digital-marketing">
+                    <div class="portfolio-image placeholder" data-icon="✍️">
+                        <!-- Replace with: <img src="
