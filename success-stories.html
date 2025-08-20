@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Client Success Stories - Elizabeth Edge | Digital Marketing Strategist</title>
+    <title>Client Success Stories - Elizabeth | Digital Marketing Strategist</title>
     <meta name="description" content="Discover success stories from my clients who achieved remarkable growth through my digital marketing, GIS, and virtual assistance services. Real results from Sundrops Realtors, Ministry of Mining, and more.">
-    <meta name="keywords" content="client success stories, digital marketing results, Elizabeth Edge testimonials, GIS expertise, virtual assistant success, business growth">
+    <meta name="keywords" content="client success stories, digital marketing results, Elizabeth testimonials, GIS expertise, virtual assistant success, business growth">
     
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="Client Success Stories - Elizabeth Edge">
+    <meta property="og:title" content="Client Success Stories - Elizabeth">
     <meta property="og:description" content="See how Elizabeth's digital marketing and GIS expertise drives real business success">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://elizabethedge.vercel.app/success-stories.html">
@@ -100,7 +100,7 @@
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1.5rem;
             align-items: center;
         }
 
@@ -111,6 +111,7 @@
             transition: color 0.3s, transform 0.3s;
             padding: 0.5rem 1rem;
             border-radius: 5px;
+            white-space: nowrap;
         }
 
         .nav-link:hover {
@@ -358,12 +359,101 @@
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .cta-button:hover {
             background: #b8941f;
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Contact Form Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .close {
+            color: var(--muted);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: var(--burgundy);
+        }
+
+        .contact-form {
+            margin-top: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--burgundy);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--burgundy);
+        }
+
+        .submit-btn {
+            background: var(--burgundy);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #4B0812;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 6, 10, 0.3);
         }
 
         /* Footer */
@@ -428,6 +518,17 @@
         }
 
         /* Responsive Design */
+        @media (max-width: 968px) {
+            .nav-menu {
+                gap: 1rem;
+            }
+            
+            .nav-link {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
@@ -439,10 +540,22 @@
                 flex-direction: column;
                 padding: 1rem;
                 box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                gap: 0.5rem;
             }
 
             .nav-menu.active {
                 display: flex;
+            }
+
+            .nav-menu li {
+                width: 100%;
+            }
+
+            .nav-link {
+                display: block;
+                width: 100%;
+                text-align: center;
+                padding: 1rem;
             }
 
             .mobile-menu-toggle {
@@ -490,9 +603,14 @@
             .footer-center {
                 order: -1;
             }
+
+            .modal-content {
+                margin: 10% auto;
+                padding: 1.5rem;
+            }
         }
 
-            @media (max-width: 480px) {
+        @media (max-width: 480px) {
             .results-grid {
                 grid-template-columns: 1fr;
             }
@@ -509,6 +627,14 @@
                 padding: 4px 8px;
                 font-size: 0.75rem;
                 gap: 0.2rem;
+            }
+
+            .header-container {
+                padding: 0 1rem;
+            }
+
+            .main-content {
+                padding: 2rem 1rem;
             }
         }
 
@@ -528,6 +654,16 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Success message */
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -535,14 +671,15 @@
     <header class="header">
         <div class="header-container">
             <div class="logo-container">
-                <a href="index.html" class="logo">EE</a>
-                <a href="index.html" class="brand-name">Elizabeth Edge</a>
+                <a href="index.html" class="logo">E</a>
+                <a href="index.html" class="brand-name">Elizabeth</a>
             </div>
             <nav>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
                     <li><a href="educationexperience.html" class="nav-link">Education & Experience</a></li>
                     <li><a href="success-stories.html" class="nav-link active">Success Stories</a></li>
                     <li><a href="index.html#contact" class="nav-link">Contact</a></li>
@@ -723,24 +860,100 @@
             <section class="cta-section fade-in">
                 <h2 class="cta-title">Ready to Write Your Success Story?</h2>
                 <p class="cta-description">Let me help you achieve similar results for your business. Get started with a free consultation today.</p>
-                <a href="index.html#contact" class="cta-button">Begin Your Success Journey</a>
+                <button class="cta-button" onclick="openContactModal()">Begin Your Success Journey</button>
             </section>
         </div>
     </main>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeContactModal()">&times;</span>
+            <h2 style="color: var(--burgundy); margin-bottom: 1rem;">Schedule Your Free Consultation</h2>
+            <div class="success-message" id="successMessage">
+                Thank you! Your message has been sent successfully. I'll get back to you within 24 hours.
+            </div>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="business">Business/Company Name</label>
+                    <input type="text" id="business" name="business">
+                </div>
+                
+                <div class="form-group">
+                    <label for="service">Service Interest *</label>
+                    <select id="service" name="service" required>
+                        <option value="">Select a service</option>
+                        <option value="Digital Marketing">Digital Marketing</option>
+                        <option value="GIS Services">GIS Services</option>
+                        <option value="Virtual Assistant">Virtual Assistant</option>
+                        <option value="Social Media Management">Social Media Management</option>
+                        <option value="Email Marketing">Email Marketing</option>
+                        <option value="Multiple Services">Multiple Services</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="budget">Monthly Budget Range</label>
+                    <select id="budget" name="budget">
+                        <option value="">Select budget range</option>
+                        <option value="Under $500">Under $500</option>
+                        <option value="$500 - $1,000">$500 - $1,000</option>
+                        <option value="$1,000 - $2,500">$1,000 - $2,500</option>
+                        <option value="$2,500 - $5,000">$2,500 - $5,000</option>
+                        <option value="$5,000+">$5,000+</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="timeline">Project Timeline</label>
+                    <select id="timeline" name="timeline">
+                        <option value="">Select timeline</option>
+                        <option value="ASAP">ASAP</option>
+                        <option value="Within 1 month">Within 1 month</option>
+                        <option value="1-3 months">1-3 months</option>
+                        <option value="3-6 months">3-6 months</option>
+                        <option value="6+ months">6+ months</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Project Details *</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Tell me about your project goals, challenges, and how I can help you achieve success..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message & Schedule Call</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-left">
-                <p class="footer-copyright">&copy; 2025 Elizabeth Edge. All rights reserved.</p>
+                <p class="footer-copyright">&copy; 2025 Elizabeth. All rights reserved.</p>
             </div>
             <div class="footer-center">
-                <a href="https://linkedin.com/in/elizabeth-edge" target="_blank" class="footer-badge" rel="noopener">
+                <a href="https://linkedin.com/in/elizabeth-wairimu-2069a6289" target="_blank" class="footer-badge" rel="noopener">
                     LinkedIn
                 </a>
             </div>
             <div class="footer-right">
-                <a href="mailto:elizabeth.edge@gmail.com" class="footer-badge">
+                <a href="mailto:elizabeth.wairimu@gmail.com" class="footer-badge">
                     Email
                 </a>
             </div>
@@ -814,6 +1027,87 @@
                 full.style.display = 'none';
                 button.textContent = 'Read More →';
             }
+        }
+
+        // Contact Modal Functions
+        function openContactModal() {
+            document.getElementById('contactModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeContactModal() {
+            document.getElementById('contactModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('contactModal');
+            if (event.target === modal) {
+                closeContactModal();
+            }
+        });
+
+        // Form submission with EmailJS
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Show loading state
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate email sending (replace with actual EmailJS integration)
+            setTimeout(() => {
+                // Show success message
+                document.getElementById('successMessage').style.display = 'block';
+                
+                // Reset form
+                this.reset();
+                
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                
+                // Close modal after 3 seconds
+                setTimeout(() => {
+                    closeContactModal();
+                    document.getElementById('successMessage').style.display = 'none';
+                }, 3000);
+                
+                // Here you would integrate with EmailJS or your preferred email service
+                console.log('Form data:', data);
+                
+            }, 2000);
+        });
+
+        // Initialize EmailJS (you'll need to add your EmailJS keys)
+        // emailjs.init("YOUR_PUBLIC_KEY");
+        
+        // Alternative email sending function
+        function sendEmail(formData) {
+            // You can integrate with EmailJS, Formspree, or any other email service
+            // Example with mailto (opens email client):
+            const subject = `New consultation request from ${formData.name}`;
+            const body = `
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Business: ${formData.business}
+Service: ${formData.service}
+Budget: ${formData.budget}
+Timeline: ${formData.timeline}
+
+Message:
+${formData.message}
+            `;
+            
+            const mailtoLink = `mailto:elizabeth.wairimu@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
         }
     </script>
 </body>
