@@ -539,6 +539,17 @@
         }
 
         /* Responsive Design */
+        @media (max-width: 968px) {
+            .nav-menu {
+                gap: 1.5rem;
+            }
+            
+            .nav-link {
+                font-size: 0.9rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
@@ -550,10 +561,22 @@
                 flex-direction: column;
                 padding: 1rem;
                 box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                gap: 0.5rem;
             }
 
             .nav-menu.active {
                 display: flex;
+            }
+
+            .nav-link {
+                font-size: 1rem;
+                padding: 0.8rem 1rem;
+                text-align: center;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .nav-link:last-child {
+                border-bottom: none;
             }
 
             .mobile-menu-toggle {
@@ -664,7 +687,7 @@
                     <li><a href="services.html" class="nav-link active">Services</a></li>
                     <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
                     <li><a href="success-stories.html" class="nav-link">Success Stories</a></li>
-                    <li><a href="educationexperience.html" class="nav-link">Education & Experience</a></li>
+                    <li><a href="educationexperience.html" class="nav-link">Experience</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
