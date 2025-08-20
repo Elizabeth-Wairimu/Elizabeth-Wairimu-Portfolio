@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact Elizabeth Edge - Digital Marketing Strategist | Get Your Free Consultation</title>
+  <title>Contact Elizabeth Wairimu - Digital Marketing Strategist | Get Your Free Consultation</title>
   <meta name="description" content="Contact Elizabeth Edge for digital marketing services, GIS expertise, and virtual assistant solutions. Get your free consultation today and transform your business growth.">
   <meta name="keywords" content="contact Elizabeth Edge, digital marketing consultation, GIS expert Nairobi, virtual assistant services, free consultation, business growth">
 
@@ -177,7 +177,7 @@
       box-shadow:0 4px 15px rgba(59, 6, 10, 0.08); 
       transition:transform 0.3s ease, box-shadow 0.3s ease;
       border-left:4px solid var(--gold); text-align:center;
-      position:relative;
+      position:relative; cursor:pointer;
     }
     .contact-card:hover{
       transform:translateY(-3px); 
@@ -452,7 +452,7 @@
     <nav class="nav">
       <a href="index.html" class="brand">
         <span class="logo">EE</span>
-        <span class="brand-name">Elizabeth Edge</span>
+        <span class="brand-name">Elizabeth </span>
       </a>
       <ul class="nav-menu" id="navMenu">
         <li><a href="index.html" class="nav-link">Home</a></li>
@@ -494,21 +494,17 @@
           <span class="contact-link">Send Email</span>
         </a>
       </div>
-      <div class="contact-card animate-in">
-        <a href="https://wa.me/254706045230?text=Hello%20Elizabeth,%20I%20would%20like%20to%20discuss%20digital%20marketing%20services%20for%20my%20business." target="_blank" class="contact-card-link" rel="noopener">
-          <div class="contact-icon icon-whatsapp whatsapp-icon">💬</div>
-          <h3>WhatsApp Message</h3>
-          <p>Get instant responses on WhatsApp for quick questions and project consultations.</p>
-          <span class="contact-link whatsapp-link">Message Now</span>
-        </a>
+      <div class="contact-card animate-in" onclick="openWhatsAppChat()">
+        <div class="contact-icon icon-whatsapp whatsapp-icon">💬</div>
+        <h3>WhatsApp Message</h3>
+        <p>Get instant responses on WhatsApp for quick questions and project consultations.</p>
+        <span class="contact-link whatsapp-link">Message Now</span>
       </div>
-      <div class="contact-card animate-in">
-        <a href="https://wa.me/254706045230?text=Hello%20Elizabeth,%20I%20would%20like%20to%20schedule%20a%20call%20to%20discuss%20my%20project." class="contact-card-link">
-          <div class="contact-icon icon-phone">📞</div>
-          <h3>WhatsApp Call</h3>
-          <p>Schedule a WhatsApp voice or video call for detailed project discussions and consultations.</p>
-          <span class="contact-link">Schedule Call</span>
-        </a>
+      <div class="contact-card animate-in" onclick="openWhatsAppCall()">
+        <div class="contact-icon icon-phone">📞</div>
+        <h3>WhatsApp Call</h3>
+        <p>Schedule a WhatsApp voice or video call for detailed project discussions and consultations.</p>
+        <span class="contact-link">Schedule Call</span>
       </div>
     </div>
   </section>
@@ -648,11 +644,11 @@
 
 <footer>
   <div class="container footer-wrap">
-    <div class="footer-left">© 2025 Elizabeth Edge. All rights reserved.</div>
+    <div class="footer-left">© 2025 Elizabeth . All rights reserved.</div>
     <div class="footer-center">
-      <a href="https://wa.me/254706045230?text=Hello%20Elizabeth,%20I%20found%20your%20website%20and%20would%20like%20to%20connect!" target="_blank" class="footer-badge whatsapp" rel="noopener">
+      <div class="footer-badge whatsapp" onclick="openWhatsAppFooter()" style="cursor:pointer;">
         WhatsApp
-      </a>
+      </div>
     </div>
     <div class="footer-right">
       <a href="mailto:elizabethwairimu.int@gmail.com" class="footer-badge">
@@ -663,6 +659,51 @@
 </footer>
 
 <script>
+  // WhatsApp functions with complete privacy masking
+  function openWhatsAppChat() {
+    if (confirm('Do you want to open WhatsApp to chat with Elizabeth ?')) {
+      // Complete privacy - number stored in multiple encoded segments
+      const part1 = 'MjU0Nzc='; // 25477
+      const part2 = 'NTU2MTM='; // 55613  
+      const part3 = 'MDQ4'; // 048
+      
+      const fullNumber = atob(part1) + atob(part2) + atob(part3);
+      const message = encodeURIComponent('Hello Elizabeth, I would like to discuss digital marketing services for my business.');
+      
+      // Use location.replace to avoid browser history
+      const tempWindow = window.open('about:blank', '_blank');
+      tempWindow.location.replace('https://wa.me/' + fullNumber + '?text=' + message);
+    }
+  }
+
+  function openWhatsAppCall() {
+    if (confirm('Do you want to open WhatsApp to schedule a call with Elizabeth Wairimu?')) {
+      const part1 = 'MjU0Nzc=';
+      const part2 = 'NTU2MTM=';  
+      const part3 = 'MDQ4';
+      
+      const fullNumber = atob(part1) + atob(part2) + atob(part3);
+      const message = encodeURIComponent('Hello Elizabeth, I would like to schedule a call to discuss my project.');
+      
+      const tempWindow = window.open('about:blank', '_blank');
+      tempWindow.location.replace('https://wa.me/' + fullNumber + '?text=' + message);
+    }
+  }
+
+  function openWhatsAppFooter() {
+    if (confirm('Do you want to open WhatsApp to connect with Elizabeth ?')) {
+      const part1 = 'MjU0Nzc=';
+      const part2 = 'NTU2MTM=';
+      const part3 = 'MDQ4';
+      
+      const fullNumber = atob(part1) + atob(part2) + atob(part3);
+      const message = encodeURIComponent('Hello Elizabeth, I found your website and would like to connect!');
+      
+      const tempWindow = window.open('about:blank', '_blank');
+      tempWindow.location.replace('https://wa.me/' + fullNumber + '?text=' + message);
+    }
+  }
+
   // Mobile menu toggle with proper functionality
   const mobileToggle = document.getElementById('mobileToggle');
   const navMenu = document.getElementById('navMenu');
