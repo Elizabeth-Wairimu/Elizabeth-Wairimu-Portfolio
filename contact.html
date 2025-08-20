@@ -167,7 +167,7 @@
       .two-column{grid-template-columns:1fr}
     }
 
-    /* Contact Info Cards */
+    /* Contact Info Cards with Enhanced Motion */
     .contact-info{
       display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
       gap:1.5rem; margin:2rem 0;
@@ -175,17 +175,43 @@
     .contact-card{
       background:var(--card); border-radius:12px; padding:1.8rem;
       box-shadow:0 4px 15px rgba(59, 6, 10, 0.08); 
-      transition:transform 0.3s ease, box-shadow 0.3s ease;
+      transition:all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       border-left:4px solid var(--gold); text-align:center;
-      position:relative; cursor:pointer;
+      position:relative; cursor:pointer; overflow:hidden;
+      transform:translateY(0);
     }
+
+    /* Animated background gradient for contact cards */
+    .contact-card::before{
+      content:''; position:absolute; top:0; left:-100%;
+      width:100%; height:100%; z-index:1;
+      background:linear-gradient(90deg, transparent, rgba(212,175,55,0.1), transparent);
+      transition:left 0.6s ease;
+    }
+
+    .contact-card:hover::before{
+      left:100%;
+    }
+
     .contact-card:hover{
-      transform:translateY(-3px); 
-      box-shadow:0 8px 25px rgba(59, 6, 10, 0.12);
+      transform:translateY(-8px) scale(1.02); 
+      box-shadow:0 15px 35px rgba(59, 6, 10, 0.15);
+      border-left-color:var(--burgundy);
     }
+
+    /* Pulse animation for cards */
+    @keyframes cardPulse {
+      0%, 100% { box-shadow:0 4px 15px rgba(59, 6, 10, 0.08); }
+      50% { box-shadow:0 8px 25px rgba(212, 175, 55, 0.2); }
+    }
+
+    .contact-card:nth-child(1) { animation:cardPulse 3s ease-in-out infinite; animation-delay:0s; }
+    .contact-card:nth-child(2) { animation:cardPulse 3s ease-in-out infinite; animation-delay:0.5s; }
+    .contact-card:nth-child(3) { animation:cardPulse 3s ease-in-out infinite; animation-delay:1s; }
+
     .contact-card-link{
       text-decoration:none; color:inherit; display:block;
-      width:100%; height:100%;
+      width:100%; height:100%; position:relative; z-index:2;
     }
     .contact-card-link:hover{
       color:inherit;
@@ -195,71 +221,207 @@
       background:var(--burgundy); border-radius:50%;
       display:flex; align-items:center; justify-content:center;
       color:var(--gold); font-size:1.2rem; font-weight:700;
-      transition:all 0.3s ease;
+      transition:all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      position:relative; z-index:2;
     }
     .whatsapp-icon{
       background:var(--whatsapp) !important;
       color:#fff !important;
     }
     .contact-card:hover .contact-icon{
-      transform:scale(1.1);
+      transform:scale(1.2) rotate(360deg);
     }
 
-    /* Icon Animations */
+    /* Enhanced Icon Animations with Color Changes */
     .icon-email{
-      animation:emailBounce 2s ease-in-out infinite;
+      animation:emailFloat 3s ease-in-out infinite;
     }
     .icon-whatsapp{
-      animation:whatsappPulse 2s ease-in-out infinite;
+      animation:whatsappBounce 2.5s ease-in-out infinite;
     }
     .icon-phone{
-      animation:phoneRing 1.5s ease-in-out infinite;
+      animation:phoneWiggle 2.8s ease-in-out infinite;
     }
 
-    @keyframes emailBounce {
-      0%, 100% { transform:translateY(0); }
-      50% { transform:translateY(-4px); }
+    @keyframes emailFloat {
+      0%, 100% { 
+        transform:translateY(0) rotate(0deg) scale(1); 
+        background:var(--burgundy);
+        color:var(--gold);
+        box-shadow:0 0 0 rgba(59, 6, 10, 0.3);
+      }
+      25% { 
+        transform:translateY(-8px) rotate(-10deg) scale(1.1); 
+        background:linear-gradient(45deg, #FF6B6B, #4ECDC4);
+        color:#fff;
+        box-shadow:0 5px 15px rgba(255, 107, 107, 0.4);
+      }
+      50% { 
+        transform:translateY(-12px) rotate(5deg) scale(1.15); 
+        background:linear-gradient(45deg, #4ECDC4, #45B7D1);
+        color:#fff;
+        box-shadow:0 8px 20px rgba(78, 205, 196, 0.5);
+      }
+      75% { 
+        transform:translateY(-8px) rotate(10deg) scale(1.1); 
+        background:linear-gradient(45deg, #45B7D1, #96CEB4);
+        color:#fff;
+        box-shadow:0 5px 15px rgba(69, 183, 209, 0.4);
+      }
     }
 
-    @keyframes whatsappPulse {
-      0%, 100% { transform:scale(1); box-shadow:0 0 0 0 rgba(37, 211, 102, 0.4); }
-      50% { transform:scale(1.05); box-shadow:0 0 0 8px rgba(37, 211, 102, 0); }
+    @keyframes whatsappBounce {
+      0%, 100% { 
+        transform:scale(1) rotate(0deg); 
+        background:var(--whatsapp);
+        color:#fff;
+        box-shadow:0 0 0 rgba(37, 211, 102, 0.3);
+      }
+      20% { 
+        transform:scale(1.15) rotate(-8deg); 
+        background:linear-gradient(45deg, #25D366, #128C7E);
+        color:#fff;
+        box-shadow:0 0 15px rgba(37, 211, 102, 0.6);
+      }
+      40% { 
+        transform:scale(1.25) rotate(5deg); 
+        background:linear-gradient(45deg, #128C7E, #075E54);
+        color:#fff;
+        box-shadow:0 0 20px rgba(18, 140, 126, 0.7);
+      }
+      60% { 
+        transform:scale(1.2) rotate(-3deg); 
+        background:linear-gradient(45deg, #075E54, #25D366);
+        color:#fff;
+        box-shadow:0 0 25px rgba(7, 94, 84, 0.6);
+      }
+      80% { 
+        transform:scale(1.1) rotate(8deg); 
+        background:linear-gradient(45deg, #25D366, #34E79A);
+        color:#fff;
+        box-shadow:0 0 15px rgba(37, 211, 102, 0.5);
+      }
     }
 
-    @keyframes phoneRing {
-      0%, 100% { transform:rotate(0deg); }
-      10%, 30% { transform:rotate(-10deg); }
-      20%, 40% { transform:rotate(10deg); }
+    @keyframes phoneWiggle {
+      0%, 100% { 
+        transform:rotate(0deg) scale(1); 
+        background:var(--burgundy);
+        color:var(--gold);
+        box-shadow:0 0 0 rgba(59, 6, 10, 0.3);
+      }
+      15% { 
+        transform:rotate(-20deg) scale(1.1); 
+        background:linear-gradient(45deg, #FF9500, #FF5722);
+        color:#fff;
+        box-shadow:0 0 15px rgba(255, 149, 0, 0.5);
+      }
+      30% { 
+        transform:rotate(25deg) scale(1.15); 
+        background:linear-gradient(45deg, #FF5722, #E91E63);
+        color:#fff;
+        box-shadow:0 0 20px rgba(255, 87, 34, 0.6);
+      }
+      45% { 
+        transform:rotate(-18deg) scale(1.12); 
+        background:linear-gradient(45deg, #E91E63, #9C27B0);
+        color:#fff;
+        box-shadow:0 0 18px rgba(233, 30, 99, 0.5);
+      }
+      60% { 
+        transform:rotate(22deg) scale(1.08); 
+        background:linear-gradient(45deg, #9C27B0, #673AB7);
+        color:#fff;
+        box-shadow:0 0 15px rgba(156, 39, 176, 0.4);
+      }
+      75% { 
+        transform:rotate(-12deg) scale(1.05); 
+        background:linear-gradient(45deg, #673AB7, #3F51B5);
+        color:#fff;
+        box-shadow:0 0 12px rgba(103, 58, 183, 0.4);
+      }
+      90% { 
+        transform:rotate(8deg) scale(1.02); 
+        background:linear-gradient(45deg, #3F51B5, var(--burgundy));
+        color:#fff;
+        box-shadow:0 0 8px rgba(63, 81, 181, 0.3);
+      }
     }
 
     .contact-card h3{
       margin:0 0 0.5rem; font-size:1.2rem; color:var(--burgundy); 
-      font-weight:600;
+      font-weight:600; position:relative; z-index:2;
+      transition:color 0.3s ease;
+    }
+    .contact-card:hover h3{
+      color:var(--burgundy);
     }
     .contact-card p{
       color:var(--muted); line-height:1.5; margin:0 0 1rem;
+      position:relative; z-index:2;
     }
     .contact-link{
       display:inline-block; padding:8px 16px; background:var(--gold);
       color:var(--burgundy); text-decoration:none; border-radius:20px;
-      font-weight:600; font-size:0.9rem; transition:all 0.3s ease;
+      font-weight:600; font-size:0.9rem; 
+      transition:all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position:relative; z-index:2;
     }
     .whatsapp-link{
       background:var(--whatsapp) !important;
       color:#fff !important;
     }
     .contact-link:hover{
-      transform:translateY(-1px); box-shadow:0 4px 12px rgba(212,175,55,.3);
+      transform:translateY(-2px) scale(1.05); 
+      box-shadow:0 6px 15px rgba(212,175,55,.4);
     }
     .whatsapp-link:hover{
-      box-shadow:0 4px 12px rgba(37,211,102,.3) !important;
+      box-shadow:0 6px 15px rgba(37,211,102,.4) !important;
+    }
+
+    /* Schedule Call Form Modal */
+    .modal-overlay{
+      position:fixed; top:0; left:0; width:100%; height:100%;
+      background:rgba(0,0,0,0.7); z-index:9999; display:none;
+      align-items:center; justify-content:center; padding:1rem;
+      backdrop-filter:blur(5px);
+    }
+    .modal-overlay.active{display:flex}
+    .modal-content{
+      background:#fff; border-radius:15px; padding:2rem;
+      max-width:500px; width:100%; max-height:90vh; overflow-y:auto;
+      transform:scale(0.8); opacity:0; transition:all 0.3s ease;
+      box-shadow:0 20px 60px rgba(0,0,0,0.3);
+    }
+    .modal-overlay.active .modal-content{
+      transform:scale(1); opacity:1;
+    }
+    .modal-header{
+      display:flex; justify-content:space-between; align-items:center;
+      margin-bottom:1.5rem; padding-bottom:1rem;
+      border-bottom:2px solid var(--card);
+    }
+    .modal-title{
+      font-size:1.5rem; color:var(--burgundy); margin:0; font-weight:700;
+    }
+    .modal-close{
+      background:none; border:none; font-size:1.5rem; cursor:pointer;
+      color:var(--muted); width:30px; height:30px; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      transition:all 0.3s ease;
+    }
+    .modal-close:hover{
+      background:var(--card); color:var(--burgundy); transform:rotate(90deg);
     }
 
     /* Contact Form */
-    .contact-form{
+    .contact-form, .schedule-form{
       background:var(--card); border-radius:12px; padding:2rem;
       box-shadow:0 4px 15px rgba(59, 6, 10, 0.08);
       border-left:4px solid var(--burgundy); max-width:800px; margin:0 auto;
+    }
+    .schedule-form{
+      background:#fff; box-shadow:none; border:none; padding:0;
     }
     .form-row{
       display:grid; grid-template-columns:1fr 1fr; gap:1rem;
@@ -277,12 +439,12 @@
     .form-input, .form-textarea, .form-select{
       width:100%; padding:12px 16px; border:2px solid #e5e5e5;
       border-radius:8px; font-size:1rem; font-family:inherit;
-      transition:border-color 0.3s ease, box-shadow 0.3s ease;
-      background:#fff;
+      transition:all 0.3s ease; background:#fff;
     }
     .form-input:focus, .form-textarea:focus, .form-select:focus{
       outline:none; border-color:var(--gold);
       box-shadow:0 0 0 3px rgba(212, 175, 55, 0.1);
+      transform:scale(1.02);
     }
     .form-textarea{
       min-height:120px; resize:vertical;
@@ -296,8 +458,8 @@
       cursor:pointer; transition:all 0.3s ease; font-family:inherit;
     }
     .form-button:hover{
-      background:#2a0507; transform:translateY(-1px);
-      box-shadow:0 4px 15px rgba(59, 6, 10, 0.2);
+      background:#2a0507; transform:translateY(-2px);
+      box-shadow:0 6px 20px rgba(59, 6, 10, 0.2);
     }
     .form-button:active{transform:translateY(0)}
 
@@ -315,64 +477,115 @@
       text-align:center; font-weight:500;
     }
 
-    /* CTA section with motion */
+    /* Enhanced CTA section with advanced motion */
     .cta{
       background:linear-gradient(135deg, var(--burgundy) 0%, #2a0507 100%);
-      color:#fff; padding:2rem; border-radius:12px; text-align:center; margin:3rem 0;
+      color:#fff; padding:3rem 2rem; border-radius:15px; text-align:center; margin:3rem 0;
       position:relative; overflow:hidden;
-      animation:ctaFloat 3s ease-in-out infinite;
+      animation:ctaFloat 4s ease-in-out infinite;
+      box-shadow:0 10px 30px rgba(59, 6, 10, 0.3);
     }
 
     @keyframes ctaFloat {
-      0%, 100% { transform:translateY(0px); }
-      50% { transform:translateY(-5px); }
+      0%, 100% { transform:translateY(0px) scale(1); }
+      50% { transform:translateY(-8px) scale(1.02); }
     }
 
+    /* Multiple animated layers */
     .cta::before{
       content:''; position:absolute; top:-50%; left:-50%;
-      width:200%; height:200%; background:linear-gradient(45deg, transparent, rgba(212,175,55,0.1), transparent);
-      transform:rotate(45deg); animation:ctaShine 4s ease-in-out infinite;
+      width:200%; height:200%; 
+      background:conic-gradient(from 0deg, transparent, rgba(212,175,55,0.1), transparent, rgba(212,175,55,0.05), transparent);
+      animation:ctaSpin 8s linear infinite;
     }
 
-    @keyframes ctaShine {
-      0% { transform:translateX(-100%) rotate(45deg); }
-      100% { transform:translateX(100%) rotate(45deg); }
+    .cta::after{
+      content:''; position:absolute; top:0; left:0; right:0; bottom:0;
+      background:linear-gradient(45deg, transparent 30%, rgba(212,175,55,0.1) 50%, transparent 70%);
+      animation:ctaShimmer 3s ease-in-out infinite;
+    }
+
+    @keyframes ctaSpin {
+      0% { transform:rotate(0deg); }
+      100% { transform:rotate(360deg); }
+    }
+
+    @keyframes ctaShimmer {
+      0%, 100% { opacity:0; transform:translateX(-100%) skewX(-15deg); }
+      50% { opacity:1; transform:translateX(100%) skewX(-15deg); }
     }
 
     .cta h3{
-      font-size:1.8rem; margin:0 0 1rem; color:#fff; position:relative; z-index:2;
+      font-size:2rem; margin:0 0 1rem; color:#fff; position:relative; z-index:2;
+      animation:textGlow 2s ease-in-out infinite alternate;
     }
+
+    @keyframes textGlow {
+      from { text-shadow:0 0 10px rgba(212,175,55,0.5); }
+      to { text-shadow:0 0 20px rgba(212,175,55,0.8), 0 0 30px rgba(212,175,55,0.3); }
+    }
+
     .cta p{
-      font-size:1.1rem; margin:0 0 1.5rem; opacity:0.9; position:relative; z-index:2;
+      font-size:1.1rem; margin:0 0 2rem; opacity:0.9; position:relative; z-index:2;
     }
     .btn{
       display:inline-block; padding:12px 24px; border-radius:30px; 
-      font-weight:600; text-decoration:none; margin:0.3rem;
-      transition:all 0.3s ease; font-size:0.95rem; position:relative; z-index:2;
+      font-weight:600; text-decoration:none; margin:0.5rem;
+      transition:all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+      font-size:0.95rem; position:relative; z-index:2;
+      transform:perspective(1000px) rotateX(0deg);
     }
-    .btn:hover{transform:translateY(-2px)}
-    .btn-primary{background:var(--gold); color:var(--burgundy)}
-    .btn-primary:hover{box-shadow:0 6px 20px rgba(212,175,55,.4)}
-    .btn-outline{border:2px solid var(--gold); color:var(--gold)}
-    .btn-outline:hover{background:var(--gold); color:var(--burgundy)}
+    .btn:hover{
+      transform:perspective(1000px) rotateX(-10deg) translateY(-3px);
+    }
+    .btn-primary{
+      background:var(--gold); color:var(--burgundy);
+      box-shadow:0 5px 15px rgba(212,175,55,.3);
+    }
+    .btn-primary:hover{
+      box-shadow:0 8px 25px rgba(212,175,55,.5);
+      background:linear-gradient(45deg, var(--gold), #f4c430);
+    }
+    .btn-outline{
+      border:2px solid var(--gold); color:var(--gold);
+      background:transparent;
+    }
+    .btn-outline:hover{
+      background:var(--gold); color:var(--burgundy);
+      box-shadow:0 8px 25px rgba(212,175,55,.4);
+    }
 
-    /* What You Can Expect - Icons removed */
+    /* What You Can Expect */
     .expectation-card{
       background:var(--card); border-radius:12px; padding:1.8rem;
       box-shadow:0 4px 15px rgba(59, 6, 10, 0.08); 
-      transition:transform 0.3s ease, box-shadow 0.3s ease;
+      transition:all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       border-left:4px solid var(--gold); text-align:center;
+      position:relative; overflow:hidden;
     }
+
+    .expectation-card::before{
+      content:''; position:absolute; top:0; left:-100%;
+      width:100%; height:100%; z-index:1;
+      background:linear-gradient(90deg, transparent, rgba(212,175,55,0.05), transparent);
+      transition:left 0.5s ease;
+    }
+
+    .expectation-card:hover::before{
+      left:100%;
+    }
+
     .expectation-card:hover{
-      transform:translateY(-3px); 
-      box-shadow:0 8px 25px rgba(59, 6, 10, 0.12);
+      transform:translateY(-5px) scale(1.02); 
+      box-shadow:0 12px 30px rgba(59, 6, 10, 0.12);
+      border-left-color:var(--burgundy);
     }
     .expectation-card h3{
       margin:0 0 0.5rem; font-size:1.2rem; color:var(--burgundy); 
-      font-weight:600;
+      font-weight:600; position:relative; z-index:2;
     }
     .expectation-card p{
-      color:var(--muted); line-height:1.5; margin:0;
+      color:var(--muted); line-height:1.5; margin:0; position:relative; z-index:2;
     }
 
     /* Footer with WhatsApp badge */
@@ -415,6 +628,9 @@
       .footer-left, .footer-right{text-align:center}
       .footer-center{order:-1}
       .footer-left{font-size:0.8rem}
+      .cta{padding:2rem 1.5rem}
+      .cta h3{font-size:1.6rem}
+      .modal-content{padding:1.5rem; margin:1rem}
     }
 
     @media(max-width:480px){
@@ -443,6 +659,16 @@
     .animate-in{
       animation: fadeInUp 0.6s ease-out forwards;
     }
+
+    /* Loading animation for form submission */
+    .loading{
+      display:inline-block; width:20px; height:20px; margin-right:10px;
+      border:2px solid #fff; border-radius:50%;
+      border-top-color:transparent; animation:spin 1s ease-in-out infinite;
+    }
+    @keyframes spin {
+      to { transform:rotate(360deg); }
+    }
   </style>
 </head>
 <body>
@@ -452,7 +678,7 @@
     <nav class="nav">
       <a href="index.html" class="brand">
         <span class="logo">EE</span>
-        <span class="brand-name">Elizabeth </span>
+        <span class="brand-name">Elizabeth Edge</span>
       </a>
       <ul class="nav-menu" id="navMenu">
         <li><a href="index.html" class="nav-link">Home</a></li>
@@ -500,14 +726,128 @@
         <p>Get instant responses on WhatsApp for quick questions and project consultations.</p>
         <span class="contact-link whatsapp-link">Message Now</span>
       </div>
-      <div class="contact-card animate-in" onclick="openWhatsAppCall()">
+      <div class="contact-card animate-in" onclick="openScheduleModal()">
         <div class="contact-icon icon-phone">📞</div>
-        <h3>WhatsApp Call</h3>
-        <p>Schedule a WhatsApp voice or video call for detailed project discussions and consultations.</p>
+        <h3>Schedule a Call</h3>
+        <p>Book a WhatsApp voice or video call for detailed project discussions and consultations.</p>
         <span class="contact-link">Schedule Call</span>
       </div>
     </div>
   </section>
+
+  <!-- Schedule Call Modal -->
+  <div class="modal-overlay" id="scheduleModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Schedule Your Call</h2>
+        <button class="modal-close" onclick="closeScheduleModal()">&times;</button>
+      </div>
+      
+      <form class="schedule-form" id="scheduleForm" novalidate>
+        <div class="success-message" id="scheduleSuccessMessage">
+          Your call has been scheduled! You'll receive WhatsApp and email confirmations shortly.
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="scheduleName" class="form-label">Full Name *</label>
+            <input type="text" id="scheduleName" name="name" class="form-input" required>
+            <div class="error-message" id="scheduleNameError">Please enter your full name</div>
+          </div>
+
+          <div class="form-group">
+            <label for="scheduleEmail" class="form-label">Email Address *</label>
+            <input type="email" id="scheduleEmail" name="email" class="form-input" required>
+            <div class="error-message" id="scheduleEmailError">Please enter a valid email address</div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="schedulePhone" class="form-label">WhatsApp Number *</label>
+            <input type="tel" id="schedulePhone" name="phone" class="form-input" placeholder="+254 xxx xxx xxx" required>
+            <div class="error-message" id="schedulePhoneError">Please enter your WhatsApp number</div>
+          </div>
+
+          <div class="form-group">
+            <label for="callType" class="form-label">Call Type *</label>
+            <select id="callType" name="callType" class="form-select" required>
+              <option value="">Select call type...</option>
+              <option value="voice">WhatsApp Voice Call</option>
+              <option value="video">WhatsApp Video Call</option>
+            </select>
+            <div class="error-message" id="callTypeError">Please select call type</div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="preferredDate" class="form-label">Preferred Date *</label>
+            <input type="date" id="preferredDate" name="date" class="form-input" required>
+            <div class="error-message" id="preferredDateError">Please select a date</div>
+          </div>
+
+          <div class="form-group">
+            <label for="preferredTime" class="form-label">Preferred Time *</label>
+            <select id="preferredTime" name="time" class="form-select" required>
+              <option value="">Select time...</option>
+              <option value="09:00">9:00 AM</option>
+              <option value="10:00">10:00 AM</option>
+              <option value="11:00">11:00 AM</option>
+              <option value="12:00">12:00 PM</option>
+              <option value="13:00">1:00 PM</option>
+              <option value="14:00">2:00 PM</option>
+              <option value="15:00">3:00 PM</option>
+              <option value="16:00">4:00 PM</option>
+              <option value="17:00">5:00 PM</option>
+            </select>
+            <div class="error-message" id="preferredTimeError">Please select a time</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="timezone" class="form-label">Timezone *</label>
+          <select id="timezone" name="timezone" class="form-select" required>
+            <option value="">Select timezone...</option>
+            <option value="EAT" selected>East Africa Time (EAT) - Nairobi</option>
+            <option value="GMT">Greenwich Mean Time (GMT)</option>
+            <option value="CET">Central European Time (CET)</option>
+            <option value="EST">Eastern Standard Time (EST)</option>
+            <option value="PST">Pacific Standard Time (PST)</option>
+            <option value="IST">India Standard Time (IST)</option>
+            <option value="AEST">Australian Eastern Time (AEST)</option>
+          </select>
+          <div class="error-message" id="timezoneError">Please select your timezone</div>
+        </div>
+
+        <div class="form-group">
+          <label for="scheduleService" class="form-label">Service of Interest *</label>
+          <select id="scheduleService" name="service" class="form-select" required>
+            <option value="">Select a service...</option>
+            <option value="digital-marketing">Digital Marketing Strategy</option>
+            <option value="seo">SEO & Content Marketing</option>
+            <option value="paid-ads">Google & Meta Ads Management</option>
+            <option value="social-media">Social Media Management</option>
+            <option value="email-marketing">Email Marketing Automation</option>
+            <option value="gis-analysis">GIS Analysis & Mapping</option>
+            <option value="virtual-assistant">Virtual Assistant Services</option>
+            <option value="website-optimization">Website Optimization</option>
+            <option value="consultation">General Consultation</option>
+          </select>
+          <div class="error-message" id="scheduleServiceError">Please select a service</div>
+        </div>
+
+        <div class="form-group">
+          <label for="callPurpose" class="form-label">Call Purpose & Agenda *</label>
+          <textarea id="callPurpose" name="purpose" class="form-textarea" 
+                    placeholder="Please describe what you'd like to discuss during our call, your business challenges, goals, and any specific questions you have." required></textarea>
+          <div class="error-message" id="callPurposeError">Please describe the call purpose</div>
+        </div>
+
+        <button type="submit" class="form-button">Schedule My Call</button>
+      </form>
+    </div>
+  </div>
 
   <!-- Contact Form -->
   <section class="content-section" id="contact-form">
@@ -603,7 +943,7 @@
     </div>
   </section>
 
-  <!-- Why Choose Elizabeth - Icons removed -->
+  <!-- Why Choose Elizabeth -->
   <section class="content-section">
     <div class="section-header">
       <span class="eyebrow">Why Work With Me</span>
@@ -644,7 +984,7 @@
 
 <footer>
   <div class="container footer-wrap">
-    <div class="footer-left">© 2025 Elizabeth . All rights reserved.</div>
+    <div class="footer-left">© 2025 Elizabeth Edge. All rights reserved.</div>
     <div class="footer-center">
       <div class="footer-badge whatsapp" onclick="openWhatsAppFooter()" style="cursor:pointer;">
         WhatsApp
@@ -659,52 +999,64 @@
 </footer>
 
 <script>
-  // WhatsApp functions with complete privacy masking
+  // Corrected WhatsApp functions with proper phone number
   function openWhatsAppChat() {
-    if (confirm('Do you want to open WhatsApp to chat with Elizabeth ?')) {
-      // Complete privacy - number stored in multiple encoded segments
-      const part1 = 'MjU0Nzc='; // 25477
-      const part2 = 'NTU2MTM='; // 55613  
-      const part3 = 'MDQ4'; // 048
-      
-      const fullNumber = atob(part1) + atob(part2) + atob(part3);
+    if (confirm('Do you want to open WhatsApp to chat with Elizabeth?')) {
+      const phoneNumber = '254755613048'; // Corrected phone number
       const message = encodeURIComponent('Hello Elizabeth, I would like to discuss digital marketing services for my business.');
       
-      // Use location.replace to avoid browser history
-      const tempWindow = window.open('about:blank', '_blank');
-      tempWindow.location.replace('https://wa.me/' + fullNumber + '?text=' + message);
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+      window.open(whatsappUrl, '_blank');
     }
   }
 
   function openWhatsAppCall() {
-    if (confirm('Do you want to open WhatsApp to schedule a call with Elizabeth Wairimu?')) {
-      const part1 = 'MjU0Nzc=';
-      const part2 = 'NTU2MTM=';  
-      const part3 = 'MDQ4';
-      
-      const fullNumber = atob(part1) + atob(part2) + atob(part3);
+    if (confirm('Do you want to open WhatsApp to call Elizabeth?')) {
+      const phoneNumber = '254755613048';
       const message = encodeURIComponent('Hello Elizabeth, I would like to schedule a call to discuss my project.');
       
-      const tempWindow = window.open('about:blank', '_blank');
-      tempWindow.location.replace('https://wa.me/' + fullNumber + '?text=' + message);
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+      window.open(whatsappUrl, '_blank');
     }
   }
 
   function openWhatsAppFooter() {
-    if (confirm('Do you want to open WhatsApp to connect with Elizabeth ?')) {
-      const part1 = 'MjU0Nzc=';
-      const part2 = 'NTU2MTM=';
-      const part3 = 'MDQ4';
-      
-      const fullNumber = atob(part1) + atob(part2) + atob(part3);
+    if (confirm('Do you want to open WhatsApp to connect with Elizabeth?')) {
+      const phoneNumber = '254755613048';
       const message = encodeURIComponent('Hello Elizabeth, I found your website and would like to connect!');
       
-      const tempWindow = window.open('about:blank', '_blank');
-      tempWindow.location.replace('https://wa.me/' + fullNumber + '?text=' + message);
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+      window.open(whatsappUrl, '_blank');
     }
   }
 
-  // Mobile menu toggle with proper functionality
+  // Schedule Modal Functions
+  function openScheduleModal() {
+    document.getElementById('scheduleModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+    
+    // Set minimum date to tomorrow
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const minDate = tomorrow.toISOString().split('T')[0];
+    document.getElementById('preferredDate').min = minDate;
+  }
+
+  function closeScheduleModal() {
+    document.getElementById('scheduleModal').classList.remove('active');
+    document.body.style.overflow = 'auto';
+    document.getElementById('scheduleForm').reset();
+    clearAllScheduleErrors();
+  }
+
+  // Close modal when clicking outside
+  document.getElementById('scheduleModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+      closeScheduleModal();
+    }
+  });
+
+  // Mobile menu toggle
   const mobileToggle = document.getElementById('mobileToggle');
   const navMenu = document.getElementById('navMenu');
   
@@ -739,31 +1091,182 @@
     }
   });
 
-  // Contact form validation and submission
-  const contactForm = document.getElementById('contactForm');
-  const successMessage = document.getElementById('successMessage');
-
+  // Validation functions
   function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
   }
 
+  function validatePhone(phone) {
+    const re = /^\+?[1-9]\d{1,14}$/;
+    return re.test(phone.replace(/\s+/g, ''));
+  }
+
   function showError(fieldId, message) {
     const field = document.getElementById(fieldId);
     const errorDiv = document.getElementById(fieldId + 'Error');
-    field.classList.add('error');
-    errorDiv.textContent = message;
-    errorDiv.style.display = 'block';
+    if (field && errorDiv) {
+      field.classList.add('error');
+      errorDiv.textContent = message;
+      errorDiv.style.display = 'block';
+    }
   }
 
   function clearError(fieldId) {
     const field = document.getElementById(fieldId);
     const errorDiv = document.getElementById(fieldId + 'Error');
-    field.classList.remove('error');
-    errorDiv.style.display = 'none';
+    if (field && errorDiv) {
+      field.classList.remove('error');
+      errorDiv.style.display = 'none';
+    }
   }
 
-  function validateForm() {
+  function clearAllScheduleErrors() {
+    ['scheduleName', 'scheduleEmail', 'schedulePhone', 'callType', 'preferredDate', 'preferredTime', 'timezone', 'scheduleService', 'callPurpose'].forEach(clearError);
+  }
+
+  // Schedule form validation
+  function validateScheduleForm() {
+    let isValid = true;
+    
+    clearAllScheduleErrors();
+
+    // Validate name
+    const name = document.getElementById('scheduleName').value.trim();
+    if (!name) {
+      showError('scheduleName', 'Please enter your full name');
+      isValid = false;
+    }
+
+    // Validate email
+    const email = document.getElementById('scheduleEmail').value.trim();
+    if (!email) {
+      showError('scheduleEmail', 'Please enter your email address');
+      isValid = false;
+    } else if (!validateEmail(email)) {
+      showError('scheduleEmail', 'Please enter a valid email address');
+      isValid = false;
+    }
+
+    // Validate phone
+    const phone = document.getElementById('schedulePhone').value.trim();
+    if (!phone) {
+      showError('schedulePhone', 'Please enter your WhatsApp number');
+      isValid = false;
+    } else if (!validatePhone(phone)) {
+      showError('schedulePhone', 'Please enter a valid phone number');
+      isValid = false;
+    }
+
+    // Validate call type
+    const callType = document.getElementById('callType').value;
+    if (!callType) {
+      showError('callType', 'Please select call type');
+      isValid = false;
+    }
+
+    // Validate date
+    const date = document.getElementById('preferredDate').value;
+    if (!date) {
+      showError('preferredDate', 'Please select a date');
+      isValid = false;
+    }
+
+    // Validate time
+    const time = document.getElementById('preferredTime').value;
+    if (!time) {
+      showError('preferredTime', 'Please select a time');
+      isValid = false;
+    }
+
+    // Validate timezone
+    const timezone = document.getElementById('timezone').value;
+    if (!timezone) {
+      showError('timezone', 'Please select your timezone');
+      isValid = false;
+    }
+
+    // Validate service
+    const service = document.getElementById('scheduleService').value;
+    if (!service) {
+      showError('scheduleService', 'Please select a service');
+      isValid = false;
+    }
+
+    // Validate purpose
+    const purpose = document.getElementById('callPurpose').value.trim();
+    if (!purpose) {
+      showError('callPurpose', 'Please describe the call purpose');
+      isValid = false;
+    } else if (purpose.length < 20) {
+      showError('callPurpose', 'Please provide more details (minimum 20 characters)');
+      isValid = false;
+    }
+
+    return isValid;
+  }
+
+  // Schedule form submission
+  document.getElementById('scheduleForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    if (validateScheduleForm()) {
+      const submitButton = this.querySelector('.form-button');
+      const originalText = submitButton.textContent;
+      
+      submitButton.innerHTML = '<span class="loading"></span>Scheduling...';
+      submitButton.disabled = true;
+
+      // Get form data
+      const formData = new FormData(this);
+      const scheduleData = Object.fromEntries(formData);
+      
+      // Simulate processing time
+      setTimeout(() => {
+        // Send WhatsApp message
+        const phoneNumber = '254755613048';
+        const whatsappMessage = encodeURIComponent(
+          `New Call Scheduled!\n\n` +
+          `Name: ${scheduleData.name}\n` +
+          `Email: ${scheduleData.email}\n` +
+          `Phone: ${scheduleData.phone}\n` +
+          `Call Type: ${scheduleData.callType}\n` +
+          `Date: ${scheduleData.date}\n` +
+          `Time: ${scheduleData.time}\n` +
+          `Timezone: ${scheduleData.timezone}\n` +
+          `Service: ${scheduleData.service}\n` +
+          `Purpose: ${scheduleData.purpose}`
+        );
+        
+        // Open WhatsApp with pre-filled message
+        window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, '_blank');
+        
+        // Show success message
+        document.getElementById('scheduleSuccessMessage').style.display = 'block';
+        this.reset();
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+        
+        // Scroll to success message
+        document.getElementById('scheduleSuccessMessage').scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'center' 
+        });
+        
+        // Close modal after 3 seconds
+        setTimeout(() => {
+          closeScheduleModal();
+        }, 3000);
+        
+      }, 2000);
+    }
+  });
+
+  // Contact form validation and submission
+  const contactForm = document.getElementById('contactForm');
+  const successMessage = document.getElementById('successMessage');
+
+  function validateContactForm() {
     let isValid = true;
     
     // Clear all previous errors
@@ -809,16 +1312,37 @@
   contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
     
-    if (validateForm()) {
-      // Simulate form submission
+    if (validateContactForm()) {
       const submitButton = contactForm.querySelector('.form-button');
       const originalText = submitButton.textContent;
       
-      submitButton.textContent = 'Sending...';
+      submitButton.innerHTML = '<span class="loading"></span>Sending...';
       submitButton.disabled = true;
+
+      // Get form data
+      const formData = new FormData(this);
+      const contactData = Object.fromEntries(formData);
 
       // Simulate processing time
       setTimeout(() => {
+        // Send WhatsApp message
+        const phoneNumber = '254755613048';
+        const whatsappMessage = encodeURIComponent(
+          `New Contact Form Submission!\n\n` +
+          `Name: ${contactData.name}\n` +
+          `Email: ${contactData.email}\n` +
+          `Company: ${contactData.company || 'Not specified'}\n` +
+          `Phone: ${contactData.phone || 'Not provided'}\n` +
+          `Service: ${contactData.service}\n` +
+          `Budget: ${contactData.budget || 'Not specified'}\n` +
+          `Timeline: ${contactData.timeline || 'Not specified'}\n` +
+          `Message: ${contactData.message}`
+        );
+        
+        // Open WhatsApp with pre-filled message
+        window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, '_blank');
+        
+        // Show success message
         successMessage.style.display = 'block';
         contactForm.reset();
         submitButton.textContent = originalText;
@@ -852,6 +1376,13 @@
   // Observe all elements that should animate
   document.querySelectorAll('.contact-card, .expectation-card, .hero, .contact-form').forEach(el => {
     observer.observe(el);
+  });
+
+  // Enhanced keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeScheduleModal();
+    }
   });
 </script>
 
