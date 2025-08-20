@@ -16,6 +16,7 @@
       --muted:#555;
       --success:#28a745;
       --error:#dc3545;
+      --whatsapp:#25D366;
     }
     *{box-sizing:border-box}
     body{margin:0; font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color:var(--ink); background:#fff}
@@ -26,7 +27,7 @@
     }
     .container{max-width:1200px; margin:0 auto; padding:0 1.5rem}
 
-    /* Header - Professional & Structured */
+    /* Header - Better organized navigation */
     header{
       background:var(--burgundy); color:#fff; position:sticky; top:0; z-index:1000; 
       box-shadow:0 2px 15px rgba(0,0,0,0.15);
@@ -48,15 +49,15 @@
     }
     .brand-name{font-weight:700; font-size:1.3rem; letter-spacing:-0.5px}
     
-    /* Navigation Menu - Organized */
+    /* Better organized navigation menu */
     .nav-menu{
-      display:flex; list-style:none; gap:0.5rem; align-items:center; 
+      display:flex; list-style:none; gap:0.3rem; align-items:center; 
       margin:0; padding:0; background:rgba(255,255,255,0.05);
       border-radius:25px; padding:0.3rem;
     }
     .nav-link{
-      color:#fff; text-decoration:none; font-weight:500; font-size:0.9rem;
-      padding:0.5rem 1rem; border-radius:20px; transition:all 0.3s ease;
+      color:#fff; text-decoration:none; font-weight:500; font-size:0.85rem;
+      padding:0.4rem 0.8rem; border-radius:20px; transition:all 0.3s ease;
       white-space:nowrap; position:relative;
     }
     .nav-link.active{
@@ -69,7 +70,7 @@
       transform:translateY(-1px);
     }
 
-    /* Mobile Menu - Clean */
+    /* Mobile Menu */
     .mobile-menu-toggle{
       display:none; flex-direction:column; cursor:pointer;
       padding:0.5rem; border-radius:5px; transition:background 0.3s ease;
@@ -81,7 +82,6 @@
       transition:all 0.3s ease; border-radius:2px;
     }
 
-    /* Mobile menu animation */
     .mobile-menu-toggle.active span:nth-child(1) {
         transform: rotate(-45deg) translate(-5px, 6px);
     }
@@ -94,10 +94,10 @@
         transform: rotate(45deg) translate(-5px, -6px);
     }
 
-    /* Mobile Responsive */
+    /* Mobile Responsive Navigation */
     @media(max-width:1024px){
-      .nav-menu{gap:0.3rem; padding:0.25rem}
-      .nav-link{padding:0.4rem 0.8rem; font-size:0.85rem}
+      .nav-menu{gap:0.2rem; padding:0.25rem}
+      .nav-link{padding:0.35rem 0.7rem; font-size:0.8rem}
     }
 
     @media(max-width:768px){
@@ -111,7 +111,7 @@
       .nav-menu.active{display:flex}
       .nav-link{
         width:100%; text-align:center; padding:0.8rem 1rem;
-        border-radius:8px; font-size:0.95rem;
+        border-radius:8px; font-size:0.9rem;
       }
       .mobile-menu-toggle{display:flex}
       .brand-name{font-size:1.2rem}
@@ -197,6 +197,10 @@
       color:var(--gold); font-size:1.2rem; font-weight:700;
       transition:all 0.3s ease;
     }
+    .whatsapp-icon{
+      background:var(--whatsapp) !important;
+      color:#fff !important;
+    }
     .contact-card:hover .contact-icon{
       transform:scale(1.1);
     }
@@ -205,8 +209,8 @@
     .icon-email{
       animation:emailBounce 2s ease-in-out infinite;
     }
-    .icon-linkedin{
-      animation:linkedinPulse 2s ease-in-out infinite;
+    .icon-whatsapp{
+      animation:whatsappPulse 2s ease-in-out infinite;
     }
     .icon-phone{
       animation:phoneRing 1.5s ease-in-out infinite;
@@ -217,9 +221,9 @@
       50% { transform:translateY(-4px); }
     }
 
-    @keyframes linkedinPulse {
-      0%, 100% { transform:scale(1); box-shadow:0 0 0 0 rgba(212, 175, 55, 0.4); }
-      50% { transform:scale(1.05); box-shadow:0 0 0 8px rgba(212, 175, 55, 0); }
+    @keyframes whatsappPulse {
+      0%, 100% { transform:scale(1); box-shadow:0 0 0 0 rgba(37, 211, 102, 0.4); }
+      50% { transform:scale(1.05); box-shadow:0 0 0 8px rgba(37, 211, 102, 0); }
     }
 
     @keyframes phoneRing {
@@ -227,6 +231,7 @@
       10%, 30% { transform:rotate(-10deg); }
       20%, 40% { transform:rotate(10deg); }
     }
+
     .contact-card h3{
       margin:0 0 0.5rem; font-size:1.2rem; color:var(--burgundy); 
       font-weight:600;
@@ -239,8 +244,15 @@
       color:var(--burgundy); text-decoration:none; border-radius:20px;
       font-weight:600; font-size:0.9rem; transition:all 0.3s ease;
     }
+    .whatsapp-link{
+      background:var(--whatsapp) !important;
+      color:#fff !important;
+    }
     .contact-link:hover{
       transform:translateY(-1px); box-shadow:0 4px 12px rgba(212,175,55,.3);
+    }
+    .whatsapp-link:hover{
+      box-shadow:0 4px 12px rgba(37,211,102,.3) !important;
     }
 
     /* Contact Form */
@@ -303,29 +315,67 @@
       text-align:center; font-weight:500;
     }
 
-    /* CTA section */
+    /* CTA section with motion */
     .cta{
-      background:var(--burgundy); color:#fff; padding:2rem;
-      border-radius:12px; text-align:center; margin:3rem 0;
+      background:linear-gradient(135deg, var(--burgundy) 0%, #2a0507 100%);
+      color:#fff; padding:2rem; border-radius:12px; text-align:center; margin:3rem 0;
+      position:relative; overflow:hidden;
+      animation:ctaFloat 3s ease-in-out infinite;
     }
+
+    @keyframes ctaFloat {
+      0%, 100% { transform:translateY(0px); }
+      50% { transform:translateY(-5px); }
+    }
+
+    .cta::before{
+      content:''; position:absolute; top:-50%; left:-50%;
+      width:200%; height:200%; background:linear-gradient(45deg, transparent, rgba(212,175,55,0.1), transparent);
+      transform:rotate(45deg); animation:ctaShine 4s ease-in-out infinite;
+    }
+
+    @keyframes ctaShine {
+      0% { transform:translateX(-100%) rotate(45deg); }
+      100% { transform:translateX(100%) rotate(45deg); }
+    }
+
     .cta h3{
-      font-size:1.8rem; margin:0 0 1rem; color:#fff;
+      font-size:1.8rem; margin:0 0 1rem; color:#fff; position:relative; z-index:2;
     }
     .cta p{
-      font-size:1.1rem; margin:0 0 1.5rem; opacity:0.9;
+      font-size:1.1rem; margin:0 0 1.5rem; opacity:0.9; position:relative; z-index:2;
     }
     .btn{
       display:inline-block; padding:12px 24px; border-radius:30px; 
       font-weight:600; text-decoration:none; margin:0.3rem;
-      transition:all 0.3s ease; font-size:0.95rem;
+      transition:all 0.3s ease; font-size:0.95rem; position:relative; z-index:2;
     }
-    .btn:hover{transform:translateY(-1px)}
+    .btn:hover{transform:translateY(-2px)}
     .btn-primary{background:var(--gold); color:var(--burgundy)}
-    .btn-primary:hover{box-shadow:0 4px 15px rgba(212,175,55,.3)}
+    .btn-primary:hover{box-shadow:0 6px 20px rgba(212,175,55,.4)}
     .btn-outline{border:2px solid var(--gold); color:var(--gold)}
     .btn-outline:hover{background:var(--gold); color:var(--burgundy)}
 
-    /* Footer - matching guidelines */
+    /* What You Can Expect - Icons removed */
+    .expectation-card{
+      background:var(--card); border-radius:12px; padding:1.8rem;
+      box-shadow:0 4px 15px rgba(59, 6, 10, 0.08); 
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
+      border-left:4px solid var(--gold); text-align:center;
+    }
+    .expectation-card:hover{
+      transform:translateY(-3px); 
+      box-shadow:0 8px 25px rgba(59, 6, 10, 0.12);
+    }
+    .expectation-card h3{
+      margin:0 0 0.5rem; font-size:1.2rem; color:var(--burgundy); 
+      font-weight:600;
+    }
+    .expectation-card p{
+      color:var(--muted); line-height:1.5; margin:0;
+    }
+
+    /* Footer with WhatsApp badge */
     footer{
       background:var(--burgundy); color:#fff; margin-top:auto;
       flex-shrink:0;
@@ -342,6 +392,9 @@
       font-size:0.75rem; font-weight:700;
       background:var(--gold); color:var(--burgundy); text-decoration:none; 
       display:inline-block; transition:all 0.3s ease;
+    }
+    .footer-badge.whatsapp{
+      background:var(--whatsapp); color:#fff;
     }
     .footer-badge:hover{opacity:.85; transform:translateY(-1px)}
 
@@ -405,9 +458,9 @@
         <li><a href="index.html" class="nav-link">Home</a></li>
         <li><a href="about.html" class="nav-link">About</a></li>
         <li><a href="services.html" class="nav-link">Services</a></li>
-        <li><a href="educationexperience.html" class="nav-link">Education & Experience</a></li>
+        <li><a href="educationexperience.html" class="nav-link">Education</a></li>
         <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-        <li><a href="success-stories.html" class="nav-link">Success Stories</a></li>
+        <li><a href="success-stories.html" class="nav-link">Success</a></li>
         <li><a href="contact.html" class="nav-link active">Contact</a></li>
       </ul>
       <button class="mobile-menu-toggle" id="mobileToggle">
@@ -442,19 +495,19 @@
         </a>
       </div>
       <div class="contact-card animate-in">
-        <a href="https://linkedin.com/in/elizabeth-wairimu-2069a6289" target="_blank" class="contact-card-link" rel="noopener">
-          <div class="contact-icon icon-linkedin">💼</div>
-          <h3>LinkedIn Professional</h3>
-          <p>Connect with me on LinkedIn for professional networking and industry insights.</p>
-          <span class="contact-link">View Profile</span>
+        <a href="https://wa.me/254706045230?text=Hello%20Elizabeth,%20I%20would%20like%20to%20discuss%20digital%20marketing%20services%20for%20my%20business." target="_blank" class="contact-card-link" rel="noopener">
+          <div class="contact-icon icon-whatsapp whatsapp-icon">💬</div>
+          <h3>WhatsApp Message</h3>
+          <p>Get instant responses on WhatsApp for quick questions and project consultations.</p>
+          <span class="contact-link whatsapp-link">Message Now</span>
         </a>
       </div>
       <div class="contact-card animate-in">
-        <a href="tel:+254706045230" class="contact-card-link">
+        <a href="https://wa.me/254706045230?text=Hello%20Elizabeth,%20I%20would%20like%20to%20schedule%20a%20call%20to%20discuss%20my%20project." class="contact-card-link">
           <div class="contact-icon icon-phone">📞</div>
-          <h3>Call Me Now</h3>
-          <p>Speak directly for urgent inquiries or immediate consultation needs.</p>
-          <span class="contact-link">Make Call</span>
+          <h3>WhatsApp Call</h3>
+          <p>Schedule a WhatsApp voice or video call for detailed project discussions and consultations.</p>
+          <span class="contact-link">Schedule Call</span>
         </a>
       </div>
     </div>
@@ -554,32 +607,28 @@
     </div>
   </section>
 
-  <!-- Why Choose Elizabeth -->
+  <!-- Why Choose Elizabeth - Icons removed -->
   <section class="content-section">
     <div class="section-header">
       <span class="eyebrow">Why Work With Me</span>
       <h2 class="section-title">What You Can Expect</h2>
     </div>
     <div class="two-column">
-      <div class="contact-card animate-in">
-        <div class="contact-icon">⚡</div>
+      <div class="expectation-card animate-in">
         <h3>Quick Response Time</h3>
         <p>I respond to all inquiries within 24 hours and provide detailed project proposals within 48 hours of our initial discussion.</p>
       </div>
-      <div class="contact-card animate-in">
-        <div class="contact-icon">🎯</div>
+      <div class="expectation-card animate-in">
         <h3>Tailored Solutions</h3>
         <p>Every strategy is customized to your specific business needs, industry, and growth objectives. No cookie-cutter approaches.</p>
       </div>
     </div>
     <div class="two-column">
-      <div class="contact-card animate-in">
-        <div class="contact-icon">📊</div>
+      <div class="expectation-card animate-in">
         <h3>Data-Driven Results</h3>
         <p>All campaigns are backed by thorough analysis and continuous optimization to ensure maximum ROI and measurable growth.</p>
       </div>
-      <div class="contact-card animate-in">
-        <div class="contact-icon">🤝</div>
+      <div class="expectation-card animate-in">
         <h3>Partnership Approach</h3>
         <p>I work as an extension of your team, providing transparent communication and regular updates throughout our collaboration.</p>
       </div>
@@ -601,8 +650,8 @@
   <div class="container footer-wrap">
     <div class="footer-left">© 2025 Elizabeth Edge. All rights reserved.</div>
     <div class="footer-center">
-      <a href="https://linkedin.com/in/elizabeth-wairimu-2069a6289" target="_blank" class="footer-badge" rel="noopener">
-        LinkedIn
+      <a href="https://wa.me/254706045230?text=Hello%20Elizabeth,%20I%20found%20your%20website%20and%20would%20like%20to%20connect!" target="_blank" class="footer-badge whatsapp" rel="noopener">
+        WhatsApp
       </a>
     </div>
     <div class="footer-right">
@@ -726,3 +775,44 @@
       
       submitButton.textContent = 'Sending...';
       submitButton.disabled = true;
+
+      // Simulate processing time
+      setTimeout(() => {
+        successMessage.style.display = 'block';
+        contactForm.reset();
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+        
+        // Scroll to success message
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+          successMessage.style.display = 'none';
+        }, 5000);
+      }, 2000);
+    }
+  });
+
+  // Smooth animations on scroll
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in');
+      }
+    });
+  }, observerOptions);
+
+  // Observe all elements that should animate
+  document.querySelectorAll('.contact-card, .expectation-card, .hero, .contact-form').forEach(el => {
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
