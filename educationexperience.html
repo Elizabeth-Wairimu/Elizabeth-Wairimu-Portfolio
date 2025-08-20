@@ -42,7 +42,7 @@
     .logo{
       width:38px; height:38px; border-radius:50%;
       display:flex; align-items:center; justify-content:center;
-      background:var(--gold); color:var(--burgundy); font-weight:700; font-size:1.1rem;
+      background:var(--gold); color:#3B060A; font-weight:700; font-size:1.1rem;
       box-shadow:0 2px 8px rgba(212, 175, 55, 0.3);
     }
     .brand-name{font-weight:700; font-size:1.3rem; letter-spacing:-0.5px}
@@ -59,7 +59,7 @@
       white-space:nowrap; position:relative;
     }
     .nav-link.active{
-      background:var(--gold); color:var(--burgundy);
+      background:var(--gold); color:#3B060A;
       box-shadow:0 2px 8px rgba(212, 175, 55, 0.4);
       font-weight:600;
     }
@@ -122,7 +122,7 @@
       font-size:0.8rem; font-weight:600; display:block; margin-bottom:0.5rem;
     }
     .section-title{
-      font-size:2rem; margin:0; color:var(--burgundy); font-weight:700;
+      font-size:2rem; margin:0; color:#3B060A; font-weight:700;
     }
 
     /* Grid layout */
@@ -136,7 +136,7 @@
       background:var(--card); border-radius:8px; padding:1rem;
       box-shadow:0 4px 15px rgba(102, 11, 5, 0.08); 
       transition:transform 0.3s ease, box-shadow 0.3s ease;
-      border-left:3px solid var(--burgundy); position:relative;
+      border-left:3px solid #3B060A; position:relative;
       height:fit-content;
     }
     .card:hover{
@@ -144,7 +144,7 @@
       box-shadow:0 6px 20px rgba(102, 11, 5, 0.12);
     }
     .card h3{
-      margin:0 0 0.3rem; font-size:1rem; color:var(--burgundy); 
+      margin:0 0 0.3rem; font-size:1rem; color:#3B060A; 
       font-weight:600; line-height:1.2;
     }
     .meta{
@@ -165,7 +165,7 @@
       transition:all 0.3s ease;
     }
     .badge:hover{
-      background:var(--gold); color:var(--burgundy);
+      background:var(--gold); color:#3B060A;
     }
 
     /* Divider - thinner */
@@ -179,7 +179,7 @@
     summary{
       cursor:pointer; border-radius:20px; padding:0.4rem 0.8rem; 
       font-size:0.85rem; font-weight:600;
-      background:var(--gold); color:var(--burgundy); 
+      background:var(--gold); color:#3B060A; 
       display:inline-block; transition:all 0.3s ease;
       list-style:none;
     }
@@ -198,6 +198,70 @@
       margin-bottom:0.4rem; line-height:1.4;
     }
 
+    /* CTA Styles */
+    .cta-section{
+      margin-top: 3rem;
+    }
+    .cta-card{
+      text-align: center; 
+      background: linear-gradient(135deg, #3B060A 0%, #4A0A0F 100%); 
+      color: white; 
+      border: none; 
+      padding: 2.5rem;
+    }
+    .cta-title{
+      color: var(--gold); 
+      margin-bottom: 1rem; 
+      font-size: 1.8rem;
+      margin-top: 0;
+    }
+    .cta-text{
+      font-size: 1.1rem; 
+      margin-bottom: 2rem; 
+      color: rgba(255,255,255,0.9); 
+      max-width: 600px; 
+      margin-left: auto; 
+      margin-right: auto;
+    }
+    .cta-buttons{
+      display: flex; 
+      gap: 1rem; 
+      justify-content: center; 
+      flex-wrap: wrap;
+    }
+    .cta-primary{
+      background: var(--gold); 
+      color: #3B060A; 
+      padding: 0.8rem 2rem; 
+      text-decoration: none; 
+      border-radius: 25px; 
+      font-weight: 600; 
+      transition: all 0.3s ease; 
+      display: inline-block;
+    }
+    .cta-primary:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+      background: #3B060A;
+      color: var(--gold);
+    }
+    .cta-secondary{
+      background: transparent; 
+      color: var(--gold); 
+      padding: 0.8rem 2rem; 
+      text-decoration: none; 
+      border-radius: 25px; 
+      font-weight: 600; 
+      border: 2px solid var(--gold); 
+      transition: all 0.3s ease; 
+      display: inline-block;
+    }
+    .cta-secondary:hover{
+      background: var(--gold);
+      color: #3B060A;
+      transform: translateY(-2px);
+    }
+
     /* Mobile responsive adjustments */
     @media(max-width:768px){
       main{padding:1.5rem 0}
@@ -207,12 +271,18 @@
         margin-bottom:2rem;
       }
       .card{padding:1.2rem}
+      .cta-card{padding:2rem}
+      .cta-title{font-size:1.5rem}
+      .cta-buttons{flex-direction:column; align-items:center}
     }
 
     @media(max-width:480px){
       .card{padding:1rem}
       .section-title{font-size:1.6rem}
       .card h3{font-size:1rem}
+      .cta-card{padding:1.5rem}
+      .cta-title{font-size:1.4rem}
+      .cta-text{font-size:1rem}
     }
 
     /* Footer - matching index */
@@ -230,7 +300,7 @@
     .footer-badge{
       cursor:pointer; border-radius:999px; padding:0.3rem 0.7rem; 
       font-size:0.75rem; font-weight:700;
-      background:var(--gold); color:var(--burgundy); text-decoration:none; 
+      background:var(--gold); color:#3B060A; text-decoration:none; 
       display:inline-block; transition:all 0.3s ease;
     }
     .footer-badge:hover{opacity:.85; transform:translateY(-1px)}
@@ -254,15 +324,15 @@
 <header>
   <nav class="nav container">
     <a class="brand" href="index.html" aria-label="Home">
-      <span class="logo">EE</span>
-      <span class="brand-name">Elizabeth Edge</span>
+      <span class="logo">E</span>
+      <span class="brand-name">Elizabeth</span>
     </a>
     <ul class="nav-menu" id="navMenu">
       <li><a href="index.html" class="nav-link">Home</a></li>
       <li><a href="about.html" class="nav-link">About</a></li>
       <li><a href="services.html" class="nav-link">Services</a></li>
       <li><a href="educationexperience.html" class="nav-link active">Education & Experience</a></li>
-      <li><a href="projects.html" class="nav-link">Projects</a></li>
+      <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
       <li><a href="success-stories.html" class="nav-link">Success Stories</a></li>
       <li><a href="contact.html" class="nav-link">Contact</a></li>
     </ul>
@@ -307,6 +377,18 @@
         </div>
         <div class="divider"></div>
         <p>Business digitization training: WordPress development, SEO techniques, social media marketing, and digital entrepreneurship strategies.</p>
+      </div>
+
+      <div class="card">
+        <h3>Keyword Research Course — Semrush Academy</h3>
+        <div class="meta">2025</div>
+        <div class="badges">
+          <span class="badge">Keyword Research</span>
+          <span class="badge">SEO</span>
+          <span class="badge">Analytics</span>
+        </div>
+        <div class="divider"></div>
+        <p>Advanced keyword research techniques using Semrush tools for SEO optimization and content strategy development.</p>
       </div>
 
       <div class="card">
@@ -370,100 +452,100 @@
     <div class="grid">
       <div class="card">
         <h3>Digital Marketing Manager — Sundrops Realtors</h3>
-        <div class="meta">Mar 2020 – Present</div>
-        <p>Integrated digital marketing campaigns with GIS-based targeting for real estate lead generation and customer acquisition.</p>
+        <div class="meta">Mar 2020 – Present | Nairobi (Remote-friendly)</div>
+        <p>Designed and executed SEO, Google Ads, and Meta Ads campaigns with virtual administrative support for real estate lead generation.</p>
         <details><summary>View Achievements</summary>
           <div class="more">
             <ul>
-              <li>Drove +300% qualified leads through integrated digital marketing campaigns</li>
-              <li>Boosted targeting efficiency by 25% through strategic audience mapping</li>
-              <li>Increased website conversions by 40% via optimized landing pages and A/B testing</li>
-              <li>Achieved +35% CTR improvement using Google Analytics, Meta Insights, and Semrush</li>
-              <li>Grew social media engagement by 15% and followers by 10% with strategic content calendar</li>
-              <li>Enhanced lead nurturing with Mailchimp automation (+35% follow-up response rate)</li>
+              <li>Designed and executed SEO, Google Ads, and Meta Ads campaigns, increasing qualified leads by 300%</li>
+              <li>Improved targeting efficiency by 25% through advanced audience segmentation</li>
+              <li>Boosted website conversions by 40% with optimized landing pages and A/B testing</li>
+              <li>Increased CTR by 35% using Google Analytics, Meta Insights, and SEMrush optimization</li>
+              <li>Managed content calendar, raising engagement by 15% and followers by 10%</li>
+              <li>Enhanced lead nurturing with automated Mailchimp workflows, improving response rates by 35%</li>
+              <li>Provided virtual administrative support including reporting, client communication, and scheduling</li>
             </ul>
           </div>
         </details>
       </div>
 
       <div class="card">
-        <h3>GIS & Digital Communications Specialist — Ministry of Mining</h3>
-        <div class="meta">Jul 2017 – Dec 2023</div>
-        <p>GIS data management and digital communications for government mining operations and policy development.</p>
+        <h3>Data Analyst & GIS Specialist — State Department of Mining, Blue Economy and Maritime Affairs</h3>
+        <div class="meta">Jul 2017 – Dec 2023 | Nairobi</div>
+        <p>Data analysis, GIS management, and digital communications for government operations and policy development.</p>
         <details><summary>View Achievements</summary>
           <div class="more">
             <ul>
-              <li>Increased data accuracy by 15% across 5+ government departments</li>
-              <li>Boosted public engagement by 20% and web traffic by 18% through digital initiatives</li>
-              <li>Supported 50+ mapping projects using GPS, remote sensing, and cadastral data</li>
-              <li>Trained government staff in GIS tools and data management standards</li>
-              <li>Applied spatial analysis for policy development and licensing decisions</li>
-              <li>Produced publication-ready maps for national mining reports and presentations</li>
+              <li>Consolidated fragmented datasets across 5+ departments, improving accuracy by 15% and strengthening data-driven decision-making</li>
+              <li>Created interactive dashboards, digital maps, and visual reports that increased public engagement by 20% and boosted web traffic by 18%</li>
+              <li>Supported 50+ national projects by coordinating data collection, preparing presentations, and delivering timely insights for stakeholders</li>
+              <li>Trained staff on digital tools, data visualization, and reporting standards, enhancing organizational capacity and communication</li>
+              <li>Applied advanced data and spatial analysis for policy support, resource allocation, and audience targeting</li>
+              <li>Produced high-quality visual content and publication-ready materials for reports, investor updates, and online platforms</li>
             </ul>
           </div>
         </details>
       </div>
 
       <div class="card">
-        <h3>GIS & Graphics Specialist — Geomaps Africa</h3>
-        <div class="meta">Jun 2016 – Jun 2017</div>
-        <p>GIS solutions for urban planning and real estate development across East Africa.</p>
+        <h3>GIS & Data Visualization Specialist — Geomaps Africa</h3>
+        <div class="meta">Jun 2016 – Jun 2017 | Nairobi</div>
+        <p>GIS solutions integrating GPS, cadastral, and satellite imagery for urban planning and real estate projects.</p>
         <details><summary>View Achievements</summary>
           <div class="more">
             <ul>
-              <li>Produced high-quality visuals for $2M+ project proposals, improving approval rates by 25%</li>
-              <li>Digitized 100+ land records, reducing processing time by 70%</li>
-              <li>Identified land vacancy patterns that influenced strategic investment decisions</li>
-              <li>Created detailed urban planning maps for major development projects</li>
+              <li>Delivered GIS solutions integrating GPS, cadastral, and satellite imagery for urban planning and real estate projects</li>
+              <li>Designed high-impact data visualizations and investor-ready reports for $2M+ real estate proposals, improving approval rates by 25%</li>
+              <li>Digitized 100+ land records, streamlining workflows and reducing processing time by 70%</li>
+              <li>Conducted spatial and data analysis to identify land vacancy patterns, influencing urban development and investment strategies</li>
             </ul>
           </div>
         </details>
       </div>
 
       <div class="card">
-        <h3>GIS Analyst — Kiambu County Government</h3>
-        <div class="meta">Feb 2016 – Jun 2016</div>
-        <p>Digital cadastral records management for property valuation and zoning processes.</p>
+        <h3>GIS Analyst (Consultancy) — Kiambu County Government</h3>
+        <div class="meta">Feb 2016 – Jun 2016 | Thika</div>
+        <p>Digital cadastral records management and geospatial data support for property valuation and zoning processes.</p>
         <details><summary>View Achievements</summary>
           <div class="more">
             <ul>
-              <li>Digitized 500+ cadastral plans accessible to 200+ government staff members</li>
-              <li>Significantly reduced processing delays by improving access to critical land records</li>
-              <li>Streamlined property valuation processes through digital record management</li>
+              <li>Digitized 500+ cadastral plans and centralized records in the county AutoCAD system, improving accessibility for 200+ staff</li>
+              <li>Supported property valuation and zoning departments with accurate, up-to-date geospatial datasets</li>
+              <li>Reduced processing delays by streamlining land information workflows and enhancing data accuracy</li>
             </ul>
           </div>
         </details>
       </div>
 
       <div class="card">
-        <h3>Cartographer / GIS Data Analyst — National Titling Center</h3>
-        <div class="meta">Nov 2014 – Jan 2016</div>
-        <p>Land records digitization for the National Land Information Management System (NLIMS).</p>
+        <h3>Data Entry/Verification Specialist — National Titling Center</h3>
+        <div class="meta">Nov 2014 – Jan 2016 | Nairobi</div>
+        <p>Historical land records digitization for the National Land Information Management System (NLIMS).</p>
         <details><summary>View Achievements</summary>
           <div class="more">
             <ul>
-              <li>Reduced land record processing time by 70% through digitization initiatives</li>
-              <li>Produced accurate parcel maps for land registration and deed issuance</li>
-              <li>Ensured data accuracy through comprehensive quality assurance processes</li>
-              <li>Supported national land titling digitization program</li>
+              <li>Converted historical land records into accurate digital formats for NLIMS integration, cutting processing time by 70%</li>
+              <li>Entered, validated, and cross-checked parcel and title deed data to ensure accuracy and compliance with land registration standards</li>
+              <li>Produced digital parcel maps and supported deed issuance campaigns by verifying boundary details and correcting discrepancies</li>
+              <li>Collaborated with quality assurance teams to detect and resolve data errors, strengthening database reliability for nationwide land registration</li>
             </ul>
           </div>
         </details>
       </div>
+    </div>
+  </section>
 
-      <div class="card">
-        <h3>GIS Consultant — Geosurv Systems Ltd</h3>
-        <div class="meta">Aug 2015 – Oct 2015</div>
-        <p>GPS-based mapping of Kenya Power's electrical distribution network infrastructure.</p>
-        <details><summary>View Achievements</summary>
-          <div class="more">
-            <ul>
-              <li>Successfully mapped 200+ kilometers of electrical distribution network</li>
-              <li>Updated critical asset layers to improve infrastructure planning accuracy</li>
-              <li>Provided detailed network analysis for power distribution optimization</li>
-            </ul>
-          </div>
-        </details>
+  <!-- Call to Action Section -->
+  <section class="cta-section">
+    <div class="card cta-card">
+      <h2 class="cta-title">Ready to Elevate Your Business?</h2>
+      <p class="cta-text">
+        With proven expertise in digital marketing, data analysis, and GIS solutions, I help businesses achieve measurable growth through strategic campaigns and data-driven insights.
+      </p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="cta-primary">Start Your Project</a>
+        <a href="portfolio.html" class="cta-secondary">View My Work</a>
       </div>
     </div>
   </section>
@@ -471,7 +553,7 @@
 
 <footer>
   <div class="container footer-wrap">
-    <div class="footer-left">© 2025 Elizabeth Edge. All rights reserved.</div>
+    <div class="footer-left">© 2025 Elizabeth. All rights reserved.</div>
     <div class="footer-center">
       <a href="https://linkedin.com/in/elizabeth-wairimu-2069a6289" target="_blank" class="footer-badge" rel="noopener">
         LinkedIn
