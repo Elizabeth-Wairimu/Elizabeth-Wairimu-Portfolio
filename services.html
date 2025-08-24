@@ -44,7 +44,7 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            height: 70px;
+            height: 64px;
         }
 
         .header-container {
@@ -54,7 +54,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 0 2rem;
-            height: 70px;
+            height: 64px;
         }
 
         .logo-container {
@@ -64,39 +64,27 @@
         }
 
         .logo {
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
             background: var(--gold);
             color: var(--burgundy);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 700;
             text-decoration: none;
             border: 2px solid var(--gold);
-            transition: all 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.1);
-            box-shadow: 0 3px 10px rgba(212, 175, 55, 0.3);
         }
 
         .brand-name {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: white;
             text-decoration: none;
-            transition: color 0.3s ease;
         }
 
-        .brand-name:hover {
-            color: var(--gold);
-        }
-
-        /* Navigation Menu */
         .nav-menu {
             display: flex;
             list-style: none;
@@ -112,131 +100,93 @@
             text-decoration: none;
             color: white;
             font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 1rem 1.2rem;
-            border-radius: 8px;
-            position: relative;
+            transition: color 0.3s, transform 0.3s;
+            padding: 0.75rem 1.25rem;
+            border-radius: 5px;
             display: block;
-            font-size: 0.95rem;
         }
 
         .nav-link:hover {
             color: var(--gold);
-            background: rgba(212, 175, 55, 0.1);
             transform: translateY(-2px);
         }
 
         .nav-link.active {
             background: rgba(212, 175, 55, 0.2);
             color: var(--gold);
-            font-weight: 600;
         }
 
-        /* Dropdown Menu */
+        /* Dropdown Styles */
         .dropdown {
             position: relative;
         }
 
-        .dropdown-content {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: var(--burgundy);
-            min-width: 220px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            border-radius: 8px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            z-index: 1001;
-        }
-
-        .dropdown:hover .dropdown-content {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .dropdown-content a {
-            color: white;
-            padding: 0.8rem 1.2rem;
-            text-decoration: none;
-            display: block;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .dropdown-content a:last-child {
-            border-bottom: none;
-            border-radius: 0 0 8px 8px;
-        }
-
-        .dropdown-content a:first-child {
-            border-radius: 8px 8px 0 0;
-        }
-
-        .dropdown-content a:hover {
-            background: rgba(212, 175, 55, 0.2);
-            color: var(--gold);
-            padding-left: 1.5rem;
-        }
-
-        /* Dropdown indicator */
-        .nav-link.has-dropdown::after {
-            content: "▾";
+        .dropdown-toggle::after {
+            content: '▾';
             margin-left: 0.5rem;
             font-size: 0.8rem;
             transition: transform 0.3s ease;
         }
 
-        .dropdown:hover .nav-link.has-dropdown::after {
+        .dropdown:hover .dropdown-toggle::after {
             transform: rotate(180deg);
         }
 
-        /* Mobile Menu Toggle */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--burgundy);
+            min-width: 220px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            border-radius: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 0.75rem 1.25rem;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--gold);
+            transform: translateX(5px);
+        }
+
         .mobile-menu-toggle {
             display: none;
             flex-direction: column;
             cursor: pointer;
-            padding: 8px;
-            border-radius: 4px;
-            transition: background 0.3s ease;
-        }
-
-        .mobile-menu-toggle:hover {
-            background: rgba(255,255,255,0.1);
+            padding: 5px;
         }
 
         .mobile-menu-toggle span {
-            width: 28px;
+            width: 25px;
             height: 3px;
             background: white;
             margin: 3px 0;
             transition: 0.3s;
-            border-radius: 2px;
-        }
-
-        /* Contact CTA Button */
-        .header-cta {
-            background: var(--gold);
-            color: var(--burgundy);
-            padding: 0.7rem 1.5rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            margin-left: 1rem;
-            white-space: nowrap;
-        }
-
-        .header-cta:hover {
-            background: #b8941f;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
         }
 
         /* Main Content */
@@ -518,17 +468,58 @@
         .cta-section::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, rgba(212, 175, 55, 0.1) 30%, transparent 70%);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse-center 4s ease-in-out infinite;
         }
 
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: ripple-center 3s ease-out infinite;
+        }
+
+        @keyframes pulse-center {
+            0%, 100% { 
+                width: 0;
+                height: 0;
+                opacity: 1;
+            }
+            50% { 
+                width: 300px;
+                height: 300px;
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes ripple-center {
+            0% { 
+                width: 0;
+                height: 0;
+                opacity: 0.8;
+            }
+            70% { 
+                width: 400px;
+                height: 400px;
+                opacity: 0.3;
+            }
+            100% { 
+                width: 500px;
+                height: 500px;
+                opacity: 0;
+            }
         }
 
         .cta-content {
@@ -658,25 +649,16 @@
             }
             
             .nav-link {
-                padding: 0.8rem 1rem;
+                padding: 0.75rem 1rem;
                 font-size: 0.9rem;
             }
 
-            .header-cta {
-                padding: 0.6rem 1.2rem;
-                font-size: 0.85rem;
+            .dropdown-menu {
+                min-width: 200px;
             }
         }
 
         @media (max-width: 768px) {
-            .header {
-                height: 65px;
-            }
-
-            .header-container {
-                height: 65px;
-            }
-
             .nav-menu {
                 display: none;
                 position: absolute;
@@ -688,7 +670,6 @@
                 padding: 1rem 0;
                 box-shadow: 0 5px 15px rgba(0,0,0,0.2);
                 gap: 0;
-                border-top: 1px solid rgba(255,255,255,0.1);
             }
 
             .nav-menu.active {
@@ -704,40 +685,37 @@
                 padding: 1rem 2rem;
                 text-align: left;
                 border-bottom: 1px solid rgba(255,255,255,0.1);
-                border-radius: 0;
+                width: 100%;
             }
 
             .nav-link:last-child {
                 border-bottom: none;
             }
 
-            .dropdown-content {
+            .dropdown-menu {
                 position: static;
                 opacity: 1;
                 visibility: visible;
                 transform: none;
                 box-shadow: none;
+                background: rgba(0,0,0,0.1);
                 border: none;
-                background: rgba(255,255,255,0.05);
-                margin: 0;
+                border-radius: 0;
+                padding: 0;
                 display: none;
             }
 
-            .dropdown.active .dropdown-content {
+            .dropdown.active .dropdown-menu {
                 display: block;
             }
 
-            .dropdown-content a {
-                padding: 0.8rem 3rem;
-                font-size: 0.9rem;
-                border-bottom: 1px solid rgba(255,255,255,0.05);
+            .dropdown-toggle::after {
+                float: right;
             }
 
-            .header-cta {
-                margin-left: 0;
-                margin: 1rem 2rem;
-                text-align: center;
-                order: 1;
+            .dropdown-item {
+                padding: 0.75rem 3rem;
+                font-size: 0.9rem;
             }
 
             .mobile-menu-toggle {
@@ -749,7 +727,7 @@
             }
 
             .brand-name {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
 
             .main-content {
@@ -841,44 +819,17 @@
                 <a href="index.html" class="logo">E</a>
                 <a href="index.html" class="brand-name">Elizabeth</a>
             </div>
-            
             <nav>
                 <ul class="nav-menu" id="navMenu">
-                    <!-- Core Pages -->
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                    
-                    <!-- Services & Work -->
-                    <li class="nav-item dropdown">
-                        <a href="services.html" class="nav-link has-dropdown active">Services</a>
-                        <div class="dropdown-content">
-                            <a href="services.html#digital-marketing">Digital Marketing</a>
-                            <a href="services.html#gis-services">GIS Analysis</a>
-                            <a href="services.html#design-services">Graphic Design</a>
-                            <a href="services.html#virtual-assistance">Virtual Assistance</a>
-                        </div>
-                    </li>
-                    
-                    <!-- Portfolio & Proof -->
-                    <li class="nav-item dropdown">
-                        <a href="portfolio.html" class="nav-link has-dropdown">Work</a>
-                        <div class="dropdown-content">
-                            <a href="portfolio.html">Portfolio</a>
-                            <a href="success-stories.html">Success Stories</a>
-                            <a href="case-studies.html">Case Studies</a>
-                        </div>
-                    </li>
-                    
-                    <!-- Background -->
+                    <li class="nav-item"><a href="services.html" class="nav-link active">Services</a></li>
+                    <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li class="nav-item"><a href="success-stories.html" class="nav-link">Success Stories</a></li>
                     <li class="nav-item"><a href="educationexperience.html" class="nav-link">Experience</a></li>
-                    
-                    <!-- CTA Button -->
-                    <li class="nav-item">
-                        <a href="contact.html" class="header-cta">Get Started</a>
-                    </li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
-            
             <div class="mobile-menu-toggle" id="mobileToggle">
                 <span></span>
                 <span></span>
@@ -1185,7 +1136,7 @@
             });
         });
 
-        // Mobile menu toggle with animation and dropdown support
+        // Mobile menu toggle with dropdown support
         const mobileToggle = document.getElementById('mobileToggle');
         const navMenu = document.getElementById('navMenu');
         
@@ -1195,24 +1146,70 @@
             mobileToggle.classList.toggle('active');
         });
 
-        // Mobile dropdown functionality
-        document.querySelectorAll('.dropdown .nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
+        // Handle dropdown clicks on mobile
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                
                 if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    const dropdown = this.closest('.dropdown');
+                    const dropdown = this.parentElement;
                     dropdown.classList.toggle('active');
+                    
+                    // Close other dropdowns
+                    document.querySelectorAll('.dropdown').forEach(otherDropdown => {
+                        if (otherDropdown !== dropdown) {
+                            otherDropdown.classList.remove('active');
+                        }
+                    });
                 }
             });
         });
 
-        // Close mobile menu when clicking on nav links (except dropdowns)
-        document.querySelectorAll('.nav-link:not(.has-dropdown)').forEach(link => {
-            link.addEventListener('click', (e) => {
+        // Close mobile menu when clicking on regular nav links
+        document.querySelectorAll('.nav-link:not(.dropdown-toggle)').forEach(link => {
+            link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
                 mobileToggle.classList.remove('active');
             });
         });
+
+        // Close mobile menu when clicking on dropdown items
+        document.querySelectorAll('.dropdown-item').forEach(item => {
+            item.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+                // Close all dropdowns
+                document.querySelectorAll('.dropdown').forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.header')) {
+                navMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+                // Close all dropdowns
+                document.querySelectorAll('.dropdown').forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        });
+
+        // Handle window resize
+        function handleResize() {
+            if (window.innerWidth > 768) {
+                navMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+                // Close all mobile dropdowns
+                document.querySelectorAll('.dropdown').forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
 
         // Fade in animation on scroll
         const observerOptions = {
@@ -1232,16 +1229,18 @@
             observer.observe(el);
         });
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.header')) {
-                navMenu.classList.remove('active');
-                mobileToggle.classList.remove('active');
-                // Close all dropdowns
-                document.querySelectorAll('.dropdown').forEach(dropdown => {
-                    dropdown.classList.remove('active');
-                });
-            }
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
 
         // Enhanced mobile responsiveness
@@ -1249,10 +1248,6 @@
             if (window.innerWidth > 768) {
                 navMenu.classList.remove('active');
                 mobileToggle.classList.remove('active');
-                // Reset dropdowns for desktop
-                document.querySelectorAll('.dropdown').forEach(dropdown => {
-                    dropdown.classList.remove('active');
-                });
             }
         }
 
@@ -1267,20 +1262,6 @@
             }
             lastTouchEnd = now;
         }, false);
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
 
         // Add loading animation
         window.addEventListener('load', function() {
