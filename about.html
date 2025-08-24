@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Elizabeth Edge - Digital Marketing Strategist | GIS Expert | Virtual Assistant</title>
-  <meta name="description" content="Meet Elizabeth Edge, a passionate digital marketing strategist with GIS expertise and virtual assistant services. Discover my story, mission, and value proposition.">
-  <meta name="keywords" content="about Elizabeth Edge, digital marketing strategist, GIS expert, virtual assistant, professional background, Nairobi Kenya">
+  <title>About Elizabeth - Digital Marketing Strategist | GIS Expert | Virtual Assistant</title>
+  <meta name="description" content="Meet Elizabeth, a passionate digital marketing strategist with GIS expertise and virtual assistant services. Discover my story, mission, and value proposition.">
+  <meta name="keywords" content="about Elizabeth, digital marketing strategist, GIS expert, virtual assistant, professional background, Nairobi Kenya">
 
   <style>
     :root{
@@ -210,27 +210,112 @@
       color:var(--muted); font-size:0.9rem; margin-top:0.5rem;
     }
 
-    /* CTA section */
+    /* CTA section with gripping motion */
     .cta{
-      background:var(--burgundy); color:#fff; padding:2rem;
-      border-radius:12px; text-align:center; margin:3rem 0;
+      background:linear-gradient(135deg, var(--burgundy) 0%, #5a0f15 100%);
+      color:#fff; padding:3rem 2rem; border-radius:16px; text-align:center; 
+      margin:3rem 0; position:relative; overflow:hidden;
+      box-shadow:0 20px 40px rgba(59, 6, 10, 0.3);
+      transform:perspective(1000px);
+      animation:ctaPulse 4s ease-in-out infinite;
     }
+
+    @keyframes ctaPulse {
+      0%, 100% { 
+        transform:perspective(1000px) rotateX(0deg) scale(1);
+        box-shadow:0 20px 40px rgba(59, 6, 10, 0.3);
+      }
+      50% { 
+        transform:perspective(1000px) rotateX(2deg) scale(1.02);
+        box-shadow:0 30px 60px rgba(59, 6, 10, 0.4);
+      }
+    }
+
+    .cta::before {
+      content:'';
+      position:absolute;
+      top:-50%;
+      left:-50%;
+      width:200%;
+      height:200%;
+      background:linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+      animation:ctaShine 3s ease-in-out infinite;
+      pointer-events:none;
+    }
+
+    @keyframes ctaShine {
+      0% { transform:translate(-100%, -100%) rotate(45deg); }
+      50% { transform:translate(0%, 0%) rotate(45deg); }
+      100% { transform:translate(100%, 100%) rotate(45deg); }
+    }
+
     .cta h3{
-      font-size:1.8rem; margin:0 0 1rem; color:#fff;
+      font-size:2.2rem; margin:0 0 1rem; color:#fff; position:relative;
+      z-index:2; font-weight:700;
+      animation:ctaTextFloat 3s ease-in-out infinite;
     }
+
+    @keyframes ctaTextFloat {
+      0%, 100% { transform:translateY(0px); }
+      50% { transform:translateY(-3px); }
+    }
+
     .cta p{
-      font-size:1.1rem; margin:0 0 1.5rem; opacity:0.9;
+      font-size:1.2rem; margin:0 0 2rem; opacity:0.95; position:relative;
+      z-index:2; animation:ctaTextFloat 3s ease-in-out infinite 0.2s;
     }
+
+    .cta-buttons{
+      position:relative; z-index:2;
+      animation:ctaButtonsBounce 4s ease-in-out infinite;
+    }
+
+    @keyframes ctaButtonsBounce {
+      0%, 100% { transform:translateY(0px); }
+      25% { transform:translateY(-2px); }
+      75% { transform:translateY(-1px); }
+    }
+
     .btn{
-      display:inline-block; padding:12px 24px; border-radius:30px; 
-      font-weight:600; text-decoration:none; margin:0.3rem;
-      transition:all 0.3s ease; font-size:0.95rem;
+      display:inline-block; padding:14px 28px; border-radius:35px; 
+      font-weight:600; text-decoration:none; margin:0.4rem;
+      transition:all 0.4s ease; font-size:1rem; position:relative;
+      overflow:hidden;
     }
-    .btn:hover{transform:translateY(-1px)}
-    .btn-primary{background:var(--gold); color:var(--burgundy)}
-    .btn-primary:hover{box-shadow:0 4px 15px rgba(212,175,55,.3)}
-    .btn-outline{border:2px solid var(--gold); color:var(--gold)}
-    .btn-outline:hover{background:var(--gold); color:var(--burgundy)}
+    .btn:hover{transform:translateY(-3px) scale(1.05);}
+    .btn-primary{
+      background:linear-gradient(135deg, var(--gold) 0%, #f4d03f 100%);
+      color:var(--burgundy); box-shadow:0 8px 25px rgba(212, 175, 55, 0.4);
+    }
+    .btn-primary:hover{
+      box-shadow:0 12px 35px rgba(212, 175, 55, 0.6);
+      background:linear-gradient(135deg, #f4d03f 0%, var(--gold) 100%);
+    }
+    .btn-outline{
+      border:2px solid var(--gold); color:var(--gold);
+      box-shadow:0 8px 25px rgba(212, 175, 55, 0.2);
+    }
+    .btn-outline:hover{
+      background:linear-gradient(135deg, var(--gold) 0%, #f4d03f 100%);
+      color:var(--burgundy);
+      box-shadow:0 12px 35px rgba(212, 175, 55, 0.5);
+    }
+
+    /* Floating elements for extra motion */
+    .cta::after {
+      content:'✨';
+      position:absolute;
+      top:20px;
+      right:30px;
+      font-size:1.5rem;
+      animation:float 6s ease-in-out infinite;
+      opacity:0.7;
+    }
+
+    @keyframes float {
+      0%, 100% { transform:translateY(0px) rotate(0deg); opacity:0.7; }
+      50% { transform:translateY(-10px) rotate(10deg); opacity:1; }
+    }
 
     /* Footer - matching guidelines */
     footer{
@@ -260,6 +345,9 @@
       .hero p{font-size:1.1rem}
       .section-title{font-size:1.8rem}
       .content-section{margin-bottom:2rem}
+      .cta{padding:2rem 1.5rem; margin:2rem 0}
+      .cta h3{font-size:1.8rem}
+      .cta p{font-size:1.1rem}
       .footer-wrap{
         grid-template-columns:1fr; height:auto; padding:0.8rem 0; 
         gap:0.8rem; text-align:center;
@@ -280,7 +368,7 @@
     <nav class="nav">
       <a href="index.html" class="brand">
         <span class="logo">EE</span>
-        <span class="brand-name">Elizabeth Edge</span>
+        <span class="brand-name">Elizabeth</span>
       </a>
       <ul class="nav-menu" id="navMenu">
         <li><a href="index.html" class="nav-link">Home</a></li>
@@ -303,7 +391,7 @@
 <main class="container">
   <!-- Hero Section -->
   <section class="hero">
-    <h1>About Elizabeth Edge</h1>
+    <h1>About Elizabeth</h1>
     <p>A passionate digital marketing strategist who combines creative strategy with data intelligence and GIS precision to deliver measurable results for businesses across Kenya and beyond.</p>
   </section>
 
@@ -399,26 +487,29 @@
     </div>
   </section>
 
-  <!-- Working Process -->
+  <!-- Working Process - Now in separate cards -->
   <section class="content-section">
     <div class="section-header">
       <span class="eyebrow">My Approach</span>
       <h2 class="section-title">How I Work With Clients</h2>
     </div>
-    <div class="about">
-      <h3>Partnership Focused Collaboration</h3>
-      <p>I view every client relationship as a partnership. From initial consultation to campaign execution and optimization, I maintain transparent communication and provide regular insights into campaign performance. My goal is not just to deliver services, but to empower your team with knowledge and strategies for long term success.</p>
-      
-      <h3>Tailored Solutions for Every Business</h3>
-      <p>Whether you're a startup looking to establish your digital presence or an established company seeking to optimize existing campaigns, I craft strategies that fit your budget, timeline, and growth objectives. Every solution is designed specifically for your business needs.</p>
+    <div class="two-column">
+      <div class="card">
+        <h3>Partnership Focused Collaboration</h3>
+        <p>I view every client relationship as a partnership. From initial consultation to campaign execution and optimization, I maintain transparent communication and provide regular insights into campaign performance. My goal is not just to deliver services, but to empower your team with knowledge and strategies for long term success.</p>
+      </div>
+      <div class="card">
+        <h3>Tailored Solutions for Every Business</h3>
+        <p>Whether you're a startup looking to establish your digital presence or an established company seeking to optimize existing campaigns, I craft strategies that fit your budget, timeline, and growth objectives. Every solution is designed specifically for your business needs.</p>
+      </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <!-- CTA Section with Eye-Catching Motion -->
   <section class="cta">
     <h3>Ready to Transform Your Digital Presence?</h3>
     <p>Let's discuss how my unique blend of marketing expertise and analytical precision can drive your business growth.</p>
-    <div>
+    <div class="cta-buttons">
       <a href="contact.html" class="btn btn-primary">Start Your Project</a>
       <a href="services.html" class="btn btn-outline">View Services</a>
     </div>
@@ -427,7 +518,7 @@
 
 <footer>
   <div class="container footer-wrap">
-    <div class="footer-left">© 2025 Elizabeth Edge. All rights reserved.</div>
+    <div class="footer-left">© 2025 Elizabeth. All rights reserved.</div>
     <div class="footer-center">
       <a href="https://linkedin.com/in/elizabeth-wairimu-2069a6289" target="_blank" class="footer-badge" rel="noopener">
         LinkedIn
