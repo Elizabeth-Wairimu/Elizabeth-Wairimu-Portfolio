@@ -63,10 +63,11 @@
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             padding: 0 2rem;
             height: 64px;
+            gap: 3rem;
         }
 
         .logo-container {
@@ -102,6 +103,7 @@
             list-style: none;
             gap: 1.5rem;
             align-items: center;
+            flex: 1;
         }
 
         .nav-link {
@@ -128,6 +130,7 @@
             display: none;
             flex-direction: column;
             cursor: pointer;
+            margin-left: auto;
         }
 
         .mobile-menu-toggle span {
@@ -614,6 +617,10 @@
             .nav-link {
                 padding: 0.4rem 0.8rem;
                 font-size: 0.9rem;
+            }
+
+            .header-container {
+                gap: 2rem;
             }
         }
 
