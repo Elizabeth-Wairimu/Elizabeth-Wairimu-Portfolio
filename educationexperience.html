@@ -14,6 +14,8 @@
       --card:#FFF5F2;       /* off-white cards */
       --ink:#1a1a1a;        /* main text */
       --muted:#555;         /* secondary text */
+      --white: #ffffff;
+      --light-gray: #f8f9fa;
     }
     *{box-sizing:border-box}
     html, body{height:100%; margin:0; padding:0}
@@ -47,7 +49,7 @@
     }
     .brand-name{font-weight:700; font-size:1.3rem; letter-spacing:-0.5px}
     
-    /* Navigation Menu - Organized */
+    /* Navigation Menu - Reorganized */
     .nav-menu{
       display:flex; list-style:none; gap:0.5rem; align-items:center; 
       margin:0; padding:0; background:rgba(255,255,255,0.05);
@@ -198,68 +200,94 @@
       margin-bottom:0.4rem; line-height:1.4;
     }
 
-    /* CTA Styles */
-    .cta-section{
-      margin-top: 3rem;
+    /* CTA Section - Matching Services Page Style */
+    .cta-section {
+      background: linear-gradient(135deg, var(--burgundy) 0%, #4B0812 100%);
+      color: white;
+      padding: 3rem 2rem;
+      border-radius: 20px;
+      text-align: center;
+      margin: 4rem 0;
+      position: relative;
+      overflow: hidden;
     }
-    .cta-card{
-      text-align: center; 
-      background: linear-gradient(135deg, #3B060A 0%, #4A0A0F 100%); 
-      color: white; 
-      border: none; 
-      padding: 2.5rem;
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+      animation: rotate 20s linear infinite;
     }
-    .cta-title{
-      color: var(--gold); 
-      margin-bottom: 1rem; 
-      font-size: 1.8rem;
-      margin-top: 0;
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
-    .cta-text{
-      font-size: 1.1rem; 
-      margin-bottom: 2rem; 
-      color: rgba(255,255,255,0.9); 
-      max-width: 600px; 
-      margin-left: auto; 
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-title {
+      font-size: 2.2rem;
+      margin: 0 0 1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .cta-description {
+      font-size: 1.1rem;
+      margin: 0 0 2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin-left: auto;
       margin-right: auto;
+      line-height: 1.6;
     }
-    .cta-buttons{
-      display: flex; 
-      gap: 1rem; 
-      justify-content: center; 
-      flex-wrap: wrap;
-    }
-    .cta-primary{
-      background: var(--gold); 
-      color: #3B060A; 
-      padding: 0.8rem 2rem; 
-      text-decoration: none; 
-      border-radius: 25px; 
-      font-weight: 600; 
-      transition: all 0.3s ease; 
+
+    .btn {
       display: inline-block;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      margin: 0.5rem;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      font-family: inherit;
+      border: none;
+      cursor: pointer;
     }
-    .cta-primary:hover{
+
+    .btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-      background: #3B060A;
-      color: var(--gold);
     }
-    .cta-secondary{
-      background: transparent; 
-      color: var(--gold); 
-      padding: 0.8rem 2rem; 
-      text-decoration: none; 
-      border-radius: 25px; 
-      font-weight: 600; 
-      border: 2px solid var(--gold); 
-      transition: all 0.3s ease; 
-      display: inline-block;
-    }
-    .cta-secondary:hover{
+
+    .btn-primary {
       background: var(--gold);
-      color: #3B060A;
-      transform: translateY(-2px);
+      color: var(--burgundy);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: #b8941f;
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--gold);
+      color: var(--burgundy);
     }
 
     /* Mobile responsive adjustments */
@@ -271,23 +299,22 @@
         margin-bottom:2rem;
       }
       .card{padding:1.2rem}
-      .cta-card{padding:2rem}
-      .cta-title{font-size:1.5rem}
-      .cta-buttons{flex-direction:column; align-items:center}
+      .cta-section{padding:2rem 1.5rem}
+      .cta-title{font-size:1.8rem}
     }
 
     @media(max-width:480px){
       .card{padding:1rem}
       .section-title{font-size:1.6rem}
       .card h3{font-size:1rem}
-      .cta-card{padding:1.5rem}
-      .cta-title{font-size:1.4rem}
-      .cta-text{font-size:1rem}
+      .cta-section{padding:1.5rem}
+      .cta-title{font-size:1.6rem}
+      .cta-description{font-size:1rem}
     }
 
-    /* Footer - matching index */
+    /* Footer - matching index with proper spacing */
     footer{
-      background:var(--burgundy); color:#fff; margin-top:auto;
+      background:var(--burgundy); color:#fff; margin-top:2rem;
       flex-shrink:0;
     }
     .footer-wrap{
@@ -317,6 +344,19 @@
 
     /* Smooth scrolling */
     html{scroll-behavior:smooth}
+
+    /* Mobile menu animation */
+    .mobile-menu-toggle.active span:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .mobile-menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
   </style>
 </head>
 <body>
@@ -331,9 +371,9 @@
       <li><a href="index.html" class="nav-link">Home</a></li>
       <li><a href="about.html" class="nav-link">About</a></li>
       <li><a href="services.html" class="nav-link">Services</a></li>
-      <li><a href="educationexperience.html" class="nav-link active">Education & Experience</a></li>
       <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
       <li><a href="success-stories.html" class="nav-link">Success Stories</a></li>
+      <li><a href="educationexperience.html" class="nav-link active">Experience</a></li>
       <li><a href="contact.html" class="nav-link">Contact</a></li>
     </ul>
     <div class="mobile-menu-toggle" id="mobileToggle">
@@ -538,14 +578,14 @@
 
   <!-- Call to Action Section -->
   <section class="cta-section">
-    <div class="card cta-card">
-      <h2 class="cta-title">Ready to Elevate Your Business?</h2>
-      <p class="cta-text">
+    <div class="cta-content">
+      <h3 class="cta-title">Ready to Transform Your Digital Presence?</h3>
+      <p class="cta-description">
         With proven expertise in digital marketing, data analysis, and GIS solutions, I help businesses achieve measurable growth through strategic campaigns and data-driven insights.
       </p>
-      <div class="cta-buttons">
-        <a href="contact.html" class="cta-primary">Start Your Project</a>
-        <a href="portfolio.html" class="cta-secondary">View My Work</a>
+      <div>
+        <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+        <a href="portfolio.html" class="btn btn-outline">View My Work</a>
       </div>
     </div>
   </section>
@@ -572,14 +612,17 @@
   const mobileToggle = document.getElementById('mobileToggle');
   const navMenu = document.getElementById('navMenu');
   
-  mobileToggle.addEventListener('click', function() {
+  mobileToggle.addEventListener('click', function(e) {
+    e.stopPropagation();
     navMenu.classList.toggle('active');
+    mobileToggle.classList.toggle('active');
   });
 
   // Close mobile menu when clicking outside
   document.addEventListener('click', function(e) {
     if (!e.target.closest('header') && navMenu.classList.contains('active')) {
       navMenu.classList.remove('active');
+      mobileToggle.classList.remove('active');
     }
   });
 
@@ -587,8 +630,19 @@
   document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', function() {
       navMenu.classList.remove('active');
+      mobileToggle.classList.remove('active');
     });
   });
+
+  // Enhanced mobile responsiveness
+  function handleResize() {
+    if (window.innerWidth > 768) {
+      navMenu.classList.remove('active');
+      mobileToggle.classList.remove('active');
+    }
+  }
+
+  window.addEventListener('resize', handleResize);
 </script>
 
 </body>
