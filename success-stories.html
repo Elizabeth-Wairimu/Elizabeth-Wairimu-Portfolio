@@ -609,18 +609,41 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 968px) {
+        @media (max-width: 1024px) {
+            .header-container {
+                gap: 2rem;
+            }
+            
             .nav-menu {
-                gap: 1rem;
+                gap: 0.4rem;
             }
             
             .nav-link {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.9rem;
+                padding: 0.3rem 0.4rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 968px) {
+            .header-container {
+                gap: 1.5rem;
+            }
+            
+            .nav-menu {
+                gap: 0.3rem;
+            }
+            
+            .nav-link {
+                padding: 0.2rem 0.3rem;
+                font-size: 0.75rem;
             }
 
-            .header-container {
-                gap: 2rem;
+            .logo-container {
+                gap: 0.8rem;
+            }
+
+            .brand-name {
+                font-size: 1.3rem;
             }
         }
 
@@ -651,10 +674,15 @@
                 width: 100%;
                 text-align: center;
                 padding: 1rem;
+                font-size: 1rem;
             }
 
             .mobile-menu-toggle {
                 display: flex;
+            }
+
+            .header-container {
+                gap: 1rem;
             }
 
             .logo-container {
@@ -802,9 +830,9 @@
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="educationexperience.html" class="nav-link">Education & Experience</a></li>
                     <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
                     <li><a href="success-stories.html" class="nav-link active">Success Stories</a></li>
-                    <li><a href="educationexperience.html" class="nav-link">Education & Experience</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
